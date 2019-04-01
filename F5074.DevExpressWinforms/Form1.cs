@@ -28,11 +28,11 @@ namespace F5074.DevExpressWinforms
 
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
-            this.treeList1.AppendNode(new object[] { Text = "1.DataTable" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "2.TreeList" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "3.ButtonImage" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "4.GridControl" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "5.TabControl" }, -1);
+            this.treeList1.AppendNode(new object[] { Text = "1_DataTable" }, -1);
+            this.treeList1.AppendNode(new object[] { Text = "2_TreeList" }, -1);
+            this.treeList1.AppendNode(new object[] { Text = "3_ButtonImage" }, -1);
+            this.treeList1.AppendNode(new object[] { Text = "4_GridControl" }, -1);
+            this.treeList1.AppendNode(new object[] { Text = "5_TabControl" }, -1);
             this.xtraTabControl1.TabPages.Add("Main");
         }
 
@@ -52,32 +52,37 @@ namespace F5074.DevExpressWinforms
 
                 switch (this.treeList1.FocusedValue.ToString())
                 {
-                    case "1.DataTable":
+                    case "1_DataTable":
                         {
-                            Tab1 tab1 = new Tab1();
-                            tab1.TopLevel = false;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab1);
-                            tab1.WindowState = FormWindowState.Maximized;
-                            tab1.Show();
+                            Tab1 tab = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                            tab.Show();
                             break;
                         }
-                    case "2.TreeList":
+                    case "2_TreeList":
                         {
-                            Tab2 tab2 = new Tab2();
-                            tab2.TopLevel = false;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab2);
-                            tab2.WindowState = FormWindowState.Maximized;
-                            tab2.Show();
+                            Tab2 tab = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                            tab.Show();
                             break;
                         }
 
-                    case "3.ButtonImage":
+                    case "3_ButtonImage":
                         {
-                            ButtonImage tab3 = new ButtonImage();
-                            tab3.TopLevel = false;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab3);
-                            tab3.WindowState = FormWindowState.Maximized;
-                            tab3.Show();
+                            ButtonImage tab = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                            tab.Show();
+                            break;
+                        }
+
+                    case "4_GridControl":
+                        {
+                            GridCalendarInCell tab = new GridCalendarInCell();
+                            //tab.Dock = DockStyle.Fill;
+                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                            tab.Show();
                             break;
                         }
                 }
