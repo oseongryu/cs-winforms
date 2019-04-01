@@ -124,7 +124,6 @@
     <Compile Include="TabFolder\Tab3.Designer.cs">
       <DependentUpon>Tab3.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
