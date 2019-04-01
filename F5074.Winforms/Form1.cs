@@ -14,9 +14,9 @@ namespace F5074.Winforms
 {
     public partial class Form1 : Form
     {
-        private TreeNode treeNode1 = new TreeNode("1.Enum활용");
-        private TreeNode treeNode2 = new TreeNode("노드1");
-
+        private TreeNode treeNode1 = new TreeNode("1_Enum");
+        private TreeNode treeNode2 = new TreeNode("2_UserControl");
+        private TabPage tabPage;
 
         public Form1()
         {
@@ -28,9 +28,40 @@ namespace F5074.Winforms
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-            FormTab1 formTab1 = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-            this.tabControl1.TabPages[0].Controls.Add(formTab1);
-            formTab1.Show();
+            switch (this.treeView1.SelectedNode.Text)
+            {
+                //case "1_Enum":
+                //    FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                //    this.tabControl1.TabPages[0].Controls.Add(formTab);
+                //    formTab.Show();
+                //    break;
+                //case "2_UserControl":
+                //    FormTab2 formTab2 = new FormTab2() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                //    this.tabControl1.TabPages[0].Controls.Add(formTab2);
+                //    formTab2.Show();
+                //    break;
+                case "1_Enum":
+                    FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                    tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    tabPage.Controls.Add(formTab);
+                    this.tabControl1.Controls.Add(tabPage);
+                    this.tabControl1.SelectedTab = tabPage;
+                    //this.tabControl1.TabPages[0].Controls.Add(formTab);
+                    formTab.Show();
+                    break;
+                case "2_UserControl":
+                    FormTab2 formTab2 = new FormTab2() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                    tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    tabPage.Controls.Add(formTab2);
+                    this.tabControl1.Controls.Add(tabPage);
+                    this.tabControl1.SelectedTab = tabPage;
+                    //this.tabControl1.TabPages[0].Controls.Add(formTab);
+                    formTab2.Show();
+                    break;
+            }
+
+
+
 
         }
 
