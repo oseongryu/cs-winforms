@@ -16,12 +16,13 @@ namespace F5074.Winforms
     {
         private TreeNode treeNode1 = new TreeNode("1_Enum");
         private TreeNode treeNode2 = new TreeNode("2_UserControl");
+        private TreeNode treeNode3 = new TreeNode("C_ReadTextFile");
         private TabPage tabPage;
 
         public Form1()
         {
             InitializeComponent();
-            this.treeView1.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode2 });
+            this.treeView1.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode2, treeNode3 });
             this.tabControl1.Controls.Add(new TabPage("Main"));
             this.treeView1.DoubleClick += new EventHandler(this.treeView1_DoubleClick);
         }
@@ -57,6 +58,15 @@ namespace F5074.Winforms
                     this.tabControl1.SelectedTab = tabPage;
                     //this.tabControl1.TabPages[0].Controls.Add(formTab);
                     formTab2.Show();
+                    break;
+                case "C_ReadTextFile":
+                    C_ReadTextFile formTab3 = new C_ReadTextFile() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                    tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    tabPage.Controls.Add(formTab3);
+                    this.tabControl1.Controls.Add(tabPage);
+                    this.tabControl1.SelectedTab = tabPage;
+                    //this.tabControl1.TabPages[0].Controls.Add(formTab);
+                    formTab3.Show();
                     break;
             }
 
