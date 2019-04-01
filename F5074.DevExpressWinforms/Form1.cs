@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace F5074.DevExpressWinforms
     public partial class Form1 : Form
     {
         public XtraTabControl ParentTab { get; set; }
+
+        enum ClassType {
+            Tab1, Tab2
+
+        }
         public Form1()
         {
             InitializeComponent();
@@ -28,14 +34,25 @@ namespace F5074.DevExpressWinforms
 
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
-            this.treeList1.AppendNode(new object[] { Text = "1_DataTable" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "2_TreeList" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "3_ButtonImage" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "4_GridControl" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "5_TabControl" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "6_ButtonEdit" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "7_DateEditTab" }, -1);
-            this.treeList1.AppendNode(new object[] { Text = "8_GridCheckBoxInCell" }, -1);
+
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
+            path = System.IO.Path.GetDirectoryName(path);
+            Console.WriteLine(path);
+
+            foreach (string line in File.ReadLines(path + "/MyResources/MenuTextFile.txt", Encoding.UTF8))
+            {
+                this.treeList1.AppendNode(new object[] { Text = line }, -1);
+            }
+
+            //this.treeList1.AppendNode(new object[] { Text = "1_DataTable" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "2_TreeList" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "3_ButtonImage" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "4_GridControl" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "5_TabControl" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "6_ButtonEdit" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "7_DateEditTab" }, -1);
+            //this.treeList1.AppendNode(new object[] { Text = "8_GridCheckBoxInCell" }, -1);
             this.xtraTabControl1.TabPages.Add("Main");
         }
 
@@ -53,74 +70,76 @@ namespace F5074.DevExpressWinforms
 
                 object mainTab = new object();
 
-                switch (this.treeList1.FocusedValue.ToString())
-                {
-                    case "1_DataTable":
-                        {
-                            Tab1 tab = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
-                    case "2_TreeList":
-                        {
-                            Tab2 tab = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
 
-                    case "3_ButtonImage":
-                        {
-                            ButtonImage tab = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
 
-                    case "4_GridControl":
-                        {
-                            GridCalendarInCell tab = new GridCalendarInCell();
-                            tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
+                //switch (this.treeList1.FocusedValue.ToString())
+                //{
+                //    case "1_DataTable":
+                //        {
+                //            Tab1 tab = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "2_TreeList":
+                //        {
+                //            Tab2 tab = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
-                    case "6_ButtonEdit":
-                        {
-                            ButtonEdit tab = new ButtonEdit();
-                            tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
-                    case "7_DateEditTab":
-                        {
-                            DateEditTab tab = new DateEditTab();
-                            tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
-                    case "8_GridCheckBoxInCell":
-                        {
-                            GridCheckBoxInCell tab = new GridCheckBoxInCell();
-                            tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
-                            break;
-                        }
+                //    case "3_ButtonImage":
+                //        {
+                //            ButtonImage tab = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
-                }
+                //    case "4_GridControl":
+                //        {
+                //            GridCalendarInCell tab = new GridCalendarInCell();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+
+                //    case "6_ButtonEdit":
+                //        {
+                //            ButtonEdit tab = new ButtonEdit();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "7_DateEditTab":
+                //        {
+                //            DateEditTab tab = new DateEditTab();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "8_GridCheckBoxInCell":
+                //        {
+                //            GridCheckBoxInCell tab = new GridCheckBoxInCell();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+
+            }
 
 
                 //Tab1 mainTab = new Tab1();
