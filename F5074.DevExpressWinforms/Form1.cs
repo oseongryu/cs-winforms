@@ -17,7 +17,8 @@ namespace F5074.DevExpressWinforms
     {
         public XtraTabControl ParentTab { get; set; }
 
-        enum ClassType {
+        enum ClassType
+        {
             Tab1, Tab2
 
         }
@@ -60,8 +61,6 @@ namespace F5074.DevExpressWinforms
         {
             try
             {
-                // https://stackoverflow.com/questions/10871565/how-to-make-winforms-usercontrol-fill-the-size-of-its-container/10871592
-
                 //////MessageBox.Show(this.treeList1.FocusedValue.ToString());
                 //this.xtraTabControl1.TabPages.Add(this.treeList1.FocusedValue.ToString());
                 //Tab1 tab1 = new Tab1();
@@ -70,7 +69,7 @@ namespace F5074.DevExpressWinforms
 
                 //case "1.DataTable": xtraTabControl1.TabPages[0].Controls.Add(new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized }); break;
 
-                //object mainTab = new object();
+                object mainTab = new object();
 
 
 
@@ -78,66 +77,96 @@ namespace F5074.DevExpressWinforms
                 {
                     case "1_DataTable":
                         {
-                            Tab1 tab = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            Tab1 tabControl = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "1_DataTable", Text = "1_DataTable" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            tabControl.Show();
                             break;
                         }
                     case "2_TreeList":
                         {
-                            Tab2 tab = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            Tab2 tabControl = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            tabControl.Show();
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "2_TreeList", Text = "2_TreeList" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
 
                     case "3_ButtonImage":
                         {
-                            ButtonImage tab = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            ButtonImage tabControl = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            tabControl.Show();
+
+
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "3_ButtonImage", Text = "3_ButtonImage" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
 
                     case "4_GridControl":
                         {
-                            GridCalendarInCell tab = new GridCalendarInCell();
-                            tab.Dock = DockStyle.Fill;
+                            GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
+                            //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            //tabControl.Show();
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "4_GridControl", Text = "4_GridControl" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
 
                     case "6_ButtonEdit":
                         {
-                            ButtonEdit tab = new ButtonEdit();
-                            tab.Dock = DockStyle.Fill;
+                            ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
+                            //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            //tabControl.Show();
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "6_ButtonEdit", Text = "6_ButtonEdit" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
                     case "7_DateEditTab":
                         {
-                            DateEditTab tab = new DateEditTab();
-                            tab.Dock = DockStyle.Fill;
+                            DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
+                            //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                            //tabControl.Show();
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "7_DateEditTab", Text = "7_DateEditTab" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
                     case "8_GridCheckBoxInCell":
                         {
-                            GridCheckBoxInCell tab = new GridCheckBoxInCell();
-                            tab.Dock = DockStyle.Fill;
+                            GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
+                            //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            tab.Show();
+                            //xtraTabControl1.TabPages[0].Controls.Add(tab);
+                            //tab.Show();
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "8_GridCheckBoxInCell", Text = "8_GridCheckBoxInCell" };
+                            tabPage.Controls.Add(tabControl);
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
 
