@@ -17,8 +17,7 @@ namespace F5074.DevExpressWinforms
     {
         public XtraTabControl ParentTab { get; set; }
 
-        enum ClassType
-        {
+        enum ClassType {
             Tab1, Tab2
 
         }
@@ -73,105 +72,74 @@ namespace F5074.DevExpressWinforms
 
 
 
-                switch (this.treeList1.FocusedValue.ToString())
-                {
-                    case "1_DataTable":
-                        {
-                            Tab1 tabControl = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "3_ButtonImage", Text = "3_ButtonImage" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            tabControl.Show();
-                            break;
-                        }
-                    case "2_TreeList":
-                        {
-                            Tab2 tabControl = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "3_ButtonImage", Text = "3_ButtonImage" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                            break;
-                        }
+                //switch (this.treeList1.FocusedValue.ToString())
+                //{
+                //    case "1_DataTable":
+                //        {
+                //            Tab1 tab = new Tab1() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "2_TreeList":
+                //        {
+                //            Tab2 tab = new Tab2() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
-                    case "3_ButtonImage":
-                        {
-                            ButtonImage tabControl = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            tabControl.Show();
+                //    case "3_ButtonImage":
+                //        {
+                //            ButtonImage tab = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
+                //    case "4_GridControl":
+                //        {
+                //            GridCalendarInCell tab = new GridCalendarInCell();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "3_ButtonImage", Text = "3_ButtonImage" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
+                //    case "6_ButtonEdit":
+                //        {
+                //            ButtonEdit tab = new ButtonEdit();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "7_DateEditTab":
+                //        {
+                //            DateEditTab tab = new DateEditTab();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
+                //    case "8_GridCheckBoxInCell":
+                //        {
+                //            GridCheckBoxInCell tab = new GridCheckBoxInCell();
+                //            tab.Dock = DockStyle.Fill;
+                //            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                //            xtraTabControl1.TabPages[0].Controls.Add(tab);
+                //            tab.Show();
+                //            break;
+                //        }
 
-                    case "4_GridControl":
-                        {
-                            GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "4_GridControl", Text = "4_GridControl" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-
-                    case "6_ButtonEdit":
-                        {
-                            ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "6_ButtonEdit", Text = "6_ButtonEdit" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "7_DateEditTab":
-                        {
-                            DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "7_DateEditTab", Text = "7_DateEditTab" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "8_GridCheckBoxInCell":
-                        {
-                            GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            //tab.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "8_GridCheckBoxInCell", Text = "8_GridCheckBoxInCell" };
-                            tabPage.Controls.Add(tabControl);
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-
-                }
+            }
 
 
                 //Tab1 mainTab = new Tab1();
