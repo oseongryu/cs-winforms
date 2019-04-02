@@ -9,19 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraTab;
+using F5074.DevExpressWinforms.MyResources;
 using F5074.DevExpressWinforms.TabFolder;
 
 namespace F5074.DevExpressWinforms
 {
+
     public partial class Form1 : Form
     {
         public XtraTabControl ParentTab { get; set; }
-
+        private string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
         enum ClassType
         {
-            Tab1, Tab2
+            A_DataTable
+            , B_TreeList
+            , C_ButtonImage
+            , D_GridControl
+            , E_TabControl
+            , F_ButtonEdit
+            , G_DateEditTab
+            , H_GridCheckBoxInCell
+        };
 
-        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -36,14 +47,15 @@ namespace F5074.DevExpressWinforms
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
 
-            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
 
             path = System.IO.Path.GetDirectoryName(path);
-            Console.WriteLine(path);
+            //Console.WriteLine(path);
 
             foreach (string line in File.ReadLines(path + "/MyResources/MenuTextFile.txt", Encoding.UTF8))
             {
                 this.treeList1.AppendNode(new object[] { Text = line }, -1);
+                //ClassType classType = line.ToEnum<ClassType>();
+                //ClassType animal = (ClassType)Enum.Parse(typeof(ClassType), line,true);
             }
 
             //this.treeList1.AppendNode(new object[] { Text = "1_DataTable" }, -1);
@@ -55,6 +67,15 @@ namespace F5074.DevExpressWinforms
             //this.treeList1.AppendNode(new object[] { Text = "7_DateEditTab" }, -1);
             //this.treeList1.AppendNode(new object[] { Text = "8_GridCheckBoxInCell" }, -1);
             this.xtraTabControl1.TabPages.Add("Main");
+
+            for (int x = 0; x < Enum.GetNames(typeof(ClassType)).Length; x++)
+            {
+                if(ClassType.B_TreeList == "B_TreeList".ToEnum<ClassType>())
+                {
+                    MessageBox.Show(Enum.GetNames(typeof(ClassType))[x].ToString());
+                }
+                
+            }
         }
 
         private void treeList1_DoubleClick(object sender, EventArgs e)

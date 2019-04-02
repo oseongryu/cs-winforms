@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using F5074.Winforms.MyUserControl;
 
 namespace F5074.Winforms
 {
@@ -42,13 +43,21 @@ namespace F5074.Winforms
                 //    formTab2.Show();
                 //    break;
                 case "1_Enum":
-                    FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-                    tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    tabPage.Controls.Add(formTab);
-                    this.tabControl1.Controls.Add(tabPage);
-                    this.tabControl1.SelectedTab = tabPage;
-                    //this.tabControl1.TabPages[0].Controls.Add(formTab);
-                    formTab.Show();
+                    //FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    //tabPage.Controls.Add(formTab);
+                    //this.tabControl1.Controls.Add(tabPage);
+                    //this.tabControl1.SelectedTab = tabPage;
+                    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
+                    //formTab.Show();
+
+                    TestUserControl myUserControl = new TestUserControl();
+                    myUserControl.Dock = DockStyle.Fill;
+                    TabPage myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    myTabPage.Controls.Add(myUserControl);
+                    tabControl1.TabPages.Add(myTabPage);
+
+
                     break;
                 case "2_UserControl":
                     FormTab2 formTab2 = new FormTab2() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
