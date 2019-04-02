@@ -23,10 +23,20 @@ namespace F5074.DevExpressWinforms.TabFolder
             repositoryItemCheckEdit.ValueUnchecked = "False";
             repositoryItemCheckEdit.CheckedChanged += repositoryItemCheckEdit_CheckedChanged;
             this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Checked", Caption = "Checked", Visible = true, ColumnEdit = repositoryItemCheckEdit });
+            this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Name", Caption = "Name", Visible = true });
+            this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Age", Caption = "Age", Visible = true });
+            this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Height", Caption = "Height", Visible = true });
             //this.gridView1.Columns["Checked"].ColumnEdit = repositoryItemCheckEdit;
             this.gridControl1.DataSource = CreateTable(50);
             //this.gridView1.CellValueChanged += gridView1_CellValueChanged;
             this.gridView1.DoubleClick += gridView1_DoubleClick;
+
+            this.gridView1.OptionsBehavior.Editable = true;
+            this.gridView1.Columns["Checked"].OptionsColumn.AllowEdit = true;
+            this.gridView1.Columns["Name"].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns["Age"].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns["Height"].OptionsColumn.AllowEdit = false;
+
 
         }
 
@@ -53,12 +63,15 @@ namespace F5074.DevExpressWinforms.TabFolder
             DataTable tbl = new DataTable();
 
             tbl.Columns.Add("Checked", typeof(string));
+            tbl.Columns.Add("Name", typeof(string));
+            tbl.Columns.Add("Age", typeof(int));
+            tbl.Columns.Add("Height", typeof(int));
 
 
 
             //tbl.Columns.Add("Checked", typeof(bool));
             for (int i = 0; i < RowCount; i++)
-                tbl.Rows.Add(new object[] { "True" });
+                tbl.Rows.Add(new object[] { "True", "kim", 15,70 });
             return tbl;
         }
 
