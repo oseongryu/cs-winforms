@@ -100,53 +100,53 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabFolder\ButtonEdit.cs">
+    <Compile Include="TabFolder\C_ButtonImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\ButtonEdit.Designer.cs">
-      <DependentUpon>ButtonEdit.cs</DependentUpon>
+    <Compile Include="TabFolder\C_ButtonImage.Designer.cs">
+      <DependentUpon>C_ButtonImage.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabFolder\ButtonImage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TabFolder\ButtonImage.Designer.cs">
-      <DependentUpon>ButtonImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\DateEditTab.cs">
+    <Compile Include="TabFolder\E_ButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\DateEditTab.Designer.cs">
-      <DependentUpon>DateEditTab.cs</DependentUpon>
+    <Compile Include="TabFolder\E_ButtonEdit.Designer.cs">
+      <DependentUpon>E_ButtonEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabFolder\GridCalendarInCell.cs">
+    <Compile Include="TabFolder\F_DateEditTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\GridCalendarInCell.designer.cs">
-      <DependentUpon>GridCalendarInCell.cs</DependentUpon>
+    <Compile Include="TabFolder\F_DateEditTab.Designer.cs">
+      <DependentUpon>F_DateEditTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabFolder\GridCheckBoxInCell.cs">
+    <Compile Include="TabFolder\D_GridCalendarInCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\GridCheckBoxInCell.Designer.cs">
-      <DependentUpon>GridCheckBoxInCell.cs</DependentUpon>
+    <Compile Include="TabFolder\D_GridCalendarInCell.designer.cs">
+      <DependentUpon>D_GridCalendarInCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabFolder\Tab1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TabFolder\Tab1.Designer.cs">
-      <DependentUpon>Tab1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\Tab2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TabFolder\Tab2.Designer.cs">
-      <DependentUpon>Tab2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\Tab3.cs">
+    <Compile Include="TabFolder\G_GridCheckBoxInCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\Tab3.Designer.cs">
-      <DependentUpon>Tab3.cs</DependentUpon>
+    <Compile Include="TabFolder\G_GridCheckBoxInCell.Designer.cs">
+      <DependentUpon>G_GridCheckBoxInCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabFolder\H_GridCheckBoxDefault.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFolder\H_GridCheckBoxDefault.Designer.cs">
+      <DependentUpon>H_GridCheckBoxDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabFolder\A_DataTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFolder\A_DataTable.Designer.cs">
+      <DependentUpon>A_DataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabFolder\B_TreeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFolder\B_TreeList.Designer.cs">
+      <DependentUpon>B_TreeList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DialogFolder\ButtonEditForm.resx">
       <DependentUpon>ButtonEditForm.cs</DependentUpon>
@@ -161,14 +161,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TabFolder\ButtonImage.resx">
-      <DependentUpon>ButtonImage.cs</DependentUpon>
+    <EmbeddedResource Include="TabFolder\D_GridCalendarInCell.resx">
+      <DependentUpon>D_GridCalendarInCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\GridCalendarInCell.resx">
-      <DependentUpon>GridCalendarInCell.cs</DependentUpon>
+    <EmbeddedResource Include="TabFolder\H_GridCheckBoxDefault.resx">
+      <DependentUpon>H_GridCheckBoxDefault.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\Tab1.resx">
-      <DependentUpon>Tab1.cs</DependentUpon>
+    <EmbeddedResource Include="TabFolder\A_DataTable.resx">
+      <DependentUpon>A_DataTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
