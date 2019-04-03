@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using F5074.Winforms.MyResources;
 
 namespace F5074.Winforms.TabFolder
 {
@@ -22,12 +23,39 @@ namespace F5074.Winforms.TabFolder
             , EQP_NO
             , CREATE_DATE_TIME
         };
+
+        enum ClassType
+        {
+              A_DataTable
+            , B_TreeList
+            , C_ButtonImage
+            , D_GridControl
+            , E_TabControl
+            , F_ButtonEdit
+            , G_DateEditTab
+            , H_GridCheckBoxInCell
+        };
+
         public A_Enum()
         {
             InitializeComponent();
             MakeParameters();
+            EnumTest();
 
         }
+
+        private void EnumTest()
+        {
+            for (int x = 0; x < Enum.GetNames(typeof(ClassType)).Length; x++)
+            {
+                if (ClassType.B_TreeList == "B_TreeList".ToEnum<ClassType>())
+                {
+                    MessageBox.Show(Enum.GetNames(typeof(ClassType))[x].ToString());
+                }
+
+            }
+        }
+
         private void MakeSentences()
         {
             string a = "this.txt";
