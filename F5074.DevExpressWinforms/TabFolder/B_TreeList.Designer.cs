@@ -1,6 +1,6 @@
 ﻿namespace F5074.DevExpressWinforms.TabFolder
 {
-    partial class Tab2
+    partial class B_TreeList
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace F5074.DevExpressWinforms.TabFolder
 {
-    partial class GridCalendarInCell
+    partial class D_GridCalendarInCell
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

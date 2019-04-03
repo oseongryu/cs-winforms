@@ -1,6 +1,6 @@
 ﻿namespace F5074.DevExpressWinforms.TabFolder
 {
-    partial class ButtonEdit
+    partial class E_ButtonEdit
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

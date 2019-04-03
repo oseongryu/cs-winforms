@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace F5074.DevExpressWinforms.TabFolder
 {
-    public partial class DateEditTab : UserControl
+    public partial class F_DateEditTab : UserControl
     {
-        public DateEditTab()
+        public F_DateEditTab()
         {
             InitializeComponent();
             // 전기일 From,To

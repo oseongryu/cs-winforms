@@ -11,9 +11,9 @@ using F5074.DevExpressWinforms.DialogFolder;
 
 namespace F5074.DevExpressWinforms.TabFolder
 {
-    public partial class ButtonEdit : UserControl
+    public partial class E_ButtonEdit : UserControl
     {
-        public ButtonEdit()
+        public E_ButtonEdit()
         {
             InitializeComponent();
             this.buttonEdit1.Click += buttonEdit1_Click;

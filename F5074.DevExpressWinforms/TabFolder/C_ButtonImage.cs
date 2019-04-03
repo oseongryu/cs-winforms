@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace F5074.DevExpressWinforms.TabFolder
 {
-    public partial class ButtonImage : Form
+    public partial class C_ButtonImage : UserControl
     {
-        public ButtonImage()
+        public C_ButtonImage()
         {
             InitializeComponent();
+            this.simpleButton1.Click += simpleButton1_Click;
         }
 
         // https://www.devexpress.com/Support/Center/Question/Details/Q512749/how-to-get-icons-from-the-dx-image-gallery-in-code
