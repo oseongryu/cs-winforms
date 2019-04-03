@@ -60,23 +60,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabFolder\A_Enum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFolder\A_Enum.Designer.cs">
+      <DependentUpon>A_Enum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabFolder\B_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFolder\B_UserControl.Designer.cs">
+      <DependentUpon>B_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabFolder\C_ReadTextFile.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TabFolder\C_ReadTextFile.Designer.cs">
       <DependentUpon>C_ReadTextFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabFolder\FormTab1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="TabFolder\D_TreeNode.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabFolder\FormTab1.designer.cs">
-      <DependentUpon>FormTab1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\FormTab2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TabFolder\FormTab2.Designer.cs">
-      <DependentUpon>FormTab2.cs</DependentUpon>
+    <Compile Include="TabFolder\D_TreeNode.Designer.cs">
+      <DependentUpon>D_TreeNode.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MyUserControl\TestUserControl.resx">
       <DependentUpon>TestUserControl.cs</DependentUpon>
@@ -91,11 +97,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TabFolder\FormTab1.resx">
-      <DependentUpon>FormTab1.cs</DependentUpon>
+    <EmbeddedResource Include="TabFolder\A_Enum.resx">
+      <DependentUpon>A_Enum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\FormTab2.resx">
-      <DependentUpon>FormTab2.cs</DependentUpon>
+    <EmbeddedResource Include="TabFolder\B_UserControl.resx">
+      <DependentUpon>B_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabFolder\C_ReadTextFile.resx">
+      <DependentUpon>C_ReadTextFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabFolder\D_TreeNode.resx">
+      <DependentUpon>D_TreeNode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,35 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace F5074.Winforms.TabFolder
 {
-    public partial class FormTab1 : Form
+    public partial class A_Enum : UserControl
     {
         private enum DBIndex
         {
-            ORDER_QTY
+              ORDER_QTY
             , END_DATE_TIME
             , PRODUCT_NAME
             , END_QTY
             , PROCESS_NAME
             , EQP_NO
             , CREATE_DATE_TIME
-
         };
-        public FormTab1()
+        public A_Enum()
         {
             InitializeComponent();
             MakeParameters();
-        }
 
+        }
         private void MakeSentences()
         {
             string a = "this.txt";
@@ -60,8 +58,5 @@ namespace F5074.Winforms.TabFolder
                 //Console.WriteLine(a + c + b + c + d);
             }
         }
-
-
-
     }
 }
