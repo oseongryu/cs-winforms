@@ -1,37 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraTab;
-using F5074.DevExpressWinforms.MyResources;
+﻿using DevExpress.XtraTab;
 using F5074.DevExpressWinforms.TabFolder;
+using System;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace F5074.DevExpressWinforms
 {
-
     public partial class Form1 : Form
     {
         public XtraTabControl ParentTab { get; set; }
         private string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        enum ClassType
-        {
-            A_DataTable
-            , B_TreeList
-            , C_ButtonImage
-            , D_GridControl
-            , E_TabControl
-            , F_ButtonEdit
-            , G_DateEditTab
-            , H_GridCheckBoxInCell
-        };
-
-
 
         public Form1()
         {
@@ -46,12 +25,7 @@ namespace F5074.DevExpressWinforms
 
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
-
-
-            path = System.IO.Path.GetDirectoryName(path);
-            //Console.WriteLine(path);
-
-            foreach (string line in File.ReadLines(path + "/MyResources/MenuTextFile.txt", Encoding.UTF8))
+            foreach (string line in File.ReadLines(System.IO.Path.GetDirectoryName(path) + "/MyResources/MenuTextFile.txt", Encoding.UTF8))
             {
                 this.treeList1.AppendNode(new object[] { Text = line }, -1);
                 //ClassType classType = line.ToEnum<ClassType>();
@@ -68,14 +42,6 @@ namespace F5074.DevExpressWinforms
             //this.treeList1.AppendNode(new object[] { Text = "8_GridCheckBoxInCell" }, -1);
             this.xtraTabControl1.TabPages.Add("Main");
 
-            for (int x = 0; x < Enum.GetNames(typeof(ClassType)).Length; x++)
-            {
-                if(ClassType.B_TreeList == "B_TreeList".ToEnum<ClassType>())
-                {
-                    MessageBox.Show(Enum.GetNames(typeof(ClassType))[x].ToString());
-                }
-                
-            }
         }
 
         private void treeList1_DoubleClick(object sender, EventArgs e)
@@ -125,7 +91,6 @@ namespace F5074.DevExpressWinforms
                             //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
                             tabControl.Show();
 
-
                             XtraTabPage tabPage = new XtraTabPage() { Name = "3_ButtonImage", Text = "3_ButtonImage" };
                             tabPage.Controls.Add(tabControl);
                             xtraTabControl1.TabPages.Add(tabPage);
@@ -135,14 +100,14 @@ namespace F5074.DevExpressWinforms
 
                     case "4_GridControl":
                         {
-                            GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
+                            //GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
                             //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
                             //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
                             //tabControl.Show();
                             XtraTabPage tabPage = new XtraTabPage() { Name = "4_GridControl", Text = "4_GridControl" };
-                            tabPage.Controls.Add(tabControl);
+                            tabPage.Controls.Add(new GridCalendarInCell() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -150,49 +115,48 @@ namespace F5074.DevExpressWinforms
 
                     case "6_ButtonEdit":
                         {
-                            ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
+                            //ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
                             //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
                             //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
                             //tabControl.Show();
                             XtraTabPage tabPage = new XtraTabPage() { Name = "6_ButtonEdit", Text = "6_ButtonEdit" };
-                            tabPage.Controls.Add(tabControl);
+                            tabPage.Controls.Add(new ButtonEdit() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
                     case "7_DateEditTab":
                         {
-                            DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
+                            //DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
                             //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
                             //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
                             //tabControl.Show();
                             XtraTabPage tabPage = new XtraTabPage() { Name = "7_DateEditTab", Text = "7_DateEditTab" };
-                            tabPage.Controls.Add(tabControl);
+                            tabPage.Controls.Add(new DateEditTab() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
                     case "8_GridCheckBoxInCell":
                         {
-                            GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
+                            //GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
                             //tab.Dock = DockStyle.Fill;
                             //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
                             //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
                             //xtraTabControl1.TabPages[0].Controls.Add(tab);
                             //tab.Show();
                             XtraTabPage tabPage = new XtraTabPage() { Name = "8_GridCheckBoxInCell", Text = "8_GridCheckBoxInCell" };
-                            tabPage.Controls.Add(tabControl);
+                            tabPage.Controls.Add(new GridCheckBoxInCell() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
 
                 }
-
 
                 //Tab1 mainTab = new Tab1();
                 //mainTab.TopLevel = false;
