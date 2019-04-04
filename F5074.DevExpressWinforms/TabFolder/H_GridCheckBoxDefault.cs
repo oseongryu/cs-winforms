@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.Utils;
 
 namespace F5074.DevExpressWinforms.TabFolder
 {
@@ -23,15 +24,13 @@ namespace F5074.DevExpressWinforms.TabFolder
             this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Age", Caption = "Age", Visible = true });
             this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Height", Caption = "Height", Visible = true });
 
+            SettingsMultiRow();
 
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
-
-            this.gridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True; // 체크박스 전체 선택가능 헤더만들지 여부
-            this.gridView1.OptionsSelection.ResetSelectionClickOutsideCheckboxSelector = true;  // 셀밖에 값을 눌러도 체크박스 온오프만 적용됨
             this.gridControl1.DataSource = CreateTable(7);
+            this.gridView1.MouseDown += GridView1_MouseDown;
         }
 
+        #region 테이블데이터생성
         private DataTable CreateTable(int RowCount)
         {
             Random rnd = new Random();
@@ -47,6 +46,17 @@ namespace F5074.DevExpressWinforms.TabFolder
             for (int i = 0; i < RowCount; i++)
                 tbl.Rows.Add(new object[] { "False", i, "kim", (10 + i), (70 + i) });
             return tbl;
+        }
+        #endregion
+
+        #region 그리드전용 체크박스 사용
+        private void SettingsDefaultCheckBox()
+        {
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
+
+            this.gridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True; // 체크박스 전체 선택가능 헤더만들지 여부
+            this.gridView1.OptionsSelection.ResetSelectionClickOutsideCheckboxSelector = true;  // 셀밖에 값을 눌러도 체크박스 온오프만 적용됨
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -64,5 +74,38 @@ namespace F5074.DevExpressWinforms.TabFolder
             }
 
         }
+        #endregion
+
+        #region Grid MultiSelect (Without Ctrl)
+        private void SettingsMultiRow()
+        {
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
+
+            this.gridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True; // 체크박스 전체 선택가능 헤더만들지 여부
+            this.gridView1.OptionsSelection.ResetSelectionClickOutsideCheckboxSelector = true;  // 셀밖에 값을 눌러도 체크박스 온오프만 적용됨
+        }
+
+        private void GridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            var view = sender as GridView;
+            var hi = view.CalcHitInfo(e.Location);
+            if (!hi.InRow)
+            {
+                return;
+            }
+            ((DXMouseEventArgs)e).Handled = true;
+            var rh = hi.RowHandle;
+            if (view.IsRowSelected(rh))
+            {
+                view.UnselectRow(rh);
+            }
+            else
+            {
+                view.SelectRow(rh);
+            }
+        }
+        #endregion
     }
 }

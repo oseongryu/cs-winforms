@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraTab;
+using F5074.DevExpressWinforms.LayoutFolder;
 using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
@@ -177,6 +178,14 @@ namespace F5074.DevExpressWinforms
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "H_GridCheckBoxDefault", Text = "H_GridCheckBoxDefault" };
                             tabPage.Controls.Add(new H_GridCheckBoxDefault() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "LayoutDefault":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "LayoutDefault", Text = "LayoutDefault" };
+                            tabPage.Controls.Add(new LayoutDefault() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
