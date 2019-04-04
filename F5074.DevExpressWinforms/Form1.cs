@@ -182,6 +182,14 @@ namespace F5074.DevExpressWinforms
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
+                    case "I_SpreadsheetControl":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "I_SpreadsheetControl", Text = "I_SpreadsheetControl" };
+                            tabPage.Controls.Add(new I_SpreadsheetControl() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
                     case "LayoutDefault":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "LayoutDefault", Text = "LayoutDefault" };
