@@ -25,6 +25,9 @@ namespace F5074.DevExpressWinforms.LayoutFolder
             WindowsUIButton btn3 = new WindowsUIButton("Btn3", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/apply_16x16.png") });
             WindowsUIButton btn4 = new WindowsUIButton("Btn4", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/cancel_16x16.png") });
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1, btn2, btn3, btn4 });
+            windowsUIButtonPanel1.Buttons["Btn2"].Properties.Appearance.ForeColor = Color.Blue;
+            windowsUIButtonPanel1.Buttons["Btn3"].Properties.Appearance.ForeColor = Color.Green;
+            windowsUIButtonPanel1.Buttons["Btn4"].Properties.Appearance.ForeColor = Color.Red;
             this.windowsUIButtonPanel1.ButtonClick += windowsUIButtonPanel1_ButtonClick;
             this.splitContainerControlCR.SplitterPosition = 1200;
             this.splitContainerControlCB.SplitterPosition = 1500;

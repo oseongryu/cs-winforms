@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraTab;
 using F5074.DevExpressWinforms.LayoutFolder;
+using F5074.DevExpressWinforms.MyForm.A_GridControl;
+using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
 using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
@@ -194,6 +196,22 @@ namespace F5074.DevExpressWinforms
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "LayoutDefault", Text = "LayoutDefault" };
                             tabPage.Controls.Add(new LayoutDefault() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyGridControl01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl01", Text = "MyGridControl01" };
+                            tabPage.Controls.Add(new MyGridControl01() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MySpreadsheetControl01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MySpreadsheetControl01", Text = "MySpreadsheetControl01" };
+                            tabPage.Controls.Add(new MySpreadsheetControl01() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;

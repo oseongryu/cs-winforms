@@ -152,6 +152,18 @@
     <Compile Include="LayoutFolder\LayoutDefault.Designer.cs">
       <DependentUpon>LayoutDefault.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl01.Designer.cs">
+      <DependentUpon>MyGridControl01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.Designer.cs">
+      <DependentUpon>MySpreadsheetControl01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TabFolder\C_ButtonImage.cs">
@@ -258,5 +270,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
