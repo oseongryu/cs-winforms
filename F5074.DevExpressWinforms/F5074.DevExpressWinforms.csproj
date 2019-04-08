@@ -158,6 +158,12 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl01.Designer.cs">
       <DependentUpon>MyGridControl01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl02.Designer.cs">
+      <DependentUpon>MyGridControl02.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>

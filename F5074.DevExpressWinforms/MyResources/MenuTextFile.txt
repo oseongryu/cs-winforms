@@ -1,4 +1,5 @@
 ﻿MyGridControl01
+MyGridControl02
 MySpreadsheetControl01
 A_DataTable
 B_TreeList
