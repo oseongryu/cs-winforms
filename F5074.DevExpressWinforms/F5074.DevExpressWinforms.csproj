@@ -164,6 +164,12 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl02.Designer.cs">
       <DependentUpon>MyGridControl02.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl03.Designer.cs">
+      <DependentUpon>MyGridControl03.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LayoutFolder\LayoutDefault.resx">
       <DependentUpon>LayoutDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl02.resx">
+      <DependentUpon>MyGridControl02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

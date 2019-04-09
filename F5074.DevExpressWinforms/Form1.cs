@@ -83,6 +83,14 @@ namespace F5074.DevExpressWinforms
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
+                    case "MyGridControl03":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl02", Text = "MyGridControl02" };
+                            tabPage.Controls.Add(new MyGridControl03() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
                     case "MySpreadsheetControl01":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MySpreadsheetControl01", Text = "MySpreadsheetControl01" };

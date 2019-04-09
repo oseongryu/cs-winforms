@@ -1,6 +1,6 @@
 ﻿namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    partial class MyGridControl02
+    partial class MyGridControl03
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -66,14 +66,14 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.TabIndex = 2;
             // 
-            // MyGridControl02
+            // MyGridControl03
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "MyGridControl02";
+            this.Name = "MyGridControl03";
             this.Size = new System.Drawing.Size(1011, 536);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
