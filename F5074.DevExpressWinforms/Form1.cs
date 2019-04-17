@@ -2,6 +2,7 @@
 using F5074.DevExpressWinforms.LayoutFolder;
 using F5074.DevExpressWinforms.MyForm.A_GridControl;
 using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
+using F5074.DevExpressWinforms.MyForm.C_Charts;
 using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
@@ -45,6 +46,8 @@ namespace F5074.DevExpressWinforms
             //this.treeList1.AppendNode(new object[] { Text = "8_GridCheckBoxInCell" }, -1);
             this.xtraTabControl1.TabPages.Add("Main");
 
+
+
         }
 
         private void treeList1_DoubleClick(object sender, EventArgs e)
@@ -67,6 +70,30 @@ namespace F5074.DevExpressWinforms
 
                 switch (this.treeList1.FocusedValue.ToString())
                 {
+                    case "MyCharts01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts01", Text = "MyCharts01" };
+                            tabPage.Controls.Add(new MyCharts01() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyCharts02":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts02", Text = "MyCharts02" };
+                            tabPage.Controls.Add(new MyCharts05() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyCharts03":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts03", Text = "MyCharts03" };
+                            tabPage.Controls.Add(new MyCharts03() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
                     case "MyGridControl01":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl01", Text = "MyGridControl01" };
@@ -87,6 +114,30 @@ namespace F5074.DevExpressWinforms
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl02", Text = "MyGridControl02" };
                             tabPage.Controls.Add(new MyGridControl03() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyGridControl04":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl04", Text = "MyGridControl04" };
+                            tabPage.Controls.Add(new MyGridControl04() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyGridControl05":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl05", Text = "MyGridControl05" };
+                            tabPage.Controls.Add(new MyGridControl05() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyGridControl06":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyGridControl06", Text = "MyGridControl06" };
+                            tabPage.Controls.Add(new MyGridControl06() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;

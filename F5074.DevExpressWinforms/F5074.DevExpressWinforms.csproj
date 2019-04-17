@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +88,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.XtraCharts.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.XtraDiagram.v17.1.dll</HintPath>
@@ -93,6 +98,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.XtraEditors.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Win, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.XtraGrid.v17.1.dll</HintPath>
@@ -170,11 +177,66 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl03.Designer.cs">
       <DependentUpon>MyGridControl03.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl04.Designer.cs">
+      <DependentUpon>MyGridControl04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl05.Designer.cs">
+      <DependentUpon>MyGridControl05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl06.Designer.cs">
+      <DependentUpon>MyGridControl06.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.Designer.cs">
       <DependentUpon>MySpreadsheetControl01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\ModelAssemblyHelper.cs" />
+    <Compile Include="MyForm\C_Charts\MyCharts01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts01.Designer.cs">
+      <DependentUpon>MyCharts01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts02.Designer.cs">
+      <DependentUpon>MyCharts02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts03.Designer.cs">
+      <DependentUpon>MyCharts03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts04.Designer.cs">
+      <DependentUpon>MyCharts04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\MyCharts05.Designer.cs">
+      <DependentUpon>MyCharts05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\ucValuePresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_Charts\ucValuePresenter.Designer.cs">
+      <DependentUpon>ucValuePresenter.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,6 +305,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl02.resx">
       <DependentUpon>MyGridControl02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl04.resx">
+      <DependentUpon>MyGridControl04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl05.resx">
+      <DependentUpon>MyGridControl05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl06.resx">
+      <DependentUpon>MyGridControl06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\MyCharts01.resx">
+      <DependentUpon>MyCharts01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\MyCharts02.resx">
+      <DependentUpon>MyCharts02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\MyCharts03.resx">
+      <DependentUpon>MyCharts03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\MyCharts04.resx">
+      <DependentUpon>MyCharts04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\MyCharts05.resx">
+      <DependentUpon>MyCharts05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_Charts\ucValuePresenter.resx">
+      <DependentUpon>ucValuePresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

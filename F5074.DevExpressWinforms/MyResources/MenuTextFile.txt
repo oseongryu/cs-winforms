@@ -1,5 +1,11 @@
-﻿MyGridControl01
+﻿MyCharts01
+MyCharts02
+MyGridControl01
 MyGridControl02
+MyGridControl03
+MyGridControl04
+MyGridControl05
+MyGridControl06
 MySpreadsheetControl01
 A_DataTable
 B_TreeList
