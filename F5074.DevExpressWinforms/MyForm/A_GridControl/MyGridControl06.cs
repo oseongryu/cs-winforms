@@ -25,6 +25,8 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             repositoryItemCheckEdit.ValueChecked = true;
             repositoryItemCheckEdit.ValueUnchecked = false;
             //repositoryItemCheckEdit.ValueGrayed = "False";
+
+            // https://documentation.devexpress.com/WindowsForms/1498/Controls-and-Libraries/Editors-and-Simple-Controls/Simple-Editors/Editors-Features/Mask-Editors-Overview/Mask-Type-Numeric#custom
             RepositoryItemTextEdit riteTextEditColumn = new RepositoryItemTextEdit();
             riteTextEditColumn.Mask.EditMask = "n3";
             //riteTextEditColumn.Mask.EditMask = "0.0000";

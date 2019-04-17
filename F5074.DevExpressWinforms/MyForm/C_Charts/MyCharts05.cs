@@ -23,7 +23,9 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
         private BackgroundWorker timerPainter3 = null;
         Random r = new Random();
         Random r2 = new Random();
-
+        Random r3 = new Random();
+        int a = 25;
+        Series series1 = new Series("Series 1", ViewType.Point);
 
         public MyCharts05()
         {
@@ -44,7 +46,82 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
             //RunTimer(60000);
 
             MakeRPM();
+            MakePointChart();
+
+            timerPainter3 = new BackgroundWorker();
+            timerPainter3.WorkerReportsProgress = true;
+            timerPainter3.WorkerSupportsCancellation = true;
+            //timerPainter3.DoWork += timerPainter3_DoWork;
+            //timerPainter3.RunWorkerCompleted += timerPainter3_RunWorkerCompleted;
+            //timerPainter3.RunWorkerAsync();
+            this.simpleButton1.Click += SimpleButton1_Click;
+
         }
+
+
+
+        private void SimpleButton1_Click(object sender, EventArgs e)
+        {
+            Random r3 = new Random();
+            series1.Points.Add(new SeriesPoint(10, 10 + r3.Next(-1, 1)));
+            chartControl4.Series.Add(series1);
+        }
+
+        private void MakePointChart()
+        {
+            // https://documentation.devexpress.com/WindowsForms/2975/Controls-and-Libraries/Chart-Control/Fundamentals/Series-Views/2D-Series-Views/Point-and-Line-Series-Views/Point-Chart
+            // Create a point series. 
+
+            // Set the numerical argument scale type for the series, 
+            // as it is qualitative, by default. 
+            series1.ArgumentScaleType = ScaleType.Numerical;
+
+            // Add points to it. 
+
+            for (int x = 1; x < 25; x++)
+            {
+                series1.Points.Add(new SeriesPoint(x, 10 +r2.Next(-1, 1)));
+
+            }
+
+            // Add the series to the chart. 
+            chartControl4.Series.Add(series1);
+
+            // Access the view-type-specific options of the series. 
+            PointSeriesView myView1 = (PointSeriesView)series1.View;
+            myView1.PointMarkerOptions.Kind = MarkerKind.Circle;
+            myView1.PointMarkerOptions.StarPointCount = 20;
+            myView1.PointMarkerOptions.Size = 3;
+
+            // Access the type-specific options of the diagram. 
+            ((XYDiagram)chartControl4.Diagram).EnableAxisXZooming = true;
+
+            // Hide the legend (if necessary). 
+            chartControl4.Legend.Visible = false;
+
+            // Add a title to the chart (if necessary). 
+            chartControl4.Titles.Add(new ChartTitle());
+            chartControl4.Titles[0].Text = "";
+
+        }
+        //private void timerPainter3_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    DateTime dateTimeStop = DateTime.Now;
+        //    a += 1;
+        //    series1.Points.Add(new SeriesPoint(a, 10 + r.Next(-1, 1)));
+        //    chartControl4.Series.Add(series1);
+        //    TimeSpan timeDiff = DateTime.Now - dateTimeStop;
+        //    int waiting = (int)(1000 - (timeDiff.TotalMilliseconds % 1000));
+        //    System.Threading.Thread.Sleep(waiting);
+
+        //}
+        //private void timerPainter3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        //{
+        //    timerPainter3.RunWorkerAsync();
+        //}
+
+
+
         private void MakeRPM()
         {
             // https://documentation.devexpress.com/WindowsForms/18237/Controls-and-Libraries/Gauges/Concepts/Appearance-Customization/Color-Schemes
@@ -64,12 +141,15 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
             Decimal b = Convert.ToDecimal(this.labelControl11.Text.ToString());
             this.labelComponent1.Text = Convert.ToString(a + r.Next(-50, 50));
             TimeSpan timeDiff = DateTime.Now - dateTimeStop;
-            int waiting = (int)(1000 - (timeDiff.TotalMilliseconds % 1000));
+            int waiting = (int)(500 - (timeDiff.TotalMilliseconds % 1000));
             System.Threading.Thread.Sleep(waiting);
         }
         private void timerPainter2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             timerPainter2.RunWorkerAsync();
+            a += 1;
+            series1.Points.Add(new SeriesPoint(a, 10 + r3.Next(-5, 5)));
+            chartControl4.Series.Add(series1);
         }
 
         private void ChartControl2_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e)
@@ -234,6 +314,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
         }
         private void timerPainter_DoWork(object sender, DoWorkEventArgs e)
         {
+
             DateTime dateTimeStop = DateTime.Now;
             if (this.labelControl6.InvokeRequired)
             {
