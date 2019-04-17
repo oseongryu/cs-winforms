@@ -81,7 +81,7 @@ namespace F5074.DevExpressWinforms
                     case "MyCharts02":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts02", Text = "MyCharts02" };
-                            tabPage.Controls.Add(new MyCharts05() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyCharts02() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -90,6 +90,22 @@ namespace F5074.DevExpressWinforms
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts03", Text = "MyCharts03" };
                             tabPage.Controls.Add(new MyCharts03() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyCharts04":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts04", Text = "MyCharts04" };
+                            tabPage.Controls.Add(new MyCharts04() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyCharts05":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts05", Text = "MyCharts05" };
+                            tabPage.Controls.Add(new MyCharts05() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
