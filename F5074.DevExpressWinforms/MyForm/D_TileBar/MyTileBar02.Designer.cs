@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.myUserControl011 = new F5074.DevExpressWinforms.MyUserControl.MyUserControl01();
             this.SuspendLayout();
+            // 
+            // myUserControl011
+            // 
+            this.myUserControl011.Location = new System.Drawing.Point(63, 42);
+            this.myUserControl011.Name = "myUserControl011";
+            this.myUserControl011.Size = new System.Drawing.Size(1489, 164);
+            this.myUserControl011.TabIndex = 0;
             // 
             // MyTileBar02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.myUserControl011);
             this.Name = "MyTileBar02";
             this.Size = new System.Drawing.Size(1183, 526);
             this.ResumeLayout(false);
@@ -41,5 +50,7 @@
         }
 
         #endregion
+
+        private MyUserControl.MyUserControl01 myUserControl011;
     }
 }

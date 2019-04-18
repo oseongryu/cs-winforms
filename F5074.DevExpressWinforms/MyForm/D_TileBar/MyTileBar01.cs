@@ -67,7 +67,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 tile1.Elements.Add(new TileItemElement() { Text = "", Image = DevExpress.Images.ImageResourceCache.Default.GetImage(arrImage[x]), ImageAlignment = TileItemContentAlignment.TopLeft });
                 tile1.Elements.Add(new TileItemElement() { Text = "Sales", TextAlignment = TileItemContentAlignment.BottomLeft });
                 group1.Items.Add(tile1);
-
             }
 
 

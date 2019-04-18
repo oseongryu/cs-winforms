@@ -17,15 +17,13 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
     {
         DateTimeFormatInfo m_dfiInfo = CultureInfo.CurrentCulture.DateTimeFormat;
         private BackgroundWorker worker = null;
-        private BackgroundWorker timerPainter = null;
         delegate void SetTimerDelegate(string text);
-        private BackgroundWorker timerPainter2 = null;
-        private BackgroundWorker timerPainter3 = null;
         Random r = new Random();
         Random r2 = new Random();
         Random r3 = new Random();
         int a = 25;
         Series series1 = new Series("Series 1", ViewType.Point);
+        private int[] arrCount = { 23, 30, 25, 22, 1, 39, 23, 8 };
 
         public MyChartControl05()
         {
@@ -38,27 +36,12 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             this.chartControl2.CustomDrawSeriesPoint += ChartControl2_CustomDrawSeriesPoint;
             MakeTimer();
 
-            //worker = new BackgroundWorker();
-            //worker.WorkerReportsProgress = true;
-            //worker.WorkerSupportsCancellation = true;
-            //worker.DoWork += new DoWorkEventHandler(worker_DoWork);
-            //worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
-            //RunTimer(60000);
 
-            MakeRPM();
+
             MakePointChart();
-
-            timerPainter3 = new BackgroundWorker();
-            timerPainter3.WorkerReportsProgress = true;
-            timerPainter3.WorkerSupportsCancellation = true;
-            //timerPainter3.DoWork += timerPainter3_DoWork;
-            //timerPainter3.RunWorkerCompleted += timerPainter3_RunWorkerCompleted;
-            //timerPainter3.RunWorkerAsync();
             this.simpleButton1.Click += SimpleButton1_Click;
 
         }
-
-
 
         private void SimpleButton1_Click(object sender, EventArgs e)
         {
@@ -104,59 +87,6 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             chartControl4.Titles[0].Text = "";
 
         }
-        //private void timerPainter3_DoWork(object sender, DoWorkEventArgs e)
-        //{
-        //    DateTime dateTimeStop = DateTime.Now;
-        //    a += 1;
-        //    series1.Points.Add(new SeriesPoint(a, 10 + r.Next(-1, 1)));
-        //    chartControl4.Series.Add(series1);
-        //    TimeSpan timeDiff = DateTime.Now - dateTimeStop;
-        //    int waiting = (int)(1000 - (timeDiff.TotalMilliseconds % 1000));
-        //    System.Threading.Thread.Sleep(waiting);
-
-        //}
-        //private void timerPainter3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        //{
-        //    timerPainter3.RunWorkerAsync();
-        //}
-
-
-
-        private void MakeRPM()
-        {
-            // https://documentation.devexpress.com/WindowsForms/18237/Controls-and-Libraries/Gauges/Concepts/Appearance-Customization/Color-Schemes
-            this.labelComponent1.Text = "2000";
-            timerPainter2 = new BackgroundWorker();
-            timerPainter2.WorkerReportsProgress = true;
-            timerPainter2.WorkerSupportsCancellation = true;
-            timerPainter2.DoWork += timerPainter2_DoWork;
-            timerPainter2.RunWorkerCompleted += timerPainter2_RunWorkerCompleted;
-            timerPainter2.RunWorkerAsync();
-
-        }
-        private void timerPainter2_DoWork(object sender, DoWorkEventArgs e)
-        {
-            DateTime dateTimeStop = DateTime.Now;
-            Decimal a = Convert.ToDecimal(this.labelComponent1.Text.ToString());
-            Decimal b = Convert.ToDecimal(this.labelControl11.Text.ToString());
-            this.labelComponent1.Text = Convert.ToString(a + r.Next(-50, 50));
-            TimeSpan timeDiff = DateTime.Now - dateTimeStop;
-            int waiting = (int)(500 - (timeDiff.TotalMilliseconds % 1000));
-            System.Threading.Thread.Sleep(waiting);
-        }
-        private void timerPainter2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            timerPainter2.RunWorkerAsync();
-            a += 1;
-            series1.Points.Add(new SeriesPoint(a, 10 + r3.Next(-5, 5)));
-            chartControl4.Series.Add(series1);
-        }
-
-        private void ChartControl2_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e)
-        {
-            //e.LabelText = "Yes";
-        }
-
         private void MakeDoughnutChartLeft()
         {
             // https://documentation.devexpress.com/WindowsForms/3420/Controls-and-Libraries/Chart-Control/Fundamentals/Series-Views/2D-Series-Views/Pie-and-Donut-Series-Views/Doughnut-Chart
@@ -267,7 +197,6 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
         }
 
         // MakeFullStackedBar
-        private int[] arrCount = { 23, 30, 25, 22, 1, 39, 23, 8 };
         private void MakeFullStackedBar()
         {
             var series = new Series();
@@ -300,19 +229,22 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             this.labelControl6.Text = DateTime.Now.ToString("02:mm:ss");
             this.labelControl8.Text = DateTime.Now.ToString("00:08:30");
 
-            timerPainter = new BackgroundWorker();
-            timerPainter.WorkerReportsProgress = true;
-            timerPainter.WorkerSupportsCancellation = true;
-            timerPainter.DoWork += timerPainter_DoWork;
-            timerPainter.RunWorkerCompleted += timerPainter_RunWorkerCompleted;
-            timerPainter.RunWorkerAsync();
+            // https://documentation.devexpress.com/WindowsForms/18237/Controls-and-Libraries/Gauges/Concepts/Appearance-Customization/Color-Schemes
+            this.labelComponent1.Text = "2000";
+            this.labelControl11.Text = "20";
+            worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.WorkerSupportsCancellation = true;
+            worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
+            worker.RunWorkerAsync();
         }
 
         private void SetTimer(string text)
         {
             this.labelControl6.Text = text;
         }
-        private void timerPainter_DoWork(object sender, DoWorkEventArgs e)
+        private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
 
             DateTime dateTimeStop = DateTime.Now;
@@ -329,12 +261,25 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
                 this.labelControl6.Text = DateTime.Now.ToString("02:mm:ss");
             }
             TimeSpan timeDiff = DateTime.Now - dateTimeStop;
-            int waiting = (int)(1000 - (timeDiff.TotalMilliseconds % 1000));
+            int waiting = (int)(300 - (timeDiff.TotalMilliseconds % 1000));
             System.Threading.Thread.Sleep(waiting);
         }
-        private void timerPainter_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            timerPainter.RunWorkerAsync();
+            worker.RunWorkerAsync();
+            a += 1;
+            series1.Points.Add(new SeriesPoint(a, 10 + r3.Next(-5, 5)));
+            chartControl4.Series.Add(series1);
+            
+            int b = Convert.ToInt32(this.labelComponent1.Text.ToString());
+            this.labelComponent1.Text = Convert.ToString(b + r.Next(-50, 50));
+            int c = Convert.ToInt32(this.labelControl11.Text.ToString());
+            this.labelControl11.Text = Convert.ToString(c + r.Next(-1, 2));
+        }
+
+        private void ChartControl2_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e)
+        {
+            //e.LabelText = "Yes";
         }
 
         //private void worker_DoWork(object sender, DoWorkEventArgs e)
