@@ -14,6 +14,12 @@ namespace F5074.DevExpressWinforms
         [STAThread]
         static void Main()
         {
+            //This set the style to use skin technology
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            //Here we specify the skin to use by its name           
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2013");
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Black");
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Colorful");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
