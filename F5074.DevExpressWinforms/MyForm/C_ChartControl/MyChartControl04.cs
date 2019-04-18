@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    public partial class MyCharts02 : UserControl
+    public partial class MyChartControl04 : UserControl
     {
-        public MyCharts02()
+        public MyChartControl04()
         {
             InitializeComponent();
         }

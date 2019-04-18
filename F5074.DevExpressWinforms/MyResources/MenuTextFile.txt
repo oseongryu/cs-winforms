@@ -1,4 +1,6 @@
-﻿MyCharts01
+﻿MyTileBar01
+MyTileBar02
+MyCharts01
 MyCharts02
 MyCharts03
 MyCharts04

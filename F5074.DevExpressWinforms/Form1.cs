@@ -2,7 +2,8 @@
 using F5074.DevExpressWinforms.LayoutFolder;
 using F5074.DevExpressWinforms.MyForm.A_GridControl;
 using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
-using F5074.DevExpressWinforms.MyForm.C_Charts;
+using F5074.DevExpressWinforms.MyForm.C_ChartControl;
+using F5074.DevExpressWinforms.MyForm.D_TileBar;
 using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
@@ -70,10 +71,26 @@ namespace F5074.DevExpressWinforms
 
                 switch (this.treeList1.FocusedValue.ToString())
                 {
+                    case "MyTileBar01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyTileBar01", Text = "MyTileBar01" };
+                            tabPage.Controls.Add(new MyTileBar01() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyTileBar02":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyTileBar02", Text = "MyTileBar02" };
+                            tabPage.Controls.Add(new MyTileBar02() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
                     case "MyCharts01":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts01", Text = "MyCharts01" };
-                            tabPage.Controls.Add(new MyCharts01() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyChartControl01() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -81,7 +98,7 @@ namespace F5074.DevExpressWinforms
                     case "MyCharts02":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts02", Text = "MyCharts02" };
-                            tabPage.Controls.Add(new MyCharts02() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyChartControl02() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -89,7 +106,7 @@ namespace F5074.DevExpressWinforms
                     case "MyCharts03":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts03", Text = "MyCharts03" };
-                            tabPage.Controls.Add(new MyCharts03() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyChartControl03() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -97,7 +114,7 @@ namespace F5074.DevExpressWinforms
                     case "MyCharts04":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts04", Text = "MyCharts04" };
-                            tabPage.Controls.Add(new MyCharts04() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyChartControl04() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
@@ -105,7 +122,7 @@ namespace F5074.DevExpressWinforms
                     case "MyCharts05":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts05", Text = "MyCharts05" };
-                            tabPage.Controls.Add(new MyCharts05() { Dock = DockStyle.Fill });
+                            tabPage.Controls.Add(new MyChartControl05() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;

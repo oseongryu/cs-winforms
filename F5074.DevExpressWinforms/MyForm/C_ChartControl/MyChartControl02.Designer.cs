@@ -1,6 +1,6 @@
-﻿namespace F5074.DevExpressWinforms.MyForm.C_Charts
+﻿namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    partial class MyCharts02
+    partial class MyChartControl02
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -36,10 +36,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.myCharts034 = new F5074.DevExpressWinforms.MyForm.C_Charts.MyCharts03();
+            this.myCharts034 = new F5074.DevExpressWinforms.MyForm.C_ChartControl.MyChartControl03();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.myCharts033 = new F5074.DevExpressWinforms.MyForm.C_Charts.MyCharts03();
+            this.myCharts033 = new F5074.DevExpressWinforms.MyForm.C_ChartControl.MyChartControl03();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.chartSalesbySecor = new DevExpress.XtraCharts.ChartControl();
@@ -279,10 +279,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraCharts.ChartControl chartSalesbySecor;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private MyCharts03 myCharts031;
-        private MyCharts03 myCharts032;
+        private MyChartControl03 myCharts031;
+        private MyChartControl03 myCharts032;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private MyCharts03 myCharts034;
-        private MyCharts03 myCharts033;
+        private MyChartControl03 myCharts034;
+        private MyChartControl03 myCharts033;
     }
 }

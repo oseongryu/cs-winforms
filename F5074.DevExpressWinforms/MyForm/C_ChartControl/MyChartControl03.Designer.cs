@@ -1,6 +1,6 @@
-﻿namespace F5074.DevExpressWinforms.MyForm.C_Charts
+﻿namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    partial class MyCharts03
+    partial class MyChartControl03
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -44,9 +44,9 @@
             this.btnForward = new DevExpress.XtraEditors.SimpleButton();
             this.btnPreviousDate = new DevExpress.XtraEditors.CheckButton();
             this.btnCurrentDate = new DevExpress.XtraEditors.CheckButton();
-            this.valuePresenter1 = new F5074.DevExpressWinforms.MyForm.C_Charts.ucValuePresenter();
-            this.valuePresenter0 = new F5074.DevExpressWinforms.MyForm.C_Charts.ucValuePresenter();
-            this.valuePresenter2 = new F5074.DevExpressWinforms.MyForm.C_Charts.ucValuePresenter();
+            this.valuePresenter1 = new F5074.DevExpressWinforms.MyForm.C_ChartControl.ucValuePresenter();
+            this.valuePresenter0 = new F5074.DevExpressWinforms.MyForm.C_ChartControl.ucValuePresenter();
+            this.valuePresenter2 = new F5074.DevExpressWinforms.MyForm.C_ChartControl.ucValuePresenter();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(textAnnotation1)).BeginInit();

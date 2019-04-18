@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraCharts;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    public partial class MyCharts01 : UserControl
+    public partial class MyChartControl01 : UserControl
     {
-        public MyCharts01()
+        public MyChartControl01()
         {
             InitializeComponent();
         }

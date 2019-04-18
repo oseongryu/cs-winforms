@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
     public static class ModelAssemblyHelper {
         static Assembly modelAssembly = null;

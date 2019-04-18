@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
     public partial class ucValuePresenter : UserControl
     {

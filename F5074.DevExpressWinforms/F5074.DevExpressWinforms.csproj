@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -22,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -201,42 +204,54 @@
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.Designer.cs">
       <DependentUpon>MySpreadsheetControl01.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\ModelAssemblyHelper.cs" />
-    <Compile Include="MyForm\C_Charts\MyCharts01.cs">
+    <Compile Include="MyForm\C_ChartControl\ModelAssemblyHelper.cs" />
+    <Compile Include="MyForm\C_ChartControl\MyChartControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts01.Designer.cs">
-      <DependentUpon>MyCharts01.cs</DependentUpon>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl01.Designer.cs">
+      <DependentUpon>MyChartControl01.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts02.cs">
+    <Compile Include="MyForm\C_ChartControl\MyChartControl02.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts02.Designer.cs">
-      <DependentUpon>MyCharts02.cs</DependentUpon>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl02.Designer.cs">
+      <DependentUpon>MyChartControl02.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts03.cs">
+    <Compile Include="MyForm\C_ChartControl\MyChartControl03.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts03.Designer.cs">
-      <DependentUpon>MyCharts03.cs</DependentUpon>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl03.Designer.cs">
+      <DependentUpon>MyChartControl03.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts04.cs">
+    <Compile Include="MyForm\C_ChartControl\MyChartControl04.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts04.Designer.cs">
-      <DependentUpon>MyCharts04.cs</DependentUpon>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl04.Designer.cs">
+      <DependentUpon>MyChartControl04.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts05.cs">
+    <Compile Include="MyForm\C_ChartControl\MyChartControl05.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\MyCharts05.Designer.cs">
-      <DependentUpon>MyCharts05.cs</DependentUpon>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl05.Designer.cs">
+      <DependentUpon>MyChartControl05.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_Charts\ucValuePresenter.cs">
+    <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_Charts\ucValuePresenter.Designer.cs">
+    <Compile Include="MyForm\C_ChartControl\ucValuePresenter.Designer.cs">
       <DependentUpon>ucValuePresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar01.Designer.cs">
+      <DependentUpon>MyTileBar01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar02.Designer.cs">
+      <DependentUpon>MyTileBar02.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,6 +318,9 @@
     <EmbeddedResource Include="LayoutFolder\LayoutDefault.resx">
       <DependentUpon>LayoutDefault.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl01.resx">
+      <DependentUpon>MyGridControl01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl02.resx">
       <DependentUpon>MyGridControl02.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,24 +333,31 @@
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl06.resx">
       <DependentUpon>MyGridControl06.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\MyCharts01.resx">
-      <DependentUpon>MyCharts01.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl01.resx">
+      <DependentUpon>MyChartControl01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\MyCharts02.resx">
-      <DependentUpon>MyCharts02.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl02.resx">
+      <DependentUpon>MyChartControl02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\MyCharts03.resx">
-      <DependentUpon>MyCharts03.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl03.resx">
+      <DependentUpon>MyChartControl03.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\MyCharts04.resx">
-      <DependentUpon>MyCharts04.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl04.resx">
+      <DependentUpon>MyChartControl04.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\MyCharts05.resx">
-      <DependentUpon>MyCharts05.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl05.resx">
+      <DependentUpon>MyChartControl05.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_Charts\ucValuePresenter.resx">
+    <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx">
       <DependentUpon>ucValuePresenter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
+      <DependentUpon>MyTileBar01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar02.resx">
+      <DependentUpon>MyTileBar02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -366,7 +391,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyResources\MenuTextFile.txt">

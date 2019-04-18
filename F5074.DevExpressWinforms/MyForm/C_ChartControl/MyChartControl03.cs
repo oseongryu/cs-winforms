@@ -4,11 +4,11 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
     public enum SalesPerformanceMode { Day, Month }
     public enum SalesPerformanceChartType { Area, Bar }
-    public partial class MyCharts03 : UserControl
+    public partial class MyChartControl03 : UserControl
     {
         ISalesPerformanceProvider provider;
         DateTime currentDate;
@@ -18,7 +18,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
         XYDiagram Diagram { get { return ((XYDiagram)chart.Diagram); } }
         Palette ChartPalette { get { return chart.PaletteRepository[chart.PaletteName]; } }
 
-        public MyCharts03()
+        public MyChartControl03()
         {
             InitializeComponent();
             LoadResources();

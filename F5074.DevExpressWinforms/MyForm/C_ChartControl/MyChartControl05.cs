@@ -11,9 +11,9 @@ using DevExpress.XtraCharts;
 using DevExpress.Utils;
 using System.Globalization;
 
-namespace F5074.DevExpressWinforms.MyForm.C_Charts
+namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    public partial class MyCharts05 : UserControl
+    public partial class MyChartControl05 : UserControl
     {
         DateTimeFormatInfo m_dfiInfo = CultureInfo.CurrentCulture.DateTimeFormat;
         private BackgroundWorker worker = null;
@@ -27,7 +27,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_Charts
         int a = 25;
         Series series1 = new Series("Series 1", ViewType.Point);
 
-        public MyCharts05()
+        public MyChartControl05()
         {
             InitializeComponent();
             MakeFullStackedBar();

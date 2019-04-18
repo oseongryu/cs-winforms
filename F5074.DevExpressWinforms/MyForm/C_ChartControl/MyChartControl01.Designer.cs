@@ -1,6 +1,6 @@
-﻿namespace F5074.DevExpressWinforms.MyForm.C_Charts
+﻿namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    partial class MyCharts01
+    partial class MyChartControl01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

@@ -1,4 +1,4 @@
-﻿namespace F5074.DevExpressWinforms.MyForm.C_Charts
+﻿namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
     partial class ucValuePresenter
     {
