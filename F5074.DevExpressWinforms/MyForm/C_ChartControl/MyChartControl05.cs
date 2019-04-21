@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
-    public partial class MyChartControl05 : UserControl
+    public partial class MyChartControl05 : Form
     {
         DateTimeFormatInfo m_dfiInfo = CultureInfo.CurrentCulture.DateTimeFormat;
         private BackgroundWorker worker = null;

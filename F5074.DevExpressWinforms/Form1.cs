@@ -4,6 +4,7 @@ using F5074.DevExpressWinforms.MyForm.A_GridControl;
 using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
 using F5074.DevExpressWinforms.MyForm.C_ChartControl;
 using F5074.DevExpressWinforms.MyForm.D_TileBar;
+using F5074.DevExpressWinforms.MyForm.E_WindowsUIView;
 using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
@@ -71,6 +72,14 @@ namespace F5074.DevExpressWinforms
 
                 switch (this.treeList1.FocusedValue.ToString())
                 {
+                    case "MyWindowsUIView01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyWindowsUIView01", Text = "MyWindowsUIView01" };
+                            tabPage.Controls.Add(new MyWindowsUIView01() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
                     case "MyTileBar01":
                         {
                             XtraTabPage tabPage = new XtraTabPage() { Name = "MyTileBar01", Text = "MyTileBar01" };
@@ -87,41 +96,49 @@ namespace F5074.DevExpressWinforms
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "MyCharts01":
+                    case "MyTileBar03":
                         {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts01", Text = "MyCharts01" };
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyTileBar03", Text = "MyTileBar03" };
+                            tabPage.Controls.Add(new MyTileBar03() { Dock = DockStyle.Fill });
+                            xtraTabControl1.TabPages.Add(tabPage);
+                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                            break;
+                        }
+                    case "MyChartControl01":
+                        {
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyChartControl01", Text = "MyChartControl01" };
                             tabPage.Controls.Add(new MyChartControl01() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "MyCharts02":
+                    case "MyChartControl02":
                         {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts02", Text = "MyCharts02" };
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyChartControl02", Text = "MyChartControl02" };
                             tabPage.Controls.Add(new MyChartControl02() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "MyCharts03":
+                    case "MyChartControl03":
                         {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts03", Text = "MyCharts03" };
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyChartControl03", Text = "MyChartControl03" };
                             tabPage.Controls.Add(new MyChartControl03() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "MyCharts04":
+                    case "MyChartControl04":
                         {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts04", Text = "MyCharts04" };
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyChartControl04", Text = "MyChartControl04" };
                             tabPage.Controls.Add(new MyChartControl04() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "MyCharts05":
+                    case "MyChartControl05":
                         {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyCharts05", Text = "MyCharts05" };
+                            XtraTabPage tabPage = new XtraTabPage() { Name = "MyChartControl05", Text = "MyChartControl05" };
                             tabPage.Controls.Add(new MyChartControl05() { Dock = DockStyle.Fill });
                             xtraTabControl1.TabPages.Add(tabPage);
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;

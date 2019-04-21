@@ -13,6 +13,8 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 {
     public partial class MyChartControl01 : UserControl
     {
+        ChartControl pieChart = new ChartControl();
+
         public MyChartControl01()
         {
             InitializeComponent();
@@ -22,10 +24,10 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
         {
             // https://documentation.devexpress.com/WindowsForms/2978/Controls-and-Libraries/Chart-Control/Fundamentals/Series-Views/2D-Series-Views/Pie-and-Donut-Series-Views/Pie-Chart
             // Create an empty chart. 
-            ChartControl pieChart = new ChartControl();
 
+            pieChart.CustomDrawSeriesPoint += PieChart_CustomDrawSeriesPoint;
             // Create a pie series. 
-            Series series1 = new Series("A Pie Series", ViewType.Pie);
+            Series series1 = new Series("24 시간", ViewType.Pie);
 
             // Populate the series with points. 
             series1.Points.Add(new SeriesPoint("Russia", 17.0752));
@@ -36,7 +38,6 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             series1.Points.Add(new SeriesPoint("Australia", 7.68685));
             series1.Points.Add(new SeriesPoint("India", 3.28759));
             series1.Points.Add(new SeriesPoint("Others", 81.2));
-
             // Add the series to the chart. 
             pieChart.Series.Add(series1);
 
@@ -65,11 +66,24 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             //myView.HeightToWidthRatio = 0.75;
 
             // Hide the legend (if necessary). 
-            pieChart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-
+            pieChart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            pieChart.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Center;
+            pieChart.Legend.AlignmentVertical = LegendAlignmentVertical.Center;
+            //pieChart.Legend.VerticalIndent = 100;
+            //pieChart.Legend.HorizontalIndent = 100;
             // Add the chart to the form. 
             pieChart.Dock = DockStyle.Fill;
             this.Controls.Add(pieChart);
+        }
+
+        private void PieChart_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e)
+        {
+            if (e.SeriesPoint == pieChart.Series[0].Points[0])
+            {
+                e.LegendText = e.Series.ToString();
+            }
+            else
+                e.LegendText = "";
         }
     }
 }
