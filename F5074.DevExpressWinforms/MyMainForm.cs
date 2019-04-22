@@ -38,6 +38,7 @@ namespace F5074.DevExpressWinforms
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
             resultList = new MyDirectory01().SearchFile();
+            resultList.Reverse();   // List Reversing https://stackoverflow.com/questions/3062513/how-can-i-sort-generic-list-desc-and-asc
             for (int x = 0; x < resultList.Count; x++)
             {
                 this.treeList1.AppendNode(new object[] { Text = resultList[x].MenuName }, -1);
