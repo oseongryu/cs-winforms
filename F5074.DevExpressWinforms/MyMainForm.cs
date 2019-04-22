@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static F5074.DevExpressWinforms.MyCommon.MyDirectory01;
@@ -53,34 +54,15 @@ namespace F5074.DevExpressWinforms
 
                 //string className = "F5074.DevExpressWinforms.MyForm.D_TileBar.MyTileBar03";
                 string className = "";
+                //string[] arrSplit = Regex.Split(resultList[0].MenuFullPath, "\r\n\r\n");
+                string arrSplit = Path.GetDirectoryName(resultList[2].MenuFullPath).Split(Path.DirectorySeparatorChar).Last();
+
                 for (int x = 0; x < resultList.Count; x++)
                 {
-                    if (resultList[x].MenuFullPath.Contains("A_GridControl") && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                    if (resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
                     {
-                        className = "F5074.DevExpressWinforms.MyForm.A_GridControl." + resultList[x].MenuName;
-                        break;
+                        className = "F5074.DevExpressWinforms.MyForm." + resultList[x].ClassName +"."+ resultList[x].MenuName; break;
                     }
-                    else if (resultList[x].MenuFullPath.Contains("B_SpreadsheetControl") && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
-                    {
-                        className = "F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl." + resultList[x].MenuName;
-                        break;
-                    }
-                    else if (resultList[x].MenuFullPath.Contains("C_ChartControl") && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
-                    {
-                        className = "F5074.DevExpressWinforms.MyForm.C_ChartControl." + resultList[x].MenuName;
-                        break;
-                    }
-                    else if (resultList[x].MenuFullPath.Contains("D_TileBar") && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
-                    {
-                        className = "F5074.DevExpressWinforms.MyForm.D_TileBar." + resultList[x].MenuName;
-                        break;
-                    }
-                    else if (resultList[x].MenuFullPath.Contains("E_WindowsUIView") && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
-                    {
-                        className = "F5074.DevExpressWinforms.MyForm.E_WindowsUIView." + resultList[x].MenuName;
-                        break;
-                    }
-
                 }
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Type t = assembly.GetType(className);

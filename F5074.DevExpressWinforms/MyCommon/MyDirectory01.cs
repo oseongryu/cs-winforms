@@ -34,7 +34,7 @@ namespace F5074.DevExpressWinforms.MyCommon
             {
                 if (!s.Contains("Designer"))
                 {
-                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s) });
+                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last() });
                 }
             }
             return result;
@@ -68,6 +68,7 @@ namespace F5074.DevExpressWinforms.MyCommon
         {
             public string MenuFullPath { get; set; }
             public string MenuName { get; set; }
+            public string ClassName { get; set; }
         }
 
     }
