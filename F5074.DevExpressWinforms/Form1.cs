@@ -1,11 +1,9 @@
 ﻿using DevExpress.XtraTab;
-using F5074.DevExpressWinforms.LayoutFolder;
 using F5074.DevExpressWinforms.MyForm.A_GridControl;
 using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
 using F5074.DevExpressWinforms.MyForm.C_ChartControl;
 using F5074.DevExpressWinforms.MyForm.D_TileBar;
 using F5074.DevExpressWinforms.MyForm.E_WindowsUIView;
-using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.IO;
 using System.Text;
@@ -200,139 +198,139 @@ namespace F5074.DevExpressWinforms
                             xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
                             break;
                         }
-                    case "A_DataTable":
-                        {
-                            //A_DataTable tabControl = new A_DataTable() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //XtraTabPage tabPage = new XtraTabPage() { Name = "A_DataTable", Text = "A_DataTable" };
-                            //tabPage.Controls.Add(tabControl);
-                            //xtraTabControl1.TabPages.Add(tabPage);
-                            //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            //tabControl.Show();
+                    //case "A_DataTable":
+                    //    {
+                    //        //A_DataTable tabControl = new A_DataTable() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                    //        ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //XtraTabPage tabPage = new XtraTabPage() { Name = "A_DataTable", Text = "A_DataTable" };
+                    //        //tabPage.Controls.Add(tabControl);
+                    //        //xtraTabControl1.TabPages.Add(tabPage);
+                    //        //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        //tabControl.Show();
 
 
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "A_DataTable", Text = "A_DataTable" };
-                            tabPage.Controls.Add(new A_DataTable() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "B_TreeList":
-                        {
-                            //B_TreeList tabControl = new B_TreeList() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            //XtraTabPage tabPage = new XtraTabPage() { Name = "B_TreeList", Text = "B_TreeList" };
-                            //tabPage.Controls.Add(tabControl);
-                            //xtraTabControl1.TabPages.Add(tabPage);
-                            //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "A_DataTable", Text = "A_DataTable" };
+                    //        tabPage.Controls.Add(new A_DataTable() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "B_TreeList":
+                    //    {
+                    //        //B_TreeList tabControl = new B_TreeList() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                    //        ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //tabControl.Show();
+                    //        //XtraTabPage tabPage = new XtraTabPage() { Name = "B_TreeList", Text = "B_TreeList" };
+                    //        //tabPage.Controls.Add(tabControl);
+                    //        //xtraTabControl1.TabPages.Add(tabPage);
+                    //        //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
 
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "B_TreeList", Text = "B_TreeList" };
-                            tabPage.Controls.Add(new B_TreeList() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "B_TreeList", Text = "B_TreeList" };
+                    //        tabPage.Controls.Add(new B_TreeList() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
 
-                    case "C_ButtonImage":
-                        {
-                            //ButtonImage tabControl = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
-                            ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
+                    //case "C_ButtonImage":
+                    //    {
+                    //        //ButtonImage tabControl = new ButtonImage() { TopLevel = false, WindowState = FormWindowState.Maximized };
+                    //        ////xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //tabControl.Show();
 
-                            //XtraTabPage tabPage = new XtraTabPage() { Name = "C_ButtonImage", Text = "C_ButtonImage" };
-                            //tabPage.Controls.Add(tabControl);
-                            //xtraTabControl1.TabPages.Add(tabPage);
-                            //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "C_ButtonImage", Text = "C_ButtonImage" };
-                            tabPage.Controls.Add(new C_ButtonImage() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
+                    //        //XtraTabPage tabPage = new XtraTabPage() { Name = "C_ButtonImage", Text = "C_ButtonImage" };
+                    //        //tabPage.Controls.Add(tabControl);
+                    //        //xtraTabControl1.TabPages.Add(tabPage);
+                    //        //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "C_ButtonImage", Text = "C_ButtonImage" };
+                    //        tabPage.Controls.Add(new C_ButtonImage() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
 
-                        }
+                    //    }
 
-                    case "D_GridCalendarInCell":
-                        {
-                            //GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "D_GridCalendarInCell", Text = "D_GridCalendarInCell" };
-                            tabPage.Controls.Add(new D_GridCalendarInCell() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
+                    //case "D_GridCalendarInCell":
+                    //    {
+                    //        //GridCalendarInCell tabControl = new GridCalendarInCell() { Dock = DockStyle.Fill };
+                    //        //tab.Dock = DockStyle.Fill;
+                    //        //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                    //        //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    //        //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //tabControl.Show();
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "D_GridCalendarInCell", Text = "D_GridCalendarInCell" };
+                    //        tabPage.Controls.Add(new D_GridCalendarInCell() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
 
-                    case "E_ButtonEdit":
-                        {
-                            //ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "E_ButtonEdit", Text = "E_ButtonEdit" };
-                            tabPage.Controls.Add(new E_ButtonEdit() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "F_DateEditTab":
-                        {
-                            //DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
-                            //tabControl.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "F_DateEditTab", Text = "F_DateEditTab" };
-                            tabPage.Controls.Add(new F_DateEditTab() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "G_GridCheckBoxInCell":
-                        {
-                            //GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
-                            //tab.Dock = DockStyle.Fill;
-                            //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                            //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
-                            //xtraTabControl1.TabPages[0].Controls.Add(tab);
-                            //tab.Show();
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "G_GridCheckBoxInCell", Text = "G_GridCheckBoxInCell" };
-                            tabPage.Controls.Add(new G_GridCheckBoxInCell() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "H_GridCheckBoxDefault":
-                        {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "H_GridCheckBoxDefault", Text = "H_GridCheckBoxDefault" };
-                            tabPage.Controls.Add(new H_GridCheckBoxDefault() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "I_SpreadsheetControl":
-                        {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "I_SpreadsheetControl", Text = "I_SpreadsheetControl" };
-                            tabPage.Controls.Add(new I_SpreadsheetControl() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
-                    case "LayoutDefault":
-                        {
-                            XtraTabPage tabPage = new XtraTabPage() { Name = "LayoutDefault", Text = "LayoutDefault" };
-                            tabPage.Controls.Add(new LayoutDefault() { Dock = DockStyle.Fill });
-                            xtraTabControl1.TabPages.Add(tabPage);
-                            xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-                            break;
-                        }
+                    //case "E_ButtonEdit":
+                    //    {
+                    //        //ButtonEdit tabControl = new ButtonEdit() { Dock = DockStyle.Fill };
+                    //        //tab.Dock = DockStyle.Fill;
+                    //        //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                    //        //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    //        //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //tabControl.Show();
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "E_ButtonEdit", Text = "E_ButtonEdit" };
+                    //        tabPage.Controls.Add(new E_ButtonEdit() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "F_DateEditTab":
+                    //    {
+                    //        //DateEditTab tabControl = new DateEditTab() { Dock = DockStyle.Fill };
+                    //        //tab.Dock = DockStyle.Fill;
+                    //        //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                    //        //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    //        //xtraTabControl1.TabPages[0].Controls.Add(tabControl);
+                    //        //tabControl.Show();
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "F_DateEditTab", Text = "F_DateEditTab" };
+                    //        tabPage.Controls.Add(new F_DateEditTab() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "G_GridCheckBoxInCell":
+                    //    {
+                    //        //GridCheckBoxInCell tabControl = new GridCheckBoxInCell() { Dock = DockStyle.Fill };
+                    //        //tab.Dock = DockStyle.Fill;
+                    //        //tab.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                    //        //tab.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    //        //xtraTabControl1.TabPages[0].Controls.Add(tab);
+                    //        //tab.Show();
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "G_GridCheckBoxInCell", Text = "G_GridCheckBoxInCell" };
+                    //        tabPage.Controls.Add(new G_GridCheckBoxInCell() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "H_GridCheckBoxDefault":
+                    //    {
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "H_GridCheckBoxDefault", Text = "H_GridCheckBoxDefault" };
+                    //        tabPage.Controls.Add(new H_GridCheckBoxDefault() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "I_SpreadsheetControl":
+                    //    {
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "I_SpreadsheetControl", Text = "I_SpreadsheetControl" };
+                    //        tabPage.Controls.Add(new I_SpreadsheetControl() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
+                    //case "LayoutDefault":
+                    //    {
+                    //        XtraTabPage tabPage = new XtraTabPage() { Name = "LayoutDefault", Text = "LayoutDefault" };
+                    //        tabPage.Controls.Add(new LayoutDefault() { Dock = DockStyle.Fill });
+                    //        xtraTabControl1.TabPages.Add(tabPage);
+                    //        xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+                    //        break;
+                    //    }
                 }
 
                 //Tab1 mainTab = new Tab1();

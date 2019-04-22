@@ -159,12 +159,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayoutFolder\LayoutDefault.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LayoutFolder\LayoutDefault.Designer.cs">
-      <DependentUpon>LayoutDefault.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyCommon\MyDirectory01.cs" />
     <Compile Include="MyCommon\MyReflection01.cs" />
     <Compile Include="MyForm\A_GridControl\MyGridControl01.cs">
@@ -202,6 +196,30 @@
     </Compile>
     <Compile Include="MyForm\A_GridControl\MyGridControl06.Designer.cs">
       <DependentUpon>MyGridControl06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl07.Designer.cs">
+      <DependentUpon>MyGridControl07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl08.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl08.Designer.cs">
+      <DependentUpon>MyGridControl08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl09.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl09.Designer.cs">
+      <DependentUpon>MyGridControl09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl10.Designer.cs">
+      <DependentUpon>MyGridControl10.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
@@ -276,6 +294,30 @@
     <Compile Include="MyForm\E_WindowsUIView\MyWindowsUIView01.Designer.cs">
       <DependentUpon>MyWindowsUIView01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\F_DevExpressImages\MyDevExpressImages01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\F_DevExpressImages\MyDevExpressImages01.Designer.cs">
+      <DependentUpon>MyDevExpressImages01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyButtonEdit01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyButtonEdit01.Designer.cs">
+      <DependentUpon>MyButtonEdit01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyDateEdit01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyDateEdit01.Designer.cs">
+      <DependentUpon>MyDateEdit01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyLayoutControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyLayoutControl01.Designer.cs">
+      <DependentUpon>MyLayoutControl01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,68 +332,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabFolder\C_ButtonImage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\C_ButtonImage.Designer.cs">
-      <DependentUpon>C_ButtonImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\E_ButtonEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\E_ButtonEdit.Designer.cs">
-      <DependentUpon>E_ButtonEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\F_DateEditTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\F_DateEditTab.Designer.cs">
-      <DependentUpon>F_DateEditTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\D_GridCalendarInCell.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\D_GridCalendarInCell.designer.cs">
-      <DependentUpon>D_GridCalendarInCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\G_GridCheckBoxInCell.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\G_GridCheckBoxInCell.Designer.cs">
-      <DependentUpon>G_GridCheckBoxInCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\H_GridCheckBoxDefault.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\H_GridCheckBoxDefault.Designer.cs">
-      <DependentUpon>H_GridCheckBoxDefault.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\A_DataTable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\A_DataTable.Designer.cs">
-      <DependentUpon>A_DataTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\B_TreeList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\B_TreeList.Designer.cs">
-      <DependentUpon>B_TreeList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\I_SpreadsheetControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\I_SpreadsheetControl.Designer.cs">
-      <DependentUpon>I_SpreadsheetControl.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="DialogFolder\ButtonEditForm.resx">
       <DependentUpon>ButtonEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LayoutFolder\LayoutDefault.resx">
-      <DependentUpon>LayoutDefault.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl01.resx">
       <DependentUpon>MyGridControl01.cs</DependentUpon>
@@ -367,6 +352,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl06.resx">
       <DependentUpon>MyGridControl06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl07.resx">
+      <DependentUpon>MyGridControl07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl08.resx">
+      <DependentUpon>MyGridControl08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl09.resx">
+      <DependentUpon>MyGridControl09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl10.resx">
+      <DependentUpon>MyGridControl10.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
@@ -401,6 +398,18 @@
     <EmbeddedResource Include="MyForm\E_WindowsUIView\MyWindowsUIView01.resx">
       <DependentUpon>MyWindowsUIView01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\F_DevExpressImages\MyDevExpressImages01.resx">
+      <DependentUpon>MyDevExpressImages01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyButtonEdit01.resx">
+      <DependentUpon>MyButtonEdit01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyDateEdit01.resx">
+      <DependentUpon>MyDateEdit01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyLayoutControl01.resx">
+      <DependentUpon>MyLayoutControl01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyMainForm.resx">
       <DependentUpon>MyMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,18 +426,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TabFolder\D_GridCalendarInCell.resx">
-      <DependentUpon>D_GridCalendarInCell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\H_GridCheckBoxDefault.resx">
-      <DependentUpon>H_GridCheckBoxDefault.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\A_DataTable.resx">
-      <DependentUpon>A_DataTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\I_SpreadsheetControl.resx">
-      <DependentUpon>I_SpreadsheetControl.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

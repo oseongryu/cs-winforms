@@ -61,6 +61,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -81,10 +82,13 @@
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
@@ -92,14 +96,14 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI Light", 8.25F);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1259, 612);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1239, 570);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -107,7 +111,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.80985F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.19015F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 380F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 0);
@@ -116,9 +120,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 295F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 295F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1248, 295);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 264F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 264F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1228, 274);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
             // tableLayoutPanel8
@@ -142,38 +146,44 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(356, 289);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(347, 268);
             this.tableLayoutPanel8.TabIndex = 19;
             // 
             // labelControl9
             // 
+            this.labelControl9.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl9.Appearance.Options.UseBackColor = true;
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl9.Location = new System.Drawing.Point(3, 184);
+            this.labelControl9.Location = new System.Drawing.Point(3, 163);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(350, 23);
+            this.labelControl9.Size = new System.Drawing.Size(341, 23);
             this.labelControl9.TabIndex = 6;
             this.labelControl9.Text = "이전";
             // 
             // labelControl8
             // 
+            this.labelControl8.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.labelControl8.Appearance.Options.UseBackColor = true;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseTextOptions = true;
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl8.Location = new System.Drawing.Point(3, 129);
+            this.labelControl8.Location = new System.Drawing.Point(3, 108);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(350, 49);
+            this.labelControl8.Size = new System.Drawing.Size(341, 49);
             this.labelControl8.TabIndex = 5;
             this.labelControl8.Text = "labelControl8";
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.labelControl4.Appearance.Options.UseBackColor = true;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -184,39 +194,43 @@
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.labelControl4.ShowLineShadow = false;
-            this.labelControl4.Size = new System.Drawing.Size(350, 21);
+            this.labelControl4.Size = new System.Drawing.Size(341, 21);
             this.labelControl4.TabIndex = 2;
             this.labelControl4.Text = "CYCLE TIME";
             // 
             // labelControl6
             // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.labelControl6.Appearance.Options.UseBackColor = true;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl6.Location = new System.Drawing.Point(3, 30);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(350, 67);
+            this.labelControl6.Size = new System.Drawing.Size(341, 46);
             this.labelControl6.TabIndex = 3;
             this.labelControl6.Text = "labelControl6";
             // 
             // labelControl7
             // 
+            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl7.Appearance.Options.UseBackColor = true;
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseTextOptions = true;
             this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl7.Location = new System.Drawing.Point(3, 103);
+            this.labelControl7.Location = new System.Drawing.Point(3, 82);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(350, 20);
+            this.labelControl7.Size = new System.Drawing.Size(341, 20);
             this.labelControl7.TabIndex = 4;
             this.labelControl7.Text = "STE30804-100-S18-F(180511)-Spanner.tom";
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(3, 213);
+            this.simpleButton1.Location = new System.Drawing.Point(3, 192);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 7;
@@ -232,45 +246,51 @@
             this.tableLayoutPanel7.Controls.Add(this.labelControl3, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.gaugeControl1, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(870, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(848, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(375, 289);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(377, 268);
             this.tableLayoutPanel7.TabIndex = 18;
             // 
             // labelControl12
             // 
+            this.labelControl12.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl12.Appearance.Options.UseBackColor = true;
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseTextOptions = true;
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl12.Location = new System.Drawing.Point(3, 259);
+            this.labelControl12.Location = new System.Drawing.Point(3, 238);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(369, 27);
+            this.labelControl12.Size = new System.Drawing.Size(371, 27);
             this.labelControl12.TabIndex = 7;
             this.labelControl12.Text = "초당 원주 속도(m/s)";
             // 
             // labelControl11
             // 
+            this.labelControl11.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.labelControl11.Appearance.Options.UseBackColor = true;
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Appearance.Options.UseTextOptions = true;
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl11.Location = new System.Drawing.Point(3, 179);
+            this.labelControl11.Location = new System.Drawing.Point(3, 158);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(369, 74);
+            this.labelControl11.Size = new System.Drawing.Size(371, 74);
             this.labelControl11.TabIndex = 6;
             this.labelControl11.Text = "20";
             // 
             // labelControl3
             // 
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.labelControl3.Appearance.Options.UseBackColor = true;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -281,12 +301,13 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.labelControl3.ShowLineShadow = false;
-            this.labelControl3.Size = new System.Drawing.Size(369, 21);
+            this.labelControl3.Size = new System.Drawing.Size(371, 21);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "RPM";
             // 
             // gaugeControl1
             // 
+            this.gaugeControl1.BackColor = System.Drawing.Color.Transparent;
             this.gaugeControl1.ColorScheme.TargetElements = ((DevExpress.XtraGauges.Core.Base.TargetElement)((DevExpress.XtraGauges.Core.Base.TargetElement.RangeBar | DevExpress.XtraGauges.Core.Base.TargetElement.Label)));
             this.gaugeControl1.Controls.Add(this.labelControl10);
             this.gaugeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -294,12 +315,14 @@
             this.circularGauge1});
             this.gaugeControl1.Location = new System.Drawing.Point(3, 30);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(369, 143);
+            this.gaugeControl1.Size = new System.Drawing.Size(371, 122);
             this.gaugeControl1.TabIndex = 3;
             // 
             // labelControl10
             // 
+            this.labelControl10.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl10.Appearance.Options.UseBackColor = true;
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(238, 124);
             this.labelControl10.Name = "labelControl10";
@@ -309,7 +332,7 @@
             // 
             // circularGauge1
             // 
-            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 357, 131);
+            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 359, 110);
             this.circularGauge1.Labels.AddRange(new DevExpress.XtraGauges.Win.Base.LabelComponent[] {
             this.labelComponent1});
             this.circularGauge1.Name = "circularGauge1";
@@ -365,17 +388,18 @@
             this.tableLayoutPanel5.Controls.Add(this.chartControl1, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelControl2, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(365, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(356, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(499, 289);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(486, 268);
             this.tableLayoutPanel5.TabIndex = 16;
             // 
             // chartControl1
             // 
             this.chartControl1.AnimationStartMode = DevExpress.XtraCharts.ChartAnimationMode.OnDataChanged;
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
             this.chartControl1.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.DataBindings = null;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -396,12 +420,14 @@
             doughnutSeriesLabel1.TextPattern = "{VP:G2}";
             this.chartControl1.SeriesTemplate.Label = doughnutSeriesLabel1;
             this.chartControl1.SeriesTemplate.View = doughnutSeriesView1;
-            this.chartControl1.Size = new System.Drawing.Size(493, 256);
+            this.chartControl1.Size = new System.Drawing.Size(480, 235);
             this.chartControl1.TabIndex = 1;
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.labelControl2.Appearance.Options.UseBackColor = true;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -412,7 +438,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.labelControl2.ShowLineShadow = false;
-            this.labelControl2.Size = new System.Drawing.Size(493, 21);
+            this.labelControl2.Size = new System.Drawing.Size(480, 21);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "PRODUCTION";
             // 
@@ -424,11 +450,11 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 314);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 293);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1248, 295);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1228, 274);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // tableLayoutPanel9
@@ -438,17 +464,19 @@
             this.tableLayoutPanel9.Controls.Add(this.labelControl5, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chartControl4, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(602, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(593, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(643, 289);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(632, 268);
             this.tableLayoutPanel9.TabIndex = 20;
             // 
             // labelControl5
             // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.labelControl5.Appearance.Options.UseBackColor = true;
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -459,7 +487,7 @@
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.labelControl5.ShowLineShadow = false;
-            this.labelControl5.Size = new System.Drawing.Size(637, 21);
+            this.labelControl5.Size = new System.Drawing.Size(626, 21);
             this.labelControl5.TabIndex = 2;
             this.labelControl5.Text = "SPINDLE";
             // 
@@ -471,7 +499,7 @@
             this.chartControl4.Location = new System.Drawing.Point(3, 30);
             this.chartControl4.Name = "chartControl4";
             this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl4.Size = new System.Drawing.Size(637, 256);
+            this.chartControl4.Size = new System.Drawing.Size(626, 235);
             this.chartControl4.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -486,7 +514,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(593, 289);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 268);
             this.tableLayoutPanel4.TabIndex = 17;
             // 
             // labelControl1
@@ -502,7 +530,7 @@
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.labelControl1.ShowLineShadow = false;
-            this.labelControl1.Size = new System.Drawing.Size(587, 21);
+            this.labelControl1.Size = new System.Drawing.Size(578, 21);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "RATE";
             // 
@@ -518,7 +546,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(587, 256);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(578, 235);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // chartControl2
@@ -529,7 +557,7 @@
             this.chartControl2.Location = new System.Drawing.Point(3, 3);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl2.Size = new System.Drawing.Size(287, 250);
+            this.chartControl2.Size = new System.Drawing.Size(283, 229);
             this.chartControl2.TabIndex = 0;
             // 
             // chartControl3
@@ -537,19 +565,29 @@
             this.chartControl3.DataBindings = null;
             this.chartControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl3.Legend.Name = "Default Legend";
-            this.chartControl3.Location = new System.Drawing.Point(296, 3);
+            this.chartControl3.Location = new System.Drawing.Point(292, 3);
             this.chartControl3.Name = "chartControl3";
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl3.Size = new System.Drawing.Size(288, 250);
+            this.chartControl3.Size = new System.Drawing.Size(283, 229);
             this.chartControl3.TabIndex = 1;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.tableLayoutPanel1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1243, 574);
+            this.panelControl1.TabIndex = 6;
             // 
             // MyChartControl05
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(1243, 574);
+            this.Controls.Add(this.panelControl1);
             this.Name = "MyChartControl05";
-            this.Size = new System.Drawing.Size(1259, 612);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -576,6 +614,8 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -613,5 +653,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraCharts.ChartControl chartControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

@@ -15,7 +15,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 {
     public partial class MyTileBar01 : UserControl
     {
-        Color[] arrColor = new Color[] { Color.FromArgb(0x00, 0x87, 0x9C), Color.FromArgb(0xCC, 0x6D, 0x00), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x00, 0x73, 0xC4), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x3E, 0x70, 0x38), Color.FromArgb(0x40, 0x40, 0x40) };
+        Color[] arrColor = new Color[] { Color.FromArgb(0x00, 0x87, 0x9C), Color.FromArgb(0xCC, 0x6D, 0x00), Color.FromArgb(0x00, 0x73, 0xC4), Color.FromArgb(0x3E, 0x70, 0x38), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x40, 0x40, 0x40) };
         string[] arrImage = new string[] { "office2013/chart/bar_32x32.png", "office2013/chart/pie_32x32.png", "office2013/data/database_32x32.png", "office2013/actions/add_16x16.png", "office2013/actions/add_16x16.png", "office2013/actions/add_16x16.png" };
         private DevExpress.XtraEditors.SearchControl searchControl = new DevExpress.XtraEditors.SearchControl();
         public MyTileBar01()

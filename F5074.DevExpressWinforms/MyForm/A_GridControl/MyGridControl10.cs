@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    public partial class H_GridCheckBoxDefault : UserControl
+    public partial class MyGridControl10 : UserControl
     {
-        public H_GridCheckBoxDefault()
+        string description = "그리드컨트롤 원클릭으로 셀 선택하기";
+        public MyGridControl10()
         {
             InitializeComponent();
             this.gridView1.Columns.Add(new DevExpress.XtraGrid.Columns.GridColumn() { FieldName = "Checked", Caption = "Checked", Visible = true });
@@ -28,8 +29,8 @@ namespace F5074.DevExpressWinforms.TabFolder
 
             this.gridControl1.DataSource = CreateTable(7);
             this.gridView1.MouseDown += GridView1_MouseDown;
+            this.simpleButton1.Click += simpleButton1_Click;
         }
-
         #region 테이블데이터생성
         private DataTable CreateTable(int RowCount)
         {

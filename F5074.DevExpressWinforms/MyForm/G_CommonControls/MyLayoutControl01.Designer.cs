@@ -1,6 +1,6 @@
-﻿namespace F5074.DevExpressWinforms.LayoutFolder
+﻿namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 {
-    partial class LayoutDefault
+    partial class MyLayoutControl01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -24,7 +24,7 @@
 
         /// <summary> 
         /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
         private void InitializeComponent()
         {
@@ -63,8 +63,8 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1000, 600);
-            this.panelMain.TabIndex = 1;
+            this.panelMain.Size = new System.Drawing.Size(1209, 591);
+            this.panelMain.TabIndex = 2;
             // 
             // splitContainerControlTC
             // 
@@ -76,7 +76,7 @@
             this.splitContainerControlTC.Panel1.Text = "Panel1";
             this.splitContainerControlTC.Panel2.Controls.Add(this.splitContainerControlCB);
             this.splitContainerControlTC.Panel2.Text = "Panel2";
-            this.splitContainerControlTC.Size = new System.Drawing.Size(996, 596);
+            this.splitContainerControlTC.Size = new System.Drawing.Size(1205, 587);
             this.splitContainerControlTC.SplitterPosition = 81;
             this.splitContainerControlTC.TabIndex = 0;
             this.splitContainerControlTC.Text = "splitContainerControl1";
@@ -87,7 +87,7 @@
             this.groupControlTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlTop.Location = new System.Drawing.Point(0, 0);
             this.groupControlTop.Name = "groupControlTop";
-            this.groupControlTop.Size = new System.Drawing.Size(996, 81);
+            this.groupControlTop.Size = new System.Drawing.Size(1205, 81);
             this.groupControlTop.TabIndex = 0;
             this.groupControlTop.Text = "groupControlTop";
             // 
@@ -96,7 +96,7 @@
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(2, 21);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(992, 58);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1201, 58);
             this.windowsUIButtonPanel1.TabIndex = 0;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 
@@ -110,7 +110,7 @@
             this.splitContainerControlCB.Panel1.Text = "Panel1";
             this.splitContainerControlCB.Panel2.Controls.Add(this.groupControlBottom);
             this.splitContainerControlCB.Panel2.Text = "Panel2";
-            this.splitContainerControlCB.Size = new System.Drawing.Size(996, 510);
+            this.splitContainerControlCB.Size = new System.Drawing.Size(1205, 501);
             this.splitContainerControlCB.SplitterPosition = 416;
             this.splitContainerControlCB.TabIndex = 0;
             this.splitContainerControlCB.Text = "splitContainerControl2";
@@ -124,8 +124,8 @@
             this.splitContainerControlCR.Panel1.Text = "Panel1";
             this.splitContainerControlCR.Panel2.Controls.Add(this.groupControlRight);
             this.splitContainerControlCR.Panel2.Text = "Panel2";
-            this.splitContainerControlCR.Size = new System.Drawing.Size(996, 416);
-            this.splitContainerControlCR.SplitterPosition = 830;
+            this.splitContainerControlCR.Size = new System.Drawing.Size(1205, 416);
+            this.splitContainerControlCR.SplitterPosition = 1011;
             this.splitContainerControlCR.TabIndex = 0;
             this.splitContainerControlCR.Text = "splitContainerControl3";
             // 
@@ -136,7 +136,7 @@
             this.groupControlCenter.Location = new System.Drawing.Point(0, 0);
             this.groupControlCenter.Name = "groupControlCenter";
             this.groupControlCenter.ShowCaption = false;
-            this.groupControlCenter.Size = new System.Drawing.Size(830, 416);
+            this.groupControlCenter.Size = new System.Drawing.Size(1011, 416);
             this.groupControlCenter.TabIndex = 0;
             this.groupControlCenter.Text = "groupControlCenter";
             // 
@@ -146,7 +146,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(826, 412);
+            this.gridControl1.Size = new System.Drawing.Size(1007, 412);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -162,7 +162,7 @@
             this.groupControlRight.Location = new System.Drawing.Point(0, 0);
             this.groupControlRight.Name = "groupControlRight";
             this.groupControlRight.ShowCaption = false;
-            this.groupControlRight.Size = new System.Drawing.Size(161, 416);
+            this.groupControlRight.Size = new System.Drawing.Size(189, 416);
             this.groupControlRight.TabIndex = 0;
             this.groupControlRight.Text = "groupControlRight";
             // 
@@ -172,17 +172,17 @@
             this.groupControlBottom.Location = new System.Drawing.Point(0, 0);
             this.groupControlBottom.Name = "groupControlBottom";
             this.groupControlBottom.ShowCaption = false;
-            this.groupControlBottom.Size = new System.Drawing.Size(996, 89);
+            this.groupControlBottom.Size = new System.Drawing.Size(1205, 80);
             this.groupControlBottom.TabIndex = 0;
             this.groupControlBottom.Text = "groupControlBottom";
             // 
-            // LayoutDefault
+            // MyLayoutControl01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelMain);
-            this.Name = "LayoutDefault";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Name = "MyLayoutControl01";
+            this.Size = new System.Drawing.Size(1209, 591);
             ((System.ComponentModel.ISupportInitialize)(this.panelMain)).EndInit();
             this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlTC)).EndInit();

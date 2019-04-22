@@ -38,9 +38,9 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
+            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -61,9 +62,9 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tileBar1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.chartControl1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chartControl2, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tileBar1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -197,17 +198,6 @@
             this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "가동률";
             // 
-            // tileBar1
-            // 
-            this.tileBar1.AllowDrag = false;
-            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            this.tileBar1.Location = new System.Drawing.Point(3, 3);
-            this.tileBar1.Name = "tileBar1";
-            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(134, 81);
-            this.tileBar1.TabIndex = 0;
-            this.tileBar1.Text = "tileBar1";
-            // 
             // chartControl1
             // 
             this.chartControl1.DataBindings = null;
@@ -230,9 +220,20 @@
             this.chartControl2.Size = new System.Drawing.Size(509, 81);
             this.chartControl2.TabIndex = 5;
             // 
+            // tileBar1
+            // 
+            this.tileBar1.AllowDrag = false;
+            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar1.Location = new System.Drawing.Point(3, 3);
+            this.tileBar1.Name = "tileBar1";
+            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar1.Size = new System.Drawing.Size(134, 81);
+            this.tileBar1.TabIndex = 9;
+            this.tileBar1.Text = "tileBar1";
+            // 
             // MyUserControl01
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,7 +256,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -267,5 +267,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
     }
 }

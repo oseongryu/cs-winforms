@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors;
 using F5074.DevExpressWinforms.MyUserControl;
+using DevExpress.XtraBars.Docking2010;
 
 namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 {
@@ -28,6 +29,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             InitSearchLookUpEdit(this.slueSelect, "VALUE", "VALUE", true);
             this.slueSelect.Properties.DataSource = myDataTable;
             this.slueSelect.EditValueChanged += SlueSelect_EditValueChanged;
+            MakeButtonPanel();
         }
         private void SlueSelect_EditValueChanged(object sender, EventArgs e)
         {
@@ -115,6 +117,48 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
         {
             if (!((SearchLookUpEdit)sender).ReadOnly)
                 ((SearchLookUpEdit)sender).EditValue = null;
+        }
+        private void MakeButtonPanel()
+        {
+            WindowsUIButton btn1 = new WindowsUIButton("검색", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/chart/bar_32x32.png") });
+            //WindowsUIButton btn2 = new WindowsUIButton("Btn2", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/add_32x32.png") });
+            //WindowsUIButton btn3 = new WindowsUIButton("Btn3", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/apply_32x32.png") });
+            //WindowsUIButton btn4 = new WindowsUIButton("Btn4", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/cancel_32x32.png") });
+            WindowsUISeparator separator = new DevExpress.XtraBars.Docking2010.WindowsUISeparator();
+
+            this.windowsUIButtonPanel1.AllowGlyphSkinning = true;
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1 });
+            this.windowsUIButtonPanel1.ButtonClick += windowsUIButtonPanel1_ButtonClick;
+
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1213, 73);
+            this.windowsUIButtonPanel1.TabIndex = 0;
+            this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(130, 130, 130);
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.FontSizeDelta = -1;
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(130, 130, 130);
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.Options.UseBackColor = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.Options.UseFont = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Hovered.Options.UseForeColor = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Normal.FontSizeDelta = -1;
+            this.windowsUIButtonPanel1.AppearanceButton.Normal.Options.UseFont = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(159, 159, 159);
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.FontSizeDelta = -1;
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(159, 159, 159);
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseBackColor = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseFont = true;
+            this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseForeColor = true;
+        }
+        private void windowsUIButtonPanel1_ButtonClick(object sender, ButtonEventArgs e)
+        {
+            WindowsUIButton btn = e.Button as WindowsUIButton;
+            if (btn.Caption != null && btn.Caption.Equals("Btn1"))
+            {
+                MessageBox.Show("Btn1");
+            }
+            else if (btn.Caption != null && btn.Caption.Equals("Btn2"))
+            {
+                MessageBox.Show("Btn2");
+            }
         }
     }
 }

@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Repository;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    public partial class G_GridCheckBoxInCell : UserControl
+    public partial class MyGridControl09 : UserControl
     {
-        public G_GridCheckBoxInCell()
+        string description = "그리드컨트롤 셀안에 체크박스 넣기";
+        public MyGridControl09()
         {
             InitializeComponent();
-
+            this.simpleButton1.Click += simpleButton1_Click;
+            this.simpleButton2.Click += simpleButton2_Click;
+            this.simpleButton3.Click += simpleButton3_Click;
             // https://www.devexpress.com/Support/Center/Question/Details/T228226/check-edit-in-xtragrid-column
             RepositoryItemCheckEdit repositoryItemCheckEdit = new RepositoryItemCheckEdit();
             repositoryItemCheckEdit.ValueChecked = "True";
@@ -41,10 +44,8 @@ namespace F5074.DevExpressWinforms.TabFolder
 
             this.gridView1.InitNewRow += gridView1_InitNewRow;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False; 
-
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
         }
-
         void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             //gridView1.SetRowCellValue(e.RowHandle, "Checked", "True");
@@ -88,7 +89,7 @@ namespace F5074.DevExpressWinforms.TabFolder
 
             //tbl.Columns.Add("Checked", typeof(bool));
             for (int i = 0; i < RowCount; i++)
-                tbl.Rows.Add(new object[] { "False", i,"kim", (10 + i), (70+i )});
+                tbl.Rows.Add(new object[] { "False", i, "kim", (10 + i), (70 + i) });
             return tbl;
         }
 
@@ -131,7 +132,7 @@ namespace F5074.DevExpressWinforms.TabFolder
             for (int x = 0; x < dt.Rows.Count; x++)
             {
                 MessageBox.Show(this.gridView1.GetRowCellValue(x, "Age").ToString());
-                
+
             }
 
 
@@ -156,7 +157,5 @@ namespace F5074.DevExpressWinforms.TabFolder
             //}
 
         }
-
-
     }
-} 
+}

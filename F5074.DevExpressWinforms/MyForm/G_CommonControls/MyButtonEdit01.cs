@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using F5074.DevExpressWinforms.DialogFolder;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 {
-    public partial class E_ButtonEdit : UserControl
+    public partial class MyButtonEdit01 : UserControl
     {
-        public E_ButtonEdit()
+        public MyButtonEdit01()
         {
             InitializeComponent();
-            this.buttonEdit1.Click += buttonEdit1_Click;
+            buttonEdit1.Click += buttonEdit1_Click;
         }
 
         void buttonEdit1_Click(object sender, EventArgs e)

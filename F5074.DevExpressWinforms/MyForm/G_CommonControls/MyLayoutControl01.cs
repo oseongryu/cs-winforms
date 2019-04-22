@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
 
-namespace F5074.DevExpressWinforms.LayoutFolder
+namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 {
-    public partial class LayoutDefault : UserControl
+    public partial class MyLayoutControl01 : UserControl
     {
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        public LayoutDefault()
+
+        public MyLayoutControl01()
         {
             InitializeComponent();
-            
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit() { Location = new System.Drawing.Point(20, 45), Name = "textEdit1", Size = new System.Drawing.Size(100, 20), TabIndex = 0 };
             this.groupControlRight.Controls.Add(this.textEdit1);
             WindowsUIButton btn1 = new WindowsUIButton("Btn1", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/refresh_16x16.png") });
@@ -32,7 +32,6 @@ namespace F5074.DevExpressWinforms.LayoutFolder
             this.splitContainerControlCR.SplitterPosition = 1200;
             this.splitContainerControlCB.SplitterPosition = 1500;
         }
-
         private void windowsUIButtonPanel1_ButtonClick(object sender, ButtonEventArgs e)
         {
             WindowsUIButton btn = e.Button as WindowsUIButton;

@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    public partial class D_GridCalendarInCell : UserControl
+    public partial class MyGridControl08 : UserControl
     {
-        public D_GridCalendarInCell()
+        string description = "그리드 컨트롤 안에 캘린더 팝업이 뜰 수 있도록 구현";
+        public MyGridControl08()
         {
             InitializeComponent();
             DevExpress.XtraEditors.Repository.RepositoryItemDateEdit riteTextEditColumn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -29,7 +30,6 @@ namespace F5074.DevExpressWinforms.TabFolder
 
             this.gridControl1.DataSource = CreateTable(50);
         }
-
         void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             GridView gvCurrentView = sender as GridView;
@@ -78,6 +78,5 @@ namespace F5074.DevExpressWinforms.TabFolder
                 e.Appearance.BackColor = Color.Red;
             }
         }
-
     }
 }

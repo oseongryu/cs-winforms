@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraBars.Docking2010;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    public partial class A_DataTable : UserControl
+    public partial class MyGridControl07 : UserControl
     {
-        public A_DataTable()
+        string description = "데이터테이블의 형이 정해진 경우 그리드의 타입을 변경해도 데이터테이블의 형을 따름";
+        public MyGridControl07()
         {
             InitializeComponent();
             DevExpress.XtraEditors.Repository.RepositoryItemDateEdit riteTextEditColumn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -33,20 +34,19 @@ namespace F5074.DevExpressWinforms.TabFolder
 
 
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_DataTable));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyGridControl07));
             //windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
             windowsUIButtonImageOptions1.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("grayscale/actions/add_32x32.png");
             WindowsUIButton btn1 = new WindowsUIButton("Btn1", true, windowsUIButtonImageOptions1);
             WindowsUIButton btn2 = new WindowsUIButton("Btn2", true, windowsUIButtonImageOptions1);
-            
+
             //this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             //new DevExpress.XtraBars.Docking2010.WindowsUIButton("Btn1", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton),
             //new DevExpress.XtraBars.Docking2010.WindowsUIButton("Btn2", DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton)});
 
-            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {btn1,btn2});
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1, btn2 });
 
         }
-
         void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             GridView gvCurrentView = sender as GridView;
@@ -101,7 +101,7 @@ namespace F5074.DevExpressWinforms.TabFolder
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, ButtonEventArgs e)
         {
-                        WindowsUIButton btn = e.Button as WindowsUIButton;
+            WindowsUIButton btn = e.Button as WindowsUIButton;
             if (btn.Caption != null && btn.Caption.Equals("Btn1"))
             {
                 MessageBox.Show(btn.Caption);

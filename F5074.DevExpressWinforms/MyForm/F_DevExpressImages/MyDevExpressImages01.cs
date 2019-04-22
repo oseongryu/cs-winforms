@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.F_DevExpressImages
 {
-    public partial class C_ButtonImage : UserControl
+    public partial class MyDevExpressImages01 : UserControl
     {
-        public C_ButtonImage()
+        public MyDevExpressImages01()
         {
             InitializeComponent();
             this.simpleButton1.Click += simpleButton1_Click;
-        }
 
+        }
         // https://www.devexpress.com/Support/Center/Question/Details/Q512749/how-to-get-icons-from-the-dx-image-gallery-in-code
         private void simpleButton1_Click(object sender, EventArgs e)
         {

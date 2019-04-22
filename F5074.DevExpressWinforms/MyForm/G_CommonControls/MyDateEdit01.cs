@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.TabFolder
+namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 {
-    public partial class F_DateEditTab : UserControl
+    public partial class MyDateEdit01 : UserControl
     {
-        public F_DateEditTab()
+        public MyDateEdit01()
         {
             InitializeComponent();
             // 전기일 From,To
@@ -27,7 +27,6 @@ namespace F5074.DevExpressWinforms.TabFolder
             calFromDate.EditValue = dtFromDate;
             calToDate.EditValue = dtToDate;
         }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             DateTime dtFromDt = Convert.ToDateTime(this.calFromDate.EditValue);

@@ -1,12 +1,10 @@
 ﻿using DevExpress.XtraTab;
-using F5074.DevExpressWinforms.LayoutFolder;
 using F5074.DevExpressWinforms.MyCommon;
 using F5074.DevExpressWinforms.MyForm.A_GridControl;
 using F5074.DevExpressWinforms.MyForm.B_SpreadsheetControl;
 using F5074.DevExpressWinforms.MyForm.C_ChartControl;
 using F5074.DevExpressWinforms.MyForm.D_TileBar;
 using F5074.DevExpressWinforms.MyForm.E_WindowsUIView;
-using F5074.DevExpressWinforms.TabFolder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

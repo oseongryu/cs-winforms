@@ -1,6 +1,6 @@
-﻿namespace F5074.DevExpressWinforms.TabFolder
+﻿namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 {
-    partial class D_GridCalendarInCell
+    partial class MyGridControl08
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -24,7 +24,7 @@
 
         /// <summary> 
         /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
         private void InitializeComponent()
         {
@@ -40,8 +40,8 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(954, 551);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(1179, 588);
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -50,13 +50,13 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // GridCalendarInCell
+            // MyGridControl08
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl1);
-            this.Name = "GridCalendarInCell";
-            this.Size = new System.Drawing.Size(954, 551);
+            this.Name = "MyGridControl08";
+            this.Size = new System.Drawing.Size(1179, 588);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
