@@ -55,6 +55,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.DataAccess.v17.1.UI.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Docs.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.Images.v17.1.dll</HintPath>
@@ -207,6 +208,12 @@
     </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.Designer.cs">
       <DependentUpon>MySpreadsheetControl01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.Designer.cs">
+      <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\C_ChartControl\ModelAssemblyHelper.cs" />
     <Compile Include="MyForm\C_ChartControl\MyChartControl01.cs">
@@ -361,6 +368,9 @@
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl06.resx">
       <DependentUpon>MyGridControl06.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
+      <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl01.resx">
       <DependentUpon>MyChartControl01.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,8 +452,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>IF NOT EXIST "$(TargetDir)\lib" MD "$(TargetDir)\lib"
-move "$(TargetDir)\*.dll" "$(TargetDir)\lib"
-move "$(TargetDir)\*.pdb" "$(TargetDir)\lib"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

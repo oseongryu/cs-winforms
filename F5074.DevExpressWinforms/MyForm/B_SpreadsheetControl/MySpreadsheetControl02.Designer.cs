@@ -35,19 +35,19 @@
             // 
             // spreadsheetControl1
             // 
-            this.spreadsheetControl1.Location = new System.Drawing.Point(318, 186);
+            this.spreadsheetControl1.Location = new System.Drawing.Point(206, 132);
             this.spreadsheetControl1.Name = "spreadsheetControl1";
             this.spreadsheetControl1.Options.Import.Csv.Encoding = ((System.Text.Encoding)(resources.GetObject("spreadsheetControl1.Options.Import.Csv.Encoding")));
             this.spreadsheetControl1.Options.Import.Txt.Encoding = ((System.Text.Encoding)(resources.GetObject("spreadsheetControl1.Options.Import.Txt.Encoding")));
-            this.spreadsheetControl1.Size = new System.Drawing.Size(874, 370);
+            this.spreadsheetControl1.Size = new System.Drawing.Size(905, 382);
             this.spreadsheetControl1.TabIndex = 0;
             this.spreadsheetControl1.Text = "spreadsheetControl1";
             // 
             // windowsUIButtonPanel1
             // 
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(260, 81);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(206, 39);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(858, 73);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(905, 62);
             this.windowsUIButtonPanel1.TabIndex = 1;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 
@@ -58,7 +58,7 @@
             this.Controls.Add(this.windowsUIButtonPanel1);
             this.Controls.Add(this.spreadsheetControl1);
             this.Name = "MySpreadsheetControl02";
-            this.Size = new System.Drawing.Size(1389, 615);
+            this.Size = new System.Drawing.Size(1304, 571);
             this.ResumeLayout(false);
 
         }
