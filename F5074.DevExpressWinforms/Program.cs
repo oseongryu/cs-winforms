@@ -22,7 +22,7 @@ namespace F5074.DevExpressWinforms
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Colorful");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MyMainForm());
         }
     }
 }

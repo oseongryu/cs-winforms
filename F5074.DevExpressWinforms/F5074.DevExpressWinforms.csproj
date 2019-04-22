@@ -164,6 +164,8 @@
     <Compile Include="LayoutFolder\LayoutDefault.Designer.cs">
       <DependentUpon>LayoutDefault.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCommon\MyDirectory01.cs" />
+    <Compile Include="MyCommon\MyReflection01.cs" />
     <Compile Include="MyForm\A_GridControl\MyGridControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -266,6 +268,12 @@
     </Compile>
     <Compile Include="MyForm\E_WindowsUIView\MyWindowsUIView01.Designer.cs">
       <DependentUpon>MyWindowsUIView01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyMainForm.Designer.cs">
+      <DependentUpon>MyMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\MyUserControl01.cs">
       <SubType>UserControl</SubType>
@@ -383,9 +391,13 @@
     <EmbeddedResource Include="MyForm\E_WindowsUIView\MyWindowsUIView01.resx">
       <DependentUpon>MyWindowsUIView01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyMainForm.resx">
+      <DependentUpon>MyMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\MyUserControl01.resx">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
