@@ -30,7 +30,6 @@ namespace F5074.DevExpressWinforms
         public MyMainForm()
         {
             InitializeComponent();
-
             this.treeList1.OptionsBehavior.Editable = false;
             this.treeList1.DoubleClick += treeList1_DoubleClick;
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
@@ -51,6 +50,8 @@ namespace F5074.DevExpressWinforms
             {
                 object mainTab = new object();
 
+                // https://lambdaexp.tistory.com/19
+                // https://m.blog.naver.com/delight_gruv/130071915177
                 //string className = "F5074.DevExpressWinforms.MyForm.D_TileBar.MyTileBar03";
                 string className = "";
                 //string[] arrSplit = Regex.Split(resultList[0].MenuFullPath, "\r\n\r\n");

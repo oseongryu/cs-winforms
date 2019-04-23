@@ -88,9 +88,10 @@
             // 
             // windowsUIButtonPanel1
             // 
-            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.windowsUIButtonPanel1.Controls.Add(this.slueSelect);
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(2, 2);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1292, 112);
@@ -107,6 +108,7 @@
             this.slueSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slueSelect.Properties.NullText = "";
+            this.slueSelect.Properties.ShowClearButton = false;
             this.slueSelect.Properties.View = this.searchLookUpEdit1View;
             this.slueSelect.Size = new System.Drawing.Size(172, 30);
             this.slueSelect.TabIndex = 0;
