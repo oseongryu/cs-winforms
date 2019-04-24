@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using F5074.Winforms.MyUserControl;
+using F5074.Winforms.MyForm;
 
 namespace F5074.Winforms
 {
     public partial class Form1 : Form
     {
-        private TreeNode[] treeNodeArray = { new TreeNode("A_Enum"), new TreeNode("B_UserControl"), new TreeNode("C_ReadTextFile"), new TreeNode("D_TreeNode") };
+        private TreeNode[] treeNodeArray = { new TreeNode("A_Enum"), new TreeNode("B_UserControl"), new TreeNode("C_ReadTextFile"), new TreeNode("D_TreeNode"), new TreeNode("MyCefSharp01") };
 
         private TabPage myTabPage;
 
@@ -31,6 +32,14 @@ namespace F5074.Winforms
         {
             switch (this.treeView1.SelectedNode.Text)
             {
+                case "MyCefSharp01":
+
+                    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                    myTabPage.Controls.Add(new MyCefSharp01() { Dock = DockStyle.Fill });
+                    tabControl1.TabPages.Add(myTabPage);
+                    this.tabControl1.SelectedTab = myTabPage;
+                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
+                    break;
                 //case "1_Enum":
                 //    FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
                 //    this.tabControl1.TabPages[0].Controls.Add(formTab);
