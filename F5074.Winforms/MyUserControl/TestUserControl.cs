@@ -15,7 +15,7 @@ namespace F5074.Winforms.MyUserControl
         public TestUserControl()
         {
             InitializeComponent();
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new EventHandler(this.button1_Click);
         }
 
         // 1. UserControl 

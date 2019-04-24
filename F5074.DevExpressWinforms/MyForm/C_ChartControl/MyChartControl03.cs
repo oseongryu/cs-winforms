@@ -81,7 +81,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             //btnBack.Image = LoadImage("ArrowLeft.png");
             //btnForward.Image = LoadImage("ArrowRight.png");
         }
-        static System.Drawing.Image LoadImage(string imageName)
+        static Image LoadImage(string imageName)
         {
             return DevExpress.Utils.ResourceImageHelper.CreateImageFromResources(ModelAssemblyHelper.GetResourcePath(imageName), ModelAssemblyHelper.ModelAssembly);
         }

@@ -17,7 +17,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
     {
         Color[] arrColor = new Color[] { Color.FromArgb(0x00, 0x87, 0x9C), Color.FromArgb(0xCC, 0x6D, 0x00), Color.FromArgb(0x00, 0x73, 0xC4), Color.FromArgb(0x3E, 0x70, 0x38), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x40, 0x40, 0x40), Color.FromArgb(0x40, 0x40, 0x40) };
         string[] arrImage = new string[] { "office2013/chart/bar_32x32.png", "office2013/chart/pie_32x32.png", "office2013/data/database_32x32.png", "office2013/actions/add_16x16.png", "office2013/actions/add_16x16.png", "office2013/actions/add_16x16.png" };
-        private DevExpress.XtraEditors.SearchControl searchControl = new DevExpress.XtraEditors.SearchControl();
+        private SearchControl searchControl = new SearchControl();
         public MyTileBar01()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 
         private void MakeSearchControl()
         {
-            this.searchControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchControl.Anchor = ((AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             //this.searchControl.Client = this.gridControl;
             //this.searchControl.Location = new System.Drawing.Point(669, 23);
             this.searchControl.Name = "searchControl";
@@ -36,11 +36,11 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             //this.searchControl.Properties.Client = this.gridControl;
-            this.searchControl.Size = new System.Drawing.Size(260, 100);
+            this.searchControl.Size = new Size(260, 100);
             this.searchControl.TabIndex = 9;
             this.windowsUIButtonPanel1.Controls.Add(this.searchControl);
             this.searchControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchControl.Properties.Appearance.Font = new System.Drawing.Font("consolas", 11F);
+            this.searchControl.Properties.Appearance.Font = new Font("consolas", 11F);
             this.searchControl.Properties.Appearance.Options.UseFont = true;
 
         }
@@ -82,13 +82,13 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             WindowsUIButton btn2 = new WindowsUIButton("Btn2", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/add_32x32.png") });
             WindowsUIButton btn3 = new WindowsUIButton("Btn3", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/apply_32x32.png") });
             WindowsUIButton btn4 = new WindowsUIButton("Btn4", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/cancel_32x32.png") });
-            WindowsUISeparator separator = new DevExpress.XtraBars.Docking2010.WindowsUISeparator();
+            WindowsUISeparator separator = new WindowsUISeparator();
 
             this.windowsUIButtonPanel1.AllowGlyphSkinning = true;
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1, btn2, separator, btn3, btn4 });
             this.windowsUIButtonPanel1.ButtonClick += windowsUIButtonPanel1_ButtonClick;
 
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1213, 73);
+            this.windowsUIButtonPanel1.Size = new Size(1213, 73);
             this.windowsUIButtonPanel1.TabIndex = 0;
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
             this.windowsUIButtonPanel1.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(130, 130, 130);

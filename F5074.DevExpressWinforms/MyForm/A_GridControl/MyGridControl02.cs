@@ -142,7 +142,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
         }
 
-        private void GridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        private void GridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             //GridView oCurrentView = sender as GridView;
 
@@ -180,7 +180,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
             DevExpress.XtraEditors.Controls.EditorButton temp = (DevExpress.XtraEditors.Controls.EditorButton)e.Button;
             //temp.Visible = false;
-            System.Data.DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             string cellValue = gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, "Height").ToString();
             MessageBox.Show(cellValue);
             ////this.gridView1.OptionsEditForm.EndUpdate();

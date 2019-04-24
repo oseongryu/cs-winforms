@@ -161,8 +161,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MyCommon\MyDatabaseConnect01.cs" />
+    <Compile Include="MyCommon\MyDevExpressFunctions.cs" />
     <Compile Include="MyCommon\MyDirectory01.cs" />
     <Compile Include="MyCommon\MyReflection01.cs" />
+    <Compile Include="MyCommon\MyXMLReader.cs" />
     <Compile Include="MyForm\A_GridControl\MyGridControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -418,6 +420,7 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl01.resx">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -444,6 +447,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyResources\config.xml" />
     <Content Include="MyResources\MenuTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

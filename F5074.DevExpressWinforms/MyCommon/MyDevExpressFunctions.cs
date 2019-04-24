@@ -11,17 +11,56 @@ namespace F5074.DevExpressWinforms.MyCommon
 {
     public class MyDevExpressFunctions
     {
-        public static void MakeWindowsUIButtonPanel(WindowsUIButtonPanel currentPanel)
+        public static void MakeWindowsUIButtonPanel(WindowsUIButtonPanel currentPanel, string[] arrString)
         {
+            //for (int x = 0; x < arrString.Length; x++)
+            //{
+            //    string _imageName = "";
+            //    switch (arrString[x])
+            //    {
+            //       case "검색" : _imageName = "office2013/zoom/zoom_32x32.png"; break;
+            //       case "프린트" : _imageName = "office2013/print/print_32x32.png"; break;
+            //       case "적용" : _imageName = "office2013/actions/apply_32x32.png"; break;
+            //       case "초기화" : _imageName = "office2013/actions/reset_32x32.png"; break;
+            //       case "저장" : _imageName = "office2013/save/save_32x32.png"; break;
+            //       case "차트": _imageName = "office2013/chart/bar_32x32.png"; break;
+
+            //    }
+            //    //new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage(_imageName) });
+            //    currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage(_imageName) }) });
+            //}
+            
+            // https://documentation.devexpress.com/WindowsForms/16864/What-s-Installed/Image-Gallery-and-Context-Dependent-Images
+            for (int x = 0; x < arrString.Length; x++)
+            {
+                string _imageUri = "";
+                switch (arrString[x])
+                {
+                    case "검색": _imageUri = "Zoom;Size32x32;GrayScaled"; break;
+                    case "프린트": _imageUri = "Print;Size32x32;GrayScaled"; break;
+                    case "적용": _imageUri = "Apply;Size32x32;GrayScaled"; break;
+                    case "초기화": _imageUri = "Reset;Size32x32;GrayScaled"; break;
+                    case "저장": _imageUri = "Save;Size32x32;GrayScaled"; break;
+                    case "차트": _imageUri = "Chart;Size32x32;GrayScaled"; break;
+
+                }
+                currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { ImageUri= _imageUri }) });
+                if (x!=0 && x%2 == 1)
+                {
+                    currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUISeparator() });
+                }
+            }
+
+
             WindowsUIButton btn1 = new WindowsUIButton("검색", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/chart/bar_32x32.png") });
             WindowsUIButton btn2 = new WindowsUIButton("초기화", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/cancel_32x32.png") });
             WindowsUIButton btn3 = new WindowsUIButton("Btn3", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/apply_32x32.png") });
             WindowsUIButton btn4 = new WindowsUIButton("Btn4", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/add_32x32.png") });
-            WindowsUISeparator separator = new DevExpress.XtraBars.Docking2010.WindowsUISeparator();
+            WindowsUISeparator separator = new WindowsUISeparator();
 
-            //this.windowsUIButtonPanel1.AllowGlyphSkinning = true;
+            currentPanel.AllowGlyphSkinning = true;
             currentPanel.ForeColor = System.Drawing.Color.White;
-            currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1, separator, btn2 });
+            //currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { btn1, separator, btn2 });
             //currentPanel.ButtonClick += windowsUIButtonPanel1_ButtonClick;
             currentPanel.Size = new System.Drawing.Size(1213, 73);
             currentPanel.TabIndex = 0;
@@ -93,7 +132,7 @@ namespace F5074.DevExpressWinforms.MyCommon
 
                 slEdit.QueryPopUp += (sender, e) =>
                 {
-                    DevExpress.XtraEditors.SearchLookUpEdit edit = sender as DevExpress.XtraEditors.SearchLookUpEdit;
+                    SearchLookUpEdit edit = sender as SearchLookUpEdit;
                     edit.ForceInitialize();
                     edit.Properties.View.PopulateColumns();
 

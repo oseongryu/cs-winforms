@@ -33,8 +33,8 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             gridControl1.DataSource = CreateTable(50);
 
 
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyGridControl07));
+            WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new WindowsUIButtonImageOptions();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MyGridControl07));
             //windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
             windowsUIButtonImageOptions1.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("grayscale/actions/add_32x32.png");
             WindowsUIButton btn1 = new WindowsUIButton("Btn1", true, windowsUIButtonImageOptions1);
@@ -87,7 +87,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             return tbl;
         }
 
-        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        private void gridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
             if (e.Column != view.Columns["Name"])

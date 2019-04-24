@@ -16,7 +16,7 @@ using F5074.DevExpressWinforms.MyForm;
 
 namespace F5074.DevExpressWinforms.MyUserControl
 {
-    public partial class MyUserControl01 : DevExpress.XtraEditors.XtraUserControl
+    public partial class MyUserControl01 : XtraUserControl
     {
         Random r2 = new Random();
         Series series1 = new Series("Series 1", ViewType.Point);
@@ -83,7 +83,7 @@ namespace F5074.DevExpressWinforms.MyUserControl
 
 
             }
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY1 = new DevExpress.XtraCharts.SecondaryAxisY();
+            SecondaryAxisY secondaryAxisY1 = new SecondaryAxisY();
 
             secondaryAxisY1.VisibleInPanesSerializable = "-1";
             secondaryAxisY1.WholeRange.Auto = false;
@@ -104,7 +104,7 @@ namespace F5074.DevExpressWinforms.MyUserControl
             ((XYDiagram)chartControl1.Diagram).AxisX.WholeRange.MinValueSerializable = "1";
             ((XYDiagram)chartControl1.Diagram).AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
             ((XYDiagram)chartControl1.Diagram).AxisY.VisibleInPanesSerializable = "-1";
-            ((XYDiagram)chartControl1.Diagram).SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] { secondaryAxisY1 });
+            ((XYDiagram)chartControl1.Diagram).SecondaryAxesY.AddRange(new SecondaryAxisY[] { secondaryAxisY1 });
 
             //XYDiagram xyDiagram1 = new XYDiagram();
             //xyDiagram1.Rotated = true;

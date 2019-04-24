@@ -53,7 +53,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(1296, 493);
+            this.groupControl2.Size = new System.Drawing.Size(1296, 509);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -63,7 +63,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(2, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(1292, 489);
+            this.layoutControl2.Size = new System.Drawing.Size(1292, 505);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -74,16 +74,16 @@
             this.layoutControlGroup2.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1292, 489);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1292, 505);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.windowsUIButtonPanel1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 493);
+            this.panelControl1.Location = new System.Drawing.Point(0, 509);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1296, 116);
+            this.panelControl1.Size = new System.Drawing.Size(1296, 100);
             this.panelControl1.TabIndex = 4;
             // 
             // windowsUIButtonPanel1
@@ -94,7 +94,7 @@
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(2, 2);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1292, 112);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1292, 96);
             this.windowsUIButtonPanel1.TabIndex = 0;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 

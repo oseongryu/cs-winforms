@@ -18,7 +18,7 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
         public MyLayoutControl01()
         {
             InitializeComponent();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit() { Location = new System.Drawing.Point(20, 45), Name = "textEdit1", Size = new System.Drawing.Size(100, 20), TabIndex = 0 };
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit() { Location = new Point(20, 45), Name = "textEdit1", Size = new Size(100, 20), TabIndex = 0 };
             this.groupControlRight.Controls.Add(this.textEdit1);
             WindowsUIButton btn1 = new WindowsUIButton("Btn1", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/refresh_16x16.png") });
             WindowsUIButton btn2 = new WindowsUIButton("Btn2", true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/add_16x16.png") });

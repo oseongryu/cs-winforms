@@ -1,0 +1,9 @@
+<config>
+    <Age>20</Age>
+    <ID>ID</ID>
+    <Pw>password</Pw>
+    <Name>
+        <성>홍</성>
+        <이름>길동</이름>
+    </Name>
+</config>

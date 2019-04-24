@@ -42,7 +42,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
         void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //MessageBox.Show("");
-            System.Data.DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             string cellValue = gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, "Age").ToString();
             MessageBox.Show(cellValue);
         }

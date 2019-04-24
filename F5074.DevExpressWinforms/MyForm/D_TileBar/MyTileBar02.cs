@@ -41,16 +41,16 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 string a = this.slueSelect.EditValue == null ? "" : this.slueSelect.EditValue.ToString();
                 //MessageBox.Show(a);
                 this.tableLayoutPanel1.ColumnCount = 1;
-                this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
                 this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-                this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+                this.tableLayoutPanel1.Location = new Point(0, 0);
                 this.tableLayoutPanel1.Name = "tableLayoutPanel1";
                 this.tableLayoutPanel1.RowCount = 4;
-                this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-                this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-                this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-                this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-                this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 526);
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+                this.tableLayoutPanel1.Size = new Size(1183, 526);
                 this.tableLayoutPanel1.TabIndex = 0;
 
                 this.tableLayoutPanel1.Controls.Add(new MyUserControl01("설비1",Color.DodgerBlue, "53%", "00:23:20", "10%", 10), 0, 0);

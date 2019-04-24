@@ -58,7 +58,7 @@ namespace F5074.DevExpressWinforms.MyCommon
                     SearchSHPFiles(d);
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return null;
             }

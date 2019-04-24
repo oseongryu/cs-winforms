@@ -68,7 +68,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             return tbl;
         }
 
-        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        private void gridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
             if (e.Column != view.Columns["Name"])

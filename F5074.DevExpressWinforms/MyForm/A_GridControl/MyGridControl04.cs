@@ -98,7 +98,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
             //string a = "NAME_BC".Split('_')[0];
             //MessageBox.Show(a);
-            System.Data.DataRow focusedRow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            DataRow focusedRow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
             //_dtOrderList = new DataTable();
             _dtOrderList = gridControl1.DataSource as DataTable;
             DataTable dt = _dtOrderList.Clone();
