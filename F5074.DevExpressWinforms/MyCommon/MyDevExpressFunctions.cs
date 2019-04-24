@@ -1,16 +1,78 @@
 ﻿using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraLayout;
+using F5074.DevExpressWinforms.MyUserControl;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 
 namespace F5074.DevExpressWinforms.MyCommon
 {
     public class MyDevExpressFunctions
     {
+        public static void MakeLayoutContol(LayoutControlGroup layoutControlGroup, string _valString)
+        {
+            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
+
+            layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            layoutControlGroup.GroupBordersVisible = false;
+            layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+            layoutControlGroup.Location = new Point(0, 0);
+            layoutControlGroup.Name = "layoutControlGroup";
+
+            layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 100D, SizeType = SizeType.Percent });
+
+            for (int x = 0; x < resultList.Count + 1; x++)
+            {
+                layoutControlGroup.OptionsTableLayoutGroup.RowDefinitions.Add(new RowDefinition() { Height = 100D, SizeType = SizeType.Absolute });
+            }
+
+            layoutControlGroup.Size = new Size(796, 620);
+            layoutControlGroup.TextVisible = false;
+
+
+            LayoutControlItem controlItem;
+            MyUserControl01 userControl;
+            for (int x = 0; x < resultList.Count; x++)
+            {
+                controlItem = new LayoutControlItem() { TextVisible = false };
+                controlItem.OptionsTableLayoutItem.RowIndex = x;
+                // Run 초록
+                if (resultList[x].STATE.ToString() == "Run")
+                {
+                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x3E, 0x70, 0x38), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                    controlItem.Control = userControl;
+                }
+                else if (resultList[x].STATE.ToString() == "Idle" || resultList[x].STATE.ToString() == "Ready")
+                {
+                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.DarkGray, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+
+                    controlItem.Control = userControl;
+                }
+                else if (resultList[x].STATE.ToString() == "Down")
+                {
+                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.OrangeRed, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+
+                    controlItem.Control = userControl;
+                }
+                else if (resultList[x].STATE.ToString() == "SetUp")
+                {
+                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x00, 0x73, 0xC4), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                    controlItem.Control = userControl;
+                }
+
+                layoutControlGroup.Items.AddRange(new BaseLayoutItem[] { controlItem });
+
+            }
+
+        }
+
         public static void MakeWindowsUIButtonPanel(WindowsUIButtonPanel currentPanel, string[] arrString)
         {
             //for (int x = 0; x < arrString.Length; x++)

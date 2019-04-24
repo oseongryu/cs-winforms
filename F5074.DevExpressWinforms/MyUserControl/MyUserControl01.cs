@@ -49,7 +49,8 @@ namespace F5074.DevExpressWinforms.MyUserControl
             tile1.AppearanceItem.Normal.BackColor = eqlColor;
             tile1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             tile1.Elements.Add(new TileItemElement() { Text = "", Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/gauges/gaugestylethreeforthcircular_32x32.png"), ImageAlignment = TileItemContentAlignment.BottomRight });
-            tile1.Elements.Add(new TileItemElement() { Text = string.Format("<size=12>{0}</size><br><size=8>Equipment<br>running rate</size>", eqpName), TextAlignment = TileItemContentAlignment.TopLeft });
+            tile1.Elements.Add(new TileItemElement() { Text = string.Format("<size=8>{0}</size>", eqpName), TextAlignment = TileItemContentAlignment.TopLeft });
+            //tile1.Elements.Add(new TileItemElement() { Text = string.Format("<size=8>{0}</size><br><size=8>Equipment<br>running rate</size>", eqpName), TextAlignment = TileItemContentAlignment.TopLeft });
             group1.Items.Add(tile1);
 
             tile1.ItemClick += Tile1_ItemClick;
