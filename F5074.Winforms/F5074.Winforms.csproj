@@ -70,7 +70,14 @@
     <Compile Include="MyForm\MyCefSharp01.Designer.cs">
       <DependentUpon>MyCefSharp01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\MyWebClient01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\MyWebClient01.Designer.cs">
+      <DependentUpon>MyWebClient01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
+    <Compile Include="MyResources\WebFile.cs" />
     <Compile Include="MyUserControl\TestUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="MyForm\MyCefSharp01.resx">
       <DependentUpon>MyCefSharp01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\MyWebClient01.resx">
+      <DependentUpon>MyWebClient01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\TestUserControl.resx">
       <DependentUpon>TestUserControl.cs</DependentUpon>
