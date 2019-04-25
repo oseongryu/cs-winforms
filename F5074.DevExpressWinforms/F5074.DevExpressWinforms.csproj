@@ -463,7 +463,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\F5074.Winforms\F5074.Winforms.csproj">
+      <Project>{38cfed43-2f87-4389-ad57-0ed198363ef4}</Project>
+      <Name>F5074.Winforms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
