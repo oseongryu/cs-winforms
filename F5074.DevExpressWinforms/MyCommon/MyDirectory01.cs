@@ -34,7 +34,16 @@ namespace F5074.DevExpressWinforms.MyCommon
             {
                 if (!s.Contains("Designer"))
                 {
-                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last() });
+                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.DevExpressWinforms" });
+                }
+            }
+
+            files = Directory.GetFiles("C:\\DEV\\Repos\\cs_winforms\\F5074.Winforms\\MyForm", "*.cs", SearchOption.AllDirectories);
+            foreach (string s in files)
+            {
+                if (!s.Contains("Designer"))
+                {
+                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.Winforms" });
                 }
             }
             return result;
@@ -69,6 +78,7 @@ namespace F5074.DevExpressWinforms.MyCommon
             public string MenuFullPath { get; set; }
             public string MenuName { get; set; }
             public string ClassName { get; set; }
+            public string AssemblyName { get; set; }
         }
 
     }

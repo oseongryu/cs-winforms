@@ -26,7 +26,8 @@ namespace F5074.DevExpressWinforms
         public XtraTabControl ParentTab { get; set; }
         private string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
         private List<MenuVo> resultList;
-
+        private string programPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        Assembly assembly;
         public MyMainForm()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace F5074.DevExpressWinforms
             }
             this.xtraTabControl1.TabPages.Add("Main");
             this.dockManager1.DockingOptions.ShowCloseButton = false;
+
+            
         }
 
         private void treeList1_DoubleClick(object sender, EventArgs e)
@@ -55,16 +58,25 @@ namespace F5074.DevExpressWinforms
                 //string className = "F5074.DevExpressWinforms.MyForm.D_TileBar.MyTileBar03";
                 string className = "";
                 //string[] arrSplit = Regex.Split(resultList[0].MenuFullPath, "\r\n\r\n");
-                string arrSplit = Path.GetDirectoryName(resultList[2].MenuFullPath).Split(Path.DirectorySeparatorChar).Last();
-
+                //string arrSplit = Path.GetDirectoryName(resultList[2].MenuFullPath).Split(Path.DirectorySeparatorChar).Last();
+                
                 for (int x = 0; x < resultList.Count; x++)
                 {
-                    if (resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                    if (resultList[x].AssemblyName == "F5074.DevExpressWinforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
                     {
-                        className = "F5074.DevExpressWinforms.MyForm." + resultList[x].ClassName +"."+ resultList[x].MenuName; break;
+                        className = "F5074.DevExpressWinforms.MyForm." + resultList[x].ClassName +"."+ resultList[x].MenuName;
+                        assembly = Assembly.GetExecutingAssembly();
+
+                        break;
+                    }
+                    else if (resultList[x].AssemblyName == "F5074.Winforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                    {
+                        className = "F5074.Winforms." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                        assembly = Assembly.LoadFrom(programPath + "\\F5074.WInforms.dll");
+                        break;
                     }
                 }
-                Assembly assembly = Assembly.GetExecutingAssembly();
+
                 Type t = assembly.GetType(className);
                 string classNamespace = t.Namespace;
                 Object obj = Activator.CreateInstance(t);
