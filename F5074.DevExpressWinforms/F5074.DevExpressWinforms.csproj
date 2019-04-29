@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{26248A03-0E03-4370-805A-D2F6E8A2478E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>F5074.DevExpressWinforms</RootNamespace>
     <AssemblyName>F5074.DevExpressWinforms</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -451,7 +451,6 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl01.resx">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -482,12 +481,6 @@
     <Content Include="MyResources\MenuTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\F5074.Winforms\F5074.Winforms.csproj">
-      <Project>{38cfed43-2f87-4389-ad57-0ed198363ef4}</Project>
-      <Name>F5074.Winforms</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
