@@ -18,8 +18,7 @@ namespace F5074.DevExpressWinforms.MyCommon
     {
         public static void MakeLayoutContol(LayoutControlGroup layoutControlGroup, string _valString)
         {
-            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
-
+            List<DataFourVo> resultList = new MyDatabaseConnect01().connection6(_valString);
             layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             layoutControlGroup.GroupBordersVisible = false;
             layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
@@ -43,30 +42,31 @@ namespace F5074.DevExpressWinforms.MyCommon
             {
                 controlItem = new LayoutControlItem() { TextVisible = false };
                 controlItem.OptionsTableLayoutItem.RowIndex = x;
-                // Run 초록
-                if (resultList[x].STATE.ToString() == "Run")
-                {
-                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x3E, 0x70, 0x38), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
-                    controlItem.Control = userControl;
-                }
-                else if (resultList[x].STATE.ToString() == "Idle" || resultList[x].STATE.ToString() == "Ready")
-                {
-                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.DarkGray, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                //// Run 초록
+                //if (resultList[x].STATE.ToString() == "Run")
+                //{
+                //    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x3E, 0x70, 0x38), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                //    controlItem.Control = userControl;
+                //}
+                //else if (resultList[x].STATE.ToString() == "Idle" || resultList[x].STATE.ToString() == "Ready")
+                //{
+                //    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.DarkGray, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
 
-                    controlItem.Control = userControl;
-                }
-                else if (resultList[x].STATE.ToString() == "Down")
-                {
-                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.OrangeRed, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                //    controlItem.Control = userControl;
+                //}
+                //else if (resultList[x].STATE.ToString() == "Down")
+                //{
+                //    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.OrangeRed, 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
 
-                    controlItem.Control = userControl;
-                }
-                else if (resultList[x].STATE.ToString() == "SetUp")
-                {
-                    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x00, 0x73, 0xC4), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
-                    controlItem.Control = userControl;
-                }
-
+                //    controlItem.Control = userControl;
+                //}
+                //else if (resultList[x].STATE.ToString() == "SetUp")
+                //{
+                //    userControl = new MyUserControl01(resultList[x].EQP_DESC.ToString() + (x + 1), Color.FromArgb(0x00, 0x73, 0xC4), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 10 + new Random().Next(-5, 5));
+                //    controlItem.Control = userControl;
+                //}
+                userControl = new MyUserControl01(resultList[x].EQP_ID.ToString(), Color.FromArgb(0x00, 0x73, 0xC4), 40 + new Random().Next(-20, 40) + " %", "00:23:20", 5 + new Random().Next(-3, 3) + " %", 100 + new Random().Next(-5, 5));
+                controlItem.Control = userControl;
                 layoutControlGroup.Items.AddRange(new BaseLayoutItem[] { controlItem });
 
             }

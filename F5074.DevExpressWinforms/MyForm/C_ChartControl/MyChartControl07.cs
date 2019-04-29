@@ -22,7 +22,8 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
 
 
             List< DataFourVo> resultList =  new MyDatabaseConnect01().connection4("");
-
+            this.chartControl1.AxisScaleChanged += ChartControl1_AxisScaleChanged;
+            this.chartControl1.CustomDrawAxisLabel += ChartControl1_CustomDrawAxisLabel;
 
 
             int maxVal = resultList.Count;
@@ -91,12 +92,11 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             ((XYDiagram)chartControl1.Diagram).EnableAxisXScrolling = false;
             ((XYDiagram)chartControl1.Diagram).EnableAxisYScrolling = true;
             //((XYDiagram)chartControl1.Diagram).AxisY.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute;
-            //((XYDiagram)chartControl1.Diagram).AxisY.DateTimeScaleOptions.GridSpacing = 2;
-            //((XYDiagram)chartControl1.Diagram).AxisY.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Hour;
+            ((XYDiagram)chartControl1.Diagram).AxisY.DateTimeScaleOptions.GridSpacing = 1;
+            ((XYDiagram)chartControl1.Diagram).AxisY.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Hour;
             ((XYDiagram)chartControl1.Diagram).AxisY.WholeRange.SetMinMaxValues(DateTime.Now.AddHours(-48), DateTime.Now.AddHours(0));
             ((XYDiagram)chartControl1.Diagram).AxisY.VisualRange.SetMinMaxValues(DateTime.Now.AddHours(-24), DateTime.Now.AddHours(0));
-
-
+            //((XYDiagram)chartControl1.Diagram).AxisY.Label.TextPattern = "{A:HH:mm}";
 
             //maxVal = 48;
             //for (int x = 0; x < maxVal; x++)
@@ -159,6 +159,26 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             //((XYDiagram)chartControl2.Diagram).EnableAxisYScrolling = true;
             //((XYDiagram)chartControl2.Diagram).AxisY.WholeRange.SetMinMaxValues(DateTime.Now.Date.AddHours(-48), DateTime.Now.Date.AddHours(0));
             //((XYDiagram)chartControl2.Diagram).AxisY.VisualRange.SetMinMaxValues(DateTime.Now.Date.AddHours(-24), DateTime.Now.Date.AddHours(0));
+        }
+
+        private void ChartControl1_CustomDrawAxisLabel(object sender, CustomDrawAxisLabelEventArgs e)
+        {
+
+            ((XYDiagram)chartControl1.Diagram).AxisY.Label.TextPattern = "{A:HH:mm}";
+        }
+
+        private void ChartControl1_AxisScaleChanged(object sender, AxisScaleChangedEventArgs e)
+        {
+            // https://documentation.devexpress.com/WindowsForms/5877/Controls-and-Libraries/Chart-Control/Examples/Creating-Charts/Data-Representation/How-to-Change-the-Display-Format-for-Axis-Labels
+            // https://www.devexpress.com/Support/Center/Question/Details/T692000/how-to-customize-the-axis-label-text-pattern
+            if (e.Axis is AxisY)
+            {
+                double gridSpacing = Convert.ToDouble(e.GridSpacingChange.NewValue);
+                string grdStr = gridSpacing.ToString();
+                int len = grdStr.Substring(grdStr.IndexOf(".") + 1).Length;
+                ((XYDiagram)chartControl1.Diagram).AxisY.Label.TextPattern = "{V:n" + len.ToString() + "}";
+            }
+            //((XYDiagram)chartControl1.Diagram).AxisY.Label.TextPattern = "{S:yy-M-d H:mm:ss}";
         }
     }
 }

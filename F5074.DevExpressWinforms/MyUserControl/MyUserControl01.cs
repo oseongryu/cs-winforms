@@ -119,7 +119,7 @@ namespace F5074.DevExpressWinforms.MyUserControl
         private void Tile1_ItemClick(object sender, TileItemEventArgs e)
         {
             MyChartControl05 dialog = new MyChartControl05();
-            dialog.Width = 1000;
+            dialog.Width = 1200;
             dialog.Height = 700;
             dialog.ShowDialog();
 
@@ -160,8 +160,5 @@ namespace F5074.DevExpressWinforms.MyUserControl
 
         }
 
-        private void labelControl5_Click(object sender, EventArgs e)
-        {
-                    }
     }
 }
