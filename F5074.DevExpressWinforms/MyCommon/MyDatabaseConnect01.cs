@@ -211,6 +211,49 @@ namespace F5074.DevExpressWinforms.MyCommon
             return resultList;
         }
 
+        public List<DataFourVo> connection4(string _val)
+        {
+            List<DataFourVo> resultList = new List<DataFourVo>();
+            try
+            {
+                foreach (string line in File.ReadLines("C:\\DEV\\server.txt", Encoding.UTF8))
+                {
+                    oraCon = line;
+                }
+
+                using (OracleConnection conn = new OracleConnection(oraCon))
+                {
+                    conn.Open();
+                    string sql = new MyXMLReader().Read("sqlfour");
+                    using (OracleCommand comm = new OracleCommand(sql, conn))
+                    {
+                        using (OracleDataReader rdr = comm.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                DataFourVo vo = new DataFourVo()
+                                {
+                                    SITE = rdr.GetValue(rdr.GetOrdinal("SITE")),
+                                    EQP_ID = rdr.GetValue(rdr.GetOrdinal("EQP_ID")),
+                                    EQP_NO = rdr.GetValue(rdr.GetOrdinal("EQP_NO")),
+                                    STATUS = rdr.GetValue(rdr.GetOrdinal("STATUS")),
+                                    START_TIME = rdr.GetValue(rdr.GetOrdinal("START_TIME")),
+                                    END_TIME = rdr.GetValue(rdr.GetOrdinal("END_TIME")),
+                                    DIFF_TIME = rdr.GetValue(rdr.GetOrdinal("DIFF_TIME"))
+                                };
+                                resultList.Add(vo);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            return resultList;
+        }
+
         public class DataVo
         {
             public object EQP_ID { get; set; }
@@ -255,6 +298,17 @@ namespace F5074.DevExpressWinforms.MyCommon
             public object PROCESS_NAME { get; set; }
             public object LOT_ID { get; set; }
             public object WC_NAME { get; set; }
+        }
+
+        public class DataFourVo
+        {
+            public object SITE { get; set; }
+            public object EQP_ID { get; set; }
+            public object EQP_NO { get; set; }
+            public object STATUS { get; set; }
+            public object START_TIME { get; set; }
+            public object END_TIME { get; set; }
+            public object DIFF_TIME { get; set; }
         }
 
     }

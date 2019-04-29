@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.UserSkins;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -14,7 +17,7 @@ namespace F5074.DevExpressWinforms
         /// </summary>
         [STAThread]
         static void Main()
-        {
+       {
             DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new Font("맑은 고딕", 9);
             DevExpress.XtraEditors.WindowsFormsSettings.DefaultMenuFont = new Font("맑은 고딕", 9);
             DevExpress.XtraEditors.WindowsFormsSettings.DefaultPrintFont = new Font("맑은 고딕", 9);
@@ -22,9 +25,15 @@ namespace F5074.DevExpressWinforms
             //This set the style to use skin technology
             DevExpress.LookAndFeel.UserLookAndFeel.Default.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             //Here we specify the skin to use by its name           
-            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2013");
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2013");
             //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Black");
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Colorful");
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Metropolis Dark");
+            //BonusSkins.Register();
+            //SkinManager.EnableFormSkins();
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetStyle(LookAndFeelStyle.Skin, false, false, "Metropolis Dark");
+
+
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Colorful");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MyMainForm() { WindowState= FormWindowState.Maximized});

@@ -39,6 +39,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.Charts.v17.1.Core.dll</HintPath>
@@ -271,6 +272,18 @@
     <Compile Include="MyForm\C_ChartControl\MyChartControl05.Designer.cs">
       <DependentUpon>MyChartControl05.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl06.Designer.cs">
+      <DependentUpon>MyChartControl06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl07.Designer.cs">
+      <DependentUpon>MyChartControl07.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +408,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl05.resx">
       <DependentUpon>MyChartControl05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl06.resx">
+      <DependentUpon>MyChartControl06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl07.resx">
+      <DependentUpon>MyChartControl07.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx">
       <DependentUpon>ucValuePresenter.cs</DependentUpon>
