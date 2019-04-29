@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.DevExpressWinforms", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.WinformsLauncher", "F5074.WinformsLauncher\F5074.WinformsLauncher.csproj", "{DB98F541-EAFE-4034-A748-C51EB8D9CF48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.WPF", "F5074.WPF\F5074.WPF.csproj", "{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB98F541-EAFE-4034-A748-C51EB8D9CF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB98F541-EAFE-4034-A748-C51EB8D9CF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB98F541-EAFE-4034-A748-C51EB8D9CF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
