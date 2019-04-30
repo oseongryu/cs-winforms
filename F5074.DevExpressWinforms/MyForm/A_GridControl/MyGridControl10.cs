@@ -106,6 +106,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             {
                 view.SelectRow(rh);
             }
+            this.gridView1.FocusedRowHandle = hi.RowHandle;
         }
         #endregion
     }
