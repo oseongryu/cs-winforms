@@ -62,6 +62,8 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            DataTable gridDataTable = this.gridControl1.DataSource as DataTable;
+            MessageBox.Show(gridDataTable.Rows[0]["Count"].ToString());
 
             //https://www.devexpress.com/Support/Center/Question/Details/T354790/return-only-gridmultiselectmode-checkboxrowselect-rows-without-looping
             ColumnView view = gridControl1.MainView as ColumnView;
