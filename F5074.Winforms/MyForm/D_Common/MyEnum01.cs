@@ -9,20 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using F5074.Winforms.MyResources;
 
-namespace F5074.Winforms.TabFolder
+namespace F5074.Winforms.MyForm.D_Common
 {
-    public partial class A_Enum : UserControl
+    public partial class MyEnum01 : UserControl
     {
-
-
-        public A_Enum()
+        public MyEnum01()
         {
             InitializeComponent();
             MakeParameters();
             EnumTest();
-
         }
-
         private void EnumTest()
         {
             for (int x = 0; x < Enum.GetNames(typeof(ClassType)).Length; x++)
@@ -39,7 +35,7 @@ namespace F5074.Winforms.TabFolder
 
         enum DBIndex
         {
-              ORDER_QTY
+            ORDER_QTY
             , END_DATE_TIME
             , PRODUCT_NAME
             , END_QTY
@@ -50,7 +46,7 @@ namespace F5074.Winforms.TabFolder
 
         enum ClassType
         {
-              A_DataTable
+            A_DataTable
             , B_TreeList
             , C_ButtonImage
             , D_GridControl
@@ -93,7 +89,7 @@ namespace F5074.Winforms.TabFolder
 
         enum mama
         {
-              txtPROD_ORDER_NUMBER
+            txtPROD_ORDER_NUMBER
             , txtSITE
             , txtEQP_LOTSN
             , txtEQP_LOTSN_SEQ
@@ -121,7 +117,7 @@ namespace F5074.Winforms.TabFolder
         }
         enum mama2
         {
-              txtSapResult
+            txtSapResult
             , txtSapActgu
             , txtE_MSG
             , txtE_RUECK

@@ -1,6 +1,6 @@
-﻿namespace F5074.Winforms.TabFolder
+﻿namespace F5074.Winforms.MyForm.C_WebClient
 {
-    partial class B_UserControl
+    partial class MyWebClient01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,39 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.testUserControl1 = new F5074.Winforms.MyUserControl.TestUserControl();
-            this.testUserControl2 = new F5074.Winforms.MyUserControl.TestUserControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // testUserControl1
+            // webBrowser1
             // 
-            this.testUserControl1.Location = new System.Drawing.Point(15, 17);
-            this.testUserControl1.Name = "testUserControl1";
-            this.testUserControl1.Size = new System.Drawing.Size(310, 41);
-            this.testUserControl1.TabIndex = 1;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1203, 580);
+            this.webBrowser1.TabIndex = 1;
             // 
-            // testUserControl2
-            // 
-            this.testUserControl2.Location = new System.Drawing.Point(15, 64);
-            this.testUserControl2.Name = "testUserControl2";
-            this.testUserControl2.Size = new System.Drawing.Size(310, 41);
-            this.testUserControl2.TabIndex = 2;
-            // 
-            // B_UserControl
+            // MyWebClient01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.testUserControl2);
-            this.Controls.Add(this.testUserControl1);
-            this.Name = "B_UserControl";
-            this.Size = new System.Drawing.Size(828, 468);
+            this.Controls.Add(this.webBrowser1);
+            this.Name = "MyWebClient01";
+            this.Size = new System.Drawing.Size(1203, 580);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MyUserControl.TestUserControl testUserControl1;
-        private MyUserControl.TestUserControl testUserControl2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace F5074.Winforms.MyForm
+﻿namespace F5074.Winforms.MyForm.B_CefSharp
 {
     partial class MyCefSharp01
     {
@@ -36,7 +36,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 486);
+            this.panel1.Size = new System.Drawing.Size(1256, 591);
             this.panel1.TabIndex = 0;
             // 
             // MyCefSharp01
@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "MyCefSharp01";
-            this.Size = new System.Drawing.Size(880, 486);
+            this.Size = new System.Drawing.Size(1256, 591);
             this.ResumeLayout(false);
 
         }

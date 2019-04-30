@@ -11,13 +11,14 @@ using System.Net;
 using System.IO;
 using F5074.Winforms.MyResources;
 
-namespace F5074.Winforms.MyForm
+namespace F5074.Winforms.MyForm.C_WebClient
 {
     public partial class MyWebClient01 : UserControl
     {
         string url = @"http://kostat.go.kr/file_total/kor3/korIp1_14.pdf";
         private BackgroundWorker worker = null;
         WebClient myWebClient = new WebClient();
+
         public MyWebClient01()
         {
             InitializeComponent();

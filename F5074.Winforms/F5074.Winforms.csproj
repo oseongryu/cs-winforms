@@ -48,9 +48,12 @@
     <Reference Include="CefSharp.WinForms">
       <HintPath>bin\Debug\CefSharp.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +62,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -67,19 +72,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\MyCefSharp01.cs">
+    <Compile Include="MyForm\A_WPF\MyWPFControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\MyCefSharp01.Designer.cs">
+    <Compile Include="MyForm\A_WPF\MyWPFControl01.Designer.cs">
+      <DependentUpon>MyWPFControl01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\B_CefSharp\MyCefSharp01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\B_CefSharp\MyCefSharp01.Designer.cs">
       <DependentUpon>MyCefSharp01.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\MyWebClient01.cs">
+    <Compile Include="MyForm\C_WebClient\MyWebClient01.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\MyWebClient01.Designer.cs">
+    <Compile Include="MyForm\C_WebClient\MyWebClient01.Designer.cs">
       <DependentUpon>MyWebClient01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\D_Common\MyEnum01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyEnum01.Designer.cs">
+      <DependentUpon>MyEnum01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyTreeNode01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyTreeNode01.Designer.cs">
+      <DependentUpon>MyTreeNode01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyUserControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyUserControl01.Designer.cs">
+      <DependentUpon>MyUserControl01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
+    <Compile Include="MyResources\MyReadTextFile.cs" />
     <Compile Include="MyResources\WebFile.cs" />
     <Compile Include="MyUserControl\TestUserControl.cs">
       <SubType>UserControl</SubType>
@@ -89,35 +119,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabFolder\A_Enum.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\A_Enum.Designer.cs">
-      <DependentUpon>A_Enum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\B_UserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\B_UserControl.Designer.cs">
-      <DependentUpon>B_UserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\C_ReadTextFile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\C_ReadTextFile.Designer.cs">
-      <DependentUpon>C_ReadTextFile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabFolder\D_TreeNode.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabFolder\D_TreeNode.Designer.cs">
-      <DependentUpon>D_TreeNode.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MyForm\MyCefSharp01.resx">
+    <EmbeddedResource Include="MyForm\A_WPF\MyWPFControl01.resx">
+      <DependentUpon>MyWPFControl01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\B_CefSharp\MyCefSharp01.resx">
       <DependentUpon>MyCefSharp01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\MyWebClient01.resx">
+    <EmbeddedResource Include="MyForm\C_WebClient\MyWebClient01.resx">
       <DependentUpon>MyWebClient01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MyEnum01.resx">
+      <DependentUpon>MyEnum01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MyTreeNode01.resx">
+      <DependentUpon>MyTreeNode01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MyUserControl01.resx">
+      <DependentUpon>MyUserControl01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\TestUserControl.resx">
       <DependentUpon>TestUserControl.cs</DependentUpon>
@@ -132,18 +150,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TabFolder\A_Enum.resx">
-      <DependentUpon>A_Enum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\B_UserControl.resx">
-      <DependentUpon>B_UserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\C_ReadTextFile.resx">
-      <DependentUpon>C_ReadTextFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabFolder\D_TreeNode.resx">
-      <DependentUpon>D_TreeNode.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,5 +168,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\F5074.WPF\F5074.WPF.csproj">
+      <Project>{ee8e4138-434e-4f2b-a02a-dd46dcac24d4}</Project>
+      <Name>F5074.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,4 @@
-﻿using F5074.Winforms.TabFolder;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using F5074.Winforms.MyUserControl;
 using F5074.Winforms.MyForm;
+using F5074.Winforms.MyForm.B_CefSharp;
 
 namespace F5074.Winforms
 {
@@ -51,60 +51,60 @@ namespace F5074.Winforms
                 //    formTab2.Show();
                 //    break;
 
-                case "A_Enum":
-                    //FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-                    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    //tabPage.Controls.Add(formTab);
-                    //this.tabControl1.Controls.Add(tabPage);
-                    //this.tabControl1.SelectedTab = tabPage;
-                    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
-                    //formTab.Show();
+                //case "A_Enum":
+                //    //FormTab1 formTab = new FormTab1() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                //    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    //tabPage.Controls.Add(formTab);
+                //    //this.tabControl1.Controls.Add(tabPage);
+                //    //this.tabControl1.SelectedTab = tabPage;
+                //    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
+                //    //formTab.Show();
 
-                    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    myTabPage.Controls.Add(new A_Enum() { Dock = DockStyle.Fill });
-                    this.tabControl1.TabPages.Add(myTabPage);
-                    this.tabControl1.SelectedTab = myTabPage;
-                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
-                    break;
+                //    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    myTabPage.Controls.Add(new A_Enum() { Dock = DockStyle.Fill });
+                //    this.tabControl1.TabPages.Add(myTabPage);
+                //    this.tabControl1.SelectedTab = myTabPage;
+                //    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
+                //    break;
 
-                case "B_UserControl":
-                    //FormTab2 formTab2 = new FormTab2() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-                    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    //tabPage.Controls.Add(formTab2);
-                    //this.tabControl1.Controls.Add(tabPage);
-                    //this.tabControl1.SelectedTab = tabPage;
-                    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
-                    //formTab2.Show();
+                //case "B_UserControl":
+                //    //FormTab2 formTab2 = new FormTab2() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                //    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    //tabPage.Controls.Add(formTab2);
+                //    //this.tabControl1.Controls.Add(tabPage);
+                //    //this.tabControl1.SelectedTab = tabPage;
+                //    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
+                //    //formTab2.Show();
 
-                    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    myTabPage.Controls.Add(new B_UserControl() { Dock = DockStyle.Fill });
-                    tabControl1.TabPages.Add(myTabPage);
-                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
-                    break;
+                //    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    myTabPage.Controls.Add(new B_UserControl() { Dock = DockStyle.Fill });
+                //    tabControl1.TabPages.Add(myTabPage);
+                //    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
+                //    break;
 
-                case "C_ReadTextFile":
-                    //C_ReadTextFile formTab3 = new C_ReadTextFile() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
-                    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    //tabPage.Controls.Add(formTab3);
-                    //this.tabControl1.Controls.Add(tabPage);
-                    //this.tabControl1.SelectedTab = tabPage;
-                    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
-                    //formTab3.Show();
+                //case "C_ReadTextFile":
+                //    //C_ReadTextFile formTab3 = new C_ReadTextFile() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+                //    //tabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    //tabPage.Controls.Add(formTab3);
+                //    //this.tabControl1.Controls.Add(tabPage);
+                //    //this.tabControl1.SelectedTab = tabPage;
+                //    ////this.tabControl1.TabPages[0].Controls.Add(formTab);
+                //    //formTab3.Show();
 
-                    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    myTabPage.Controls.Add(new C_ReadTextFile() { Dock = DockStyle.Fill });
-                    tabControl1.TabPages.Add(myTabPage);
-                    this.tabControl1.SelectedTab = myTabPage;
-                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
-                    break;
-                case "D_TreeNode":
+                //    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    myTabPage.Controls.Add(new C_ReadTextFile() { Dock = DockStyle.Fill });
+                //    tabControl1.TabPages.Add(myTabPage);
+                //    this.tabControl1.SelectedTab = myTabPage;
+                //    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
+                //    break;
+                //case "D_TreeNode":
 
-                    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
-                    myTabPage.Controls.Add(new D_TreeNode() { Dock = DockStyle.Fill });
-                    tabControl1.TabPages.Add(myTabPage);
-                    this.tabControl1.SelectedTab = myTabPage;
-                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
-                    break;
+                //    myTabPage = new TabPage() { Name = this.treeView1.SelectedNode.Text, Text = this.treeView1.SelectedNode.Text };
+                //    myTabPage.Controls.Add(new D_TreeNode() { Dock = DockStyle.Fill });
+                //    tabControl1.TabPages.Add(myTabPage);
+                //    this.tabControl1.SelectedTab = myTabPage;
+                //    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 1;
+                //    break;
             }
 
         }

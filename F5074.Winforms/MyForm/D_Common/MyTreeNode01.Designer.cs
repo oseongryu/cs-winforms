@@ -1,6 +1,6 @@
-﻿namespace F5074.Winforms.TabFolder
+﻿namespace F5074.Winforms.MyForm.D_Common
 {
-    partial class C_ReadTextFile
+    partial class MyTreeNode01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
-            // C_ReadTextFile
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(42, 42);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(233, 361);
+            this.treeView1.TabIndex = 1;
+            // 
+            // MyTreeNode01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "C_ReadTextFile";
-            this.Size = new System.Drawing.Size(180, 152);
+            this.Controls.Add(this.treeView1);
+            this.Name = "MyTreeNode01";
+            this.Size = new System.Drawing.Size(929, 591);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

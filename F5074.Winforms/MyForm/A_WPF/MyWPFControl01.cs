@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.Winforms.TabFolder
+namespace F5074.Winforms.MyForm.A_WPF
 {
-    public partial class B_UserControl : UserControl
+    public partial class MyWPFControl01 : UserControl
     {
-        public B_UserControl()
+        public MyWPFControl01()
         {
             InitializeComponent();
+
+            // https://shine10e.tistory.com/70
+            this.elementHost1.Child = new F5074.WPF.MainWindow();
         }
     }
 }

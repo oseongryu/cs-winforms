@@ -1,6 +1,6 @@
-﻿namespace F5074.Winforms.TabFolder
+﻿namespace F5074.Winforms.MyForm.D_Common
 {
-    partial class A_Enum
+    partial class MyUserControl01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,31 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.testUserControl1 = new F5074.Winforms.MyUserControl.TestUserControl();
+            this.testUserControl2 = new F5074.Winforms.MyUserControl.TestUserControl();
             this.SuspendLayout();
             // 
-            // textBox1
+            // testUserControl1
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 78);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(993, 355);
-            this.textBox1.TabIndex = 2;
+            this.testUserControl1.Location = new System.Drawing.Point(44, 35);
+            this.testUserControl1.Name = "testUserControl1";
+            this.testUserControl1.Size = new System.Drawing.Size(310, 41);
+            this.testUserControl1.TabIndex = 0;
             // 
-            // A_Enum
+            // testUserControl2
+            // 
+            this.testUserControl2.Location = new System.Drawing.Point(44, 97);
+            this.testUserControl2.Name = "testUserControl2";
+            this.testUserControl2.Size = new System.Drawing.Size(310, 41);
+            this.testUserControl2.TabIndex = 1;
+            // 
+            // MyUserControl01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
-            this.Name = "A_Enum";
-            this.Size = new System.Drawing.Size(1110, 534);
+            this.Controls.Add(this.testUserControl2);
+            this.Controls.Add(this.testUserControl1);
+            this.Name = "MyUserControl01";
+            this.Size = new System.Drawing.Size(1022, 479);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private MyUserControl.TestUserControl testUserControl1;
+        private MyUserControl.TestUserControl testUserControl2;
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.Winforms.TabFolder
+namespace F5074.Winforms.MyForm.D_Common
 {
-    public partial class D_TreeNode : UserControl
+    public partial class MyTreeNode01 : UserControl
     {
-        public D_TreeNode()
+        public MyTreeNode01()
         {
             InitializeComponent();
             InitializeTreeView();

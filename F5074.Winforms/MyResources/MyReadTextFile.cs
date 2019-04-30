@@ -1,25 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
 
-namespace F5074.Winforms.TabFolder
+namespace F5074.Winforms.MyResources
 {
-    public partial class C_ReadTextFile : UserControl
+    class MyReadTextFile
     {
-        public C_ReadTextFile()
-        {
-            InitializeComponent();
-            ReadTextFile();
-
-        }
-
         // http://www.csharp-examples.net/read-text-file/
         //https://rocabilly.tistory.com/114
         private void ReadTextFile()

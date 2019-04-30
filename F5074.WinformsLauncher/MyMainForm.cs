@@ -64,7 +64,7 @@ namespace F5074.WinformsLauncher
                     }
                     else if (resultList[x].AssemblyName == "F5074.Winforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
                     {
-                        className = "F5074.Winforms." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                        className = "F5074.Winforms.MyForm." + resultList[x].ClassName + "." + resultList[x].MenuName;
                         assembly = Assembly.LoadFrom(programPath + "\\F5074.WInforms.dll");
                         break;
                     }

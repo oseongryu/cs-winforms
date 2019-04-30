@@ -1,6 +1,6 @@
-﻿namespace F5074.Winforms.TabFolder
+﻿namespace F5074.Winforms.MyForm.D_Common
 {
-    partial class D_TreeNode
+    partial class MyEnum01
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // treeView1
+            // textBox1
             // 
-            this.treeView1.Location = new System.Drawing.Point(38, 37);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(233, 361);
-            this.treeView1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(98, 111);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(993, 355);
+            this.textBox1.TabIndex = 3;
             // 
-            // D_TreeNode
+            // MyEnum01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.treeView1);
-            this.Name = "D_TreeNode";
-            this.Size = new System.Drawing.Size(710, 450);
+            this.Controls.Add(this.textBox1);
+            this.Name = "MyEnum01";
+            this.Size = new System.Drawing.Size(1189, 577);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
