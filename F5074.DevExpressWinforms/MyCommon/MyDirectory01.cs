@@ -22,28 +22,70 @@ namespace F5074.DevExpressWinforms.MyCommon
                 }
             }
         }
+        public List<MenuVo> SearchAssembly()
+        {
+            // https://dotnetcademy.net/Learn/4/Pages/3
+            // http://www.hoons.net/Board/qacshap/Content/59151
+            List<MenuVo> result = new List<MenuVo>();
+
+
+            Assembly assembly = Assembly.LoadFrom(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\F5074.WInforms.dll");
+            var types = assembly.GetTypes();
+            foreach (var type in types)
+            {
+                var typeInfo = type.GetTypeInfo();
+                if(typeInfo.BaseType != null)
+                {
+                    if (typeInfo.FullName.Contains("F5074.Winforms.MyForm") && typeInfo.BaseType.Name == "UserControl")
+                    {
+                        result.Add(new MenuVo() { Name = type.Name, FullName = type.FullName });
+                        //Console.WriteLine("Type " + type.FullName + " has " + typeInfo.DeclaredProperties.Count().ToString() + " properties");
+                    }
+                }
+
+            }
+            assembly = Assembly.LoadFrom(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\F5074.DevExpressWInforms.dll");
+            types = assembly.GetTypes();
+            foreach (var type in types)
+            {
+                var typeInfo = type.GetTypeInfo();
+                if(typeInfo.BaseType != null)
+                {
+                    if (typeInfo.FullName.Contains("F5074.DevExpressWinforms.MyForm") && typeInfo.BaseType.Name == "UserControl")
+                    {
+                        result.Add(new MenuVo() { Name = type.Name, FullName = type.FullName });
+                        //Console.WriteLine("Type " + type.FullName + " has " + typeInfo.DeclaredProperties.Count().ToString() + " properties");
+                    }
+                }
+            
+            }
+            return result;
+        }
+
 
         public List<MenuVo> SearchFile()
         {
             //Directory : GetFiles(대상폴더, 검색패턴, SearchOption), GetDirectories(대상폴더, 검색패턴, SearchOption)
             //DirectoryInfo : GetFiles(검색패턴, SearchOption), GetDirectories(검색패턴, SearchOption)
             //SearchOption : AllDirectories : 모든 서브디렉토리 검색, TopDirectoryOnly : 지정한 폴더만 검색
-            string[] files = Directory.GetFiles("C:\\DEV\\repos\\cs_winforms\\F5074.DevExpressWinforms\\MyForm", "*.cs", SearchOption.AllDirectories);
+
+
+            string[] files = Directory.GetFiles("C:\\DEV\\Repos\\cs_winforms\\F5074.Winforms\\MyForm", "*.cs", SearchOption.AllDirectories);
             List<MenuVo> result = new List<MenuVo>();
             foreach (string s in files)
             {
                 if (!s.Contains("Designer"))
                 {
-                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.DevExpressWinforms" });
+                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.Winforms" });
                 }
             }
 
-            files = Directory.GetFiles("C:\\DEV\\Repos\\cs_winforms\\F5074.Winforms\\MyForm", "*.cs", SearchOption.AllDirectories);
+            files = Directory.GetFiles("C:\\DEV\\repos\\cs_winforms\\F5074.DevExpressWinforms\\MyForm", "*.cs", SearchOption.AllDirectories);
             foreach (string s in files)
             {
                 if (!s.Contains("Designer"))
                 {
-                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.Winforms" });
+                    result.Add(new MenuVo() { MenuFullPath = s, MenuName = Path.GetFileNameWithoutExtension(s), ClassName = Path.GetDirectoryName(s).Split(Path.DirectorySeparatorChar).Last(), AssemblyName = "F5074.DevExpressWinforms" });
                 }
             }
             return result;
@@ -79,6 +121,8 @@ namespace F5074.DevExpressWinforms.MyCommon
             public string MenuName { get; set; }
             public string ClassName { get; set; }
             public string AssemblyName { get; set; }
+            public string Name { get; set; }
+            public string FullName { get; set; }
         }
 
     }

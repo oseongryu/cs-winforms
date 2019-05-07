@@ -29,11 +29,12 @@ namespace F5074.WinformsLauncher
             this.treeList1.DoubleClick += treeList1_DoubleClick;
             this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] { new DevExpress.XtraTreeList.Columns.TreeListColumn() { Caption = "메뉴", FieldName = "메뉴", MinWidth = 34, Name = "treeListColumn1", Visible = true, VisibleIndex = 0, Width = 300 } });
 
-            resultList = new MyDirectory01().SearchFile();
+            resultList = new MyDirectory01().SearchAssembly();
             resultList.Reverse();   // List Reversing https://stackoverflow.com/questions/3062513/how-can-i-sort-generic-list-desc-and-asc
             for (int x = 0; x < resultList.Count; x++)
             {
-                this.treeList1.AppendNode(new object[] { Text = resultList[x].MenuName }, -1);
+                this.treeList1.AppendNode(new object[] { Text = resultList[x].Name }, -1);
+                //this.treeList1.AppendNode(new object[] { Text = resultList[x].MenuName }, -1);
             }
             this.xtraTabControl1.TabPages.Add("Main");
             this.dockManager1.DockingOptions.ShowCloseButton = false;
@@ -52,19 +53,37 @@ namespace F5074.WinformsLauncher
                 //string[] arrSplit = Regex.Split(resultList[0].MenuFullPath, "\r\n\r\n");
                 //string arrSplit = Path.GetDirectoryName(resultList[2].MenuFullPath).Split(Path.DirectorySeparatorChar).Last();
 
+                //for (int x = 0; x < resultList.Count; x++)
+                //{
+                //    if (resultList[x].AssemblyName == "F5074.DevExpressWinforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                //    {
+                //        className = "F5074.DevExpressWinforms.MyForm." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                //        //assembly = Assembly.GetExecutingAssembly();
+                //        assembly = Assembly.LoadFrom(programPath + "\\F5074.DevExpressWInforms.dll");
+
+                //        break;
+                //    }
+                //    else if (resultList[x].AssemblyName == "F5074.Winforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                //    {
+                //        className = "F5074.Winforms.MyForm." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                //        assembly = Assembly.LoadFrom(programPath + "\\F5074.WInforms.dll");
+                //        break;
+                //    }
+                //}
+
                 for (int x = 0; x < resultList.Count; x++)
                 {
-                    if (resultList[x].AssemblyName == "F5074.DevExpressWinforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                    if (resultList[x].FullName.Contains("F5074.DevExpressWinforms") && resultList[x].Name.Contains(this.treeList1.FocusedValue.ToString()))
                     {
-                        className = "F5074.DevExpressWinforms.MyForm." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                        className = resultList[x].FullName;
                         //assembly = Assembly.GetExecutingAssembly();
                         assembly = Assembly.LoadFrom(programPath + "\\F5074.DevExpressWInforms.dll");
-
                         break;
                     }
-                    else if (resultList[x].AssemblyName == "F5074.Winforms" && resultList[x].MenuFullPath.Contains(this.treeList1.FocusedValue.ToString()))
+                    else if (resultList[x].FullName.Contains("F5074.Winforms") && resultList[x].Name.Contains(this.treeList1.FocusedValue.ToString()))
                     {
-                        className = "F5074.Winforms.MyForm." + resultList[x].ClassName + "." + resultList[x].MenuName;
+                        className = resultList[x].FullName;
+                        //assembly = Assembly.GetExecutingAssembly();
                         assembly = Assembly.LoadFrom(programPath + "\\F5074.WInforms.dll");
                         break;
                     }
