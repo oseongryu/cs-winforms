@@ -241,6 +241,18 @@
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.Designer.cs">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl03.Designer.cs">
+      <DependentUpon>MySpreadsheetControl03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl04.Designer.cs">
+      <DependentUpon>MySpreadsheetControl04.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\C_ChartControl\ModelAssemblyHelper.cs" />
     <Compile Include="MyForm\C_ChartControl\MyChartControl01.cs">
       <SubType>UserControl</SubType>
@@ -283,6 +295,12 @@
     </Compile>
     <Compile Include="MyForm\C_ChartControl\MyChartControl07.Designer.cs">
       <DependentUpon>MyChartControl07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl08.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl08.Designer.cs">
+      <DependentUpon>MyChartControl08.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
@@ -394,6 +412,12 @@
     <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl03.resx">
+      <DependentUpon>MySpreadsheetControl03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl04.resx">
+      <DependentUpon>MySpreadsheetControl04.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl01.resx">
       <DependentUpon>MyChartControl01.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl07.resx">
       <DependentUpon>MyChartControl07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl08.resx">
+      <DependentUpon>MyChartControl08.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx">
       <DependentUpon>ucValuePresenter.cs</DependentUpon>

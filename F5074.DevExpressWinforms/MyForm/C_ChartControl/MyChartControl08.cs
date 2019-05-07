@@ -58,10 +58,10 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             diagram.AxisY.Label.TextPattern = "{A: yy/MM/dd hh:mm}";
             //diagram.AxisY.DateTimeScaleOptions.ScaleMode = ScaleMode.Continuous;
             diagram.AxisY.DateTimeScaleOptions.GridSpacing = 1;
-            diagram.AxisY.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute;
+            //diagram.AxisY.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute;
             //diagram.AxisY.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Hour;
             //diagram.EnableAxisXScrolling = true;
-            diagram.AxisY.WholeRange.SetMinMaxValues(DateTime.Now.AddHours(-48), DateTime.Now.AddHours(0));
+            //diagram.AxisY.WholeRange.SetMinMaxValues(DateTime.Now.AddHours(-48), DateTime.Now.AddHours(0));
 
         }
 
