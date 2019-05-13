@@ -26,6 +26,10 @@ namespace F5074.Winforms.MyForm.C_WebClient
             this.webBrowser1.Navigating += WebBrowser1_Navigating;
             this.webBrowser1.FileDownload += WebBrowser1_FileDownload;
 
+            this.webBrowser1.DocumentCompleted += WebBrowser1_DocumentCompleted;    // 문서가 로드 완료되었을 떄 발생하는 이벤트
+
+
+
             //worker = new BackgroundWorker();
             //worker.WorkerReportsProgress = true;
             //worker.WorkerSupportsCancellation = true;
@@ -41,6 +45,11 @@ namespace F5074.Winforms.MyForm.C_WebClient
             //});
             //th.SetApartmentState(ApartmentState.MTA);
             //th.Start();
+        }
+
+        private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            MessageBox.Show("Test");
         }
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)

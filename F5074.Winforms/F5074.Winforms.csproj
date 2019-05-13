@@ -39,19 +39,29 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CefSharp">
-      <HintPath>bin\Debug\CefSharp.dll</HintPath>
+    <Reference Include="CefSharp, Version=47.0.4.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MyLib\CefSharp.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.Core">
-      <HintPath>bin\Debug\CefSharp.Core.dll</HintPath>
+    <Reference Include="CefSharp.Core, Version=47.0.4.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MyLib\CefSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.WinForms">
-      <HintPath>bin\Debug\CefSharp.WinForms.dll</HintPath>
+    <Reference Include="CefSharp.WinForms, Version=47.0.4.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MyLib\CefSharp.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -164,6 +174,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyLib\CefSharp.Core.dll" />
+    <Content Include="MyLib\CefSharp.dll" />
+    <Content Include="MyLib\CefSharp.WinForms.dll" />
     <Content Include="MyResources\MyTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
