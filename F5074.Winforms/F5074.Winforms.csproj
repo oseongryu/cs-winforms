@@ -106,6 +106,12 @@
     <Compile Include="MyForm\D_Common\MyEnum01.Designer.cs">
       <DependentUpon>MyEnum01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\D_Common\MyPrivateFontCollection01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyPrivateFontCollection01.Designer.cs">
+      <DependentUpon>MyPrivateFontCollection01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\D_Common\MyTreeNode01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <EmbeddedResource Include="MyForm\D_Common\MyEnum01.resx">
       <DependentUpon>MyEnum01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MyPrivateFontCollection01.resx">
+      <DependentUpon>MyPrivateFontCollection01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_Common\MyTreeNode01.resx">
       <DependentUpon>MyTreeNode01.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +169,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="MyLib\Font\fre3of9x.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MyLib\Font\free3of9.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +192,12 @@
     <Content Include="MyLib\CefSharp.Core.dll" />
     <Content Include="MyLib\CefSharp.dll" />
     <Content Include="MyLib\CefSharp.WinForms.dll" />
+    <Content Include="MyLib\Font\free3of9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MyLib\Font\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MyResources\MyTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
