@@ -112,6 +112,12 @@
     <Compile Include="MyForm\D_Common\MyPrivateFontCollection01.Designer.cs">
       <DependentUpon>MyPrivateFontCollection01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\D_Common\MySendKey01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MySendKey01.Designer.cs">
+      <DependentUpon>MySendKey01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\D_Common\MyTreeNode01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_Common\MyPrivateFontCollection01.resx">
       <DependentUpon>MyPrivateFontCollection01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MySendKey01.resx">
+      <DependentUpon>MySendKey01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_Common\MyTreeNode01.resx">
       <DependentUpon>MyTreeNode01.cs</DependentUpon>
