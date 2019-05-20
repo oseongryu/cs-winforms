@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="TestApp" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <typeAlias alias="ReportDTO" type="F5074.MyBatisDataMapper.Service.Dashboard.DashboardVo"/>
+  </alias>
+  <statements>
+    <statement id="SelectList" parameterClass="ReportDTO" resultClass="ReportDTO" >
+      <!--SELECT IF_UT as Name
+        FROM METAL-->
+        SELECT 'aa' as  NAME FROM DUAL
+    </statement>
+  </statements>
+</sqlMap>

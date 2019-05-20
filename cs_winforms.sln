@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.Winforms", "F5074.Winforms\F5074.Winforms.csproj", "{38CFED43-2F87-4389-AD57-0ED198363EF4}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.WinformsLauncher", "F5074.WinformsLauncher\F5074.WinformsLauncher.csproj", "{DB98F541-EAFE-4034-A748-C51EB8D9CF48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.WPF", "F5074.WPF\F5074.WPF.csproj", "{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.MyBatisDataMapper", "F5074.MyBatisDataMapper\F5074.MyBatisDataMapper.csproj", "{CBE0C77D-77A1-4022-A7C8-0EBAC23BDBA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE8E4138-434E-4F2B-A02A-DD46DCAC24D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE0C77D-77A1-4022-A7C8-0EBAC23BDBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE0C77D-77A1-4022-A7C8-0EBAC23BDBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE0C77D-77A1-4022-A7C8-0EBAC23BDBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE0C77D-77A1-4022-A7C8-0EBAC23BDBA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
