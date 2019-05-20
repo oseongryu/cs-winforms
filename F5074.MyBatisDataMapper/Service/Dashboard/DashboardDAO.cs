@@ -10,7 +10,7 @@ namespace F5074.MyBatisDataMapper.Service.Dashboard
 {
     public class DashboardDAO
     {
-        private static ISqlMapper mapper = Properties.EntityMapper;
+        private static ISqlMapper mapper = DBConnection.EntityMapper;
         public static IList<DashboardVo> SelectList(DashboardVo vo)
         {
             return mapper.QueryForList<DashboardVo>("SelectList", vo);

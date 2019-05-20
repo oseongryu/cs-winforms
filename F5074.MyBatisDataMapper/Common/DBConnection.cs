@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace F5074.MyBatisDataMapper.Common
 {
-    public class Properties
+    public class DBConnection
     {
         public static ISqlMapper EntityMapper
         {
