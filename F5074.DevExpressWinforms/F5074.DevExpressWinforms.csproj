@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>F5074.DevExpressWinforms</RootNamespace>
     <AssemblyName>F5074.DevExpressWinforms</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
