@@ -87,7 +87,7 @@
     <Content Include="Lib\IBatisNet.DataMapper.dll" />
     <Content Include="Lib\IBatisNet.DataMapper.xml" />
     <Content Include="Lib\log4net.dll" />
-    <EmbeddedResource Include="Service\Dashboard\dashboard_sqlFile.xml" />
+    <Content Include="Service\Dashboard\dashboard_sqlFile.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log4Net.config">
