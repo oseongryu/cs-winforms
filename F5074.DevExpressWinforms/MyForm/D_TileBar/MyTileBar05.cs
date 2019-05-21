@@ -14,7 +14,6 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using F5074.DevExpressWinforms.MyDialog;
 using DevExpress.Utils;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Customization;
@@ -23,6 +22,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraEditors.ViewInfo;
 using DevExpress.XtraEditors.Drawing;
 using DevExpress.XtraGrid.Columns;
+using F5074.MyBatisDataMapper.Service.Dashboard;
 
 namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 {
@@ -91,7 +91,9 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             {
                 MyDevExpressFunctions.InitSearchLookUpEdit(this.slueSelect, "DEPT_NAME", "DEPT_CODE", true);
                 MyDevExpressFunctions.SetVisibleColumnSearchLookUpEdit(this.slueSelect, new string[] { "DEPT_NAME", "DEPT_CODE" }, new string[] { "부서명", "부서코드" });
-                this.slueSelect.Properties.DataSource = new MyDatabaseConnect01().connection2();
+                this.slueSelect.Properties.DataSource = DashboardDAO.SelectDepartmentList(new DashboardDTO());
+
+
                 //this.slueSelect.EditValueChanged += SlueSelect_EditValueChanged;
                 MyDevExpressFunctions.MakeWindowsUIButtonPanel(this.windowsUIButtonPanel1, new string[] { "검색", "초기화", "구분자", "미리보기", "차트", "작업이동", "구분자", "저장", "프린트" });
                 WindowsUIButton btnSearch = this.windowsUIButtonPanel1.Buttons["검색"] as WindowsUIButton;
@@ -117,7 +119,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 
                 // https://enginhak.tistory.com/entry/XtraGridView-Column-Header-Checkbox-Add
                 this.gridView2.CellValueChanging += GridView2_CellValueChanging;
-                this.gridView2.MouseUp += GridView2_MouseUp;
+                //this.gridView2.MouseUp += GridView2_MouseUp;
                 this.panelComparence.Visible = false;
                 //flowLayoutPanel1.MouseDown += FlowLayoutPanel1_MouseDown;
                 //MyDevExpressFunctions.InitGridControl(this.gridView1, 0);
@@ -174,7 +176,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 //gridView2.OptionsSelection.MultiSelect = true;
                 //gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
                 gridView2.VisibleColumns[2].OptionsColumn.ShowCaption = false;
-                this.gridView2.CustomDrawColumnHeader += GridView2_CustomDrawColumnHeader;
+                //this.gridView2.CustomDrawColumnHeader += GridView2_CustomDrawColumnHeader;
 
 
 
@@ -202,116 +204,69 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             }
         }
 
-        private void GridView2_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left && e.Clicks == 1)
-            {
-                GridView gridview = sender as GridView;
-                if (gridview != null)
-                {
-                    GridHitInfo hitinfo = gridview.CalcHitInfo(e.Location);
 
-                    if (hitinfo.InRow == false && hitinfo.InColumn == true)
+
+        private void RepositoryItemCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+
+            //CheckEdit edit = sender as CheckEdit;
+            //List<DataSevenVo> gridList = this.gridControl2.DataSource as List<DataSevenVo>;
+
+
+            //int _count = 0;
+            //for (int x = 0; x < gridList.Count; x++)
+            //{
+            //    if (gridList[x].CHK2.ToString() == "True") _count += 1;
+
+            //}
+            //if (edit.Checked == true) 
+            //{
+            //    _count += 1;
+            //}
+            //else if(edit.Checked == false)
+            //{
+            //    _count -= 1;
+            //}
+
+            //if (_count >= 1) this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true;
+            //else this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = false;
+
+        }
+        private void GridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                GridView view = sender as GridView;
+                if (e.Column.FieldName == "CHK" && (string)e.Value == "True")
+                {
+                    // https://www.devexpress.com/Support/Center/Question/Details/Q411750/single-selection-checkbox-in-a-grid
+                    int rowHandle = view.GetRowHandle(checkedRowIndex);
+                    view.SetRowCellValue(rowHandle, "CHK", "False");
+                    checkedRowIndex = view.GetDataSourceRowIndex(e.RowHandle);
+                    checkedGridView1 = e.RowHandle;
+                }
+                int _count = 0;
+                if (e.Column.FieldName == "CHK2")
+                {
+                    view.SetRowCellValue(view.GetRowHandle(e.RowHandle), "CHK2", e.Value.ToString());
+                    List<DashboardDTO> gridList = this.gridControl2.DataSource as List<DashboardDTO>;
+
+
+                    for (int x = 0; x < gridList.Count; x++)
                     {
-                        //SetAllCheckBox(!true);
-                        //if (AffectCheckBoxChange != null)
-                        //    AffectCheckBoxChange(this, null);
-                        UnChekAll(gridview);
+                        if (gridList[x].CHK2.ToString() == "True") _count += 1;
+
                     }
 
+                    if (_count >= 1) this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true;
+                    else this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = false;
                 }
-                this.gridView2.RefreshData();
-                DXMouseEventArgs args = DXMouseEventArgs.GetMouseArgs(e);
-                args.Handled = true;
+                //this.gridControl2.EndUpdate();
             }
-        }
-
-
-
-        void DrawCheckBox(Graphics g, Rectangle r, RepositoryItemCheckEdit checkEdit, string isCheck)
-        {
-            DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo info = default(DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo);
-            DevExpress.XtraEditors.Drawing.CheckEditPainter painter = default(DevExpress.XtraEditors.Drawing.CheckEditPainter);
-            DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs args = default(DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs);
-            info = (CheckEditViewInfo)checkEdit.CreateViewInfo();
-            painter = (CheckEditPainter)checkEdit.CreatePainter();
-
-            info.EditValue = isCheck;
-            info.Bounds = r;
-            info.CalcViewInfo(g);
-            args = new DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs(info, new DevExpress.Utils.Drawing.GraphicsCache(g), r);
-            painter.Draw(args);
-            args.Cache.Dispose();
-        }
-
-        private void GridView2_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
-        {
-            if (e.Column == null)
-                return;
-            if (e.Column.AbsoluteIndex != 2)
-                return;
-            Rectangle rect = e.Bounds;
-            rect.Inflate(-1, -1);
-
-            e.Info.InnerElements.Clear();
-            e.Painter.DrawObject(e.Info);
-            string sCheckedState = "";
-            if (GetCheckCount() == this.gridView2.DataRowCount) sCheckedState = "True";
-            else sCheckedState = "False";
-            DrawCheckBox(e.Graphics, rect, e.Column.ColumnEdit as RepositoryItemCheckEdit, sCheckedState);
-            e.Handled = true;
-
-        }
-
-        //// 모두 체크
-        //void CheckAll(GridView gv)
-        //{
-        //    for (int i = 0; i < gv.DataRowCount; i++)
-        //    {
-        //        gv.SetRowCellValue(i, gv.Columns["선택2"], "True");
-        //    }
-        //}
-
-        // 모두 체크 해제
-        void UnChekAll(GridView gv)
-        {
-            if(GetCheckCount() == gv.DataRowCount)
+            catch (Exception ex)
             {
-                for (int i = 0; i < gv.DataRowCount; i++)
-                {
-                    gv.SetRowCellValue(i, "CHK2", (object)"False");
-
-                }
+                MessageBox.Show(ex.Message);
             }
-            else
-            {
-                for (int i = 0; i < gv.DataRowCount; i++)
-                {
-                    gv.SetRowCellValue(i, "CHK2", (object)"True");
-
-                }
-            }
-
-
-
-            //gv.RefreshData();
-        }
-
-        private int GetCheckCount()
-        {
-            int count = 0;
-
-
-            List<DataSevenVo> gridList = this.gridControl2.DataSource as List<DataSevenVo>;
-
-
-            for (int x = 0; x < gridList.Count; x++)
-            {
-                if (gridList[x].CHK2.ToString() == "True") count += 1;
-
-            }
-
-            return count;
         }
 
         private void FlyoutPanel1_ButtonClick(object sender, FlyoutPanelButtonClickEventArgs e)
@@ -326,14 +281,14 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                     case "작업이동":
                         if (FlyoutDialog.Show(this.FindForm(), MyDevExpressFunctions.CreateCloseAction()) == System.Windows.Forms.DialogResult.Yes)
                         {
-                            List<DataSevenVo> gridList = this.gridControl2.DataSource as List<DataSevenVo>;
-                            IList<DataSevenVo> resultList = new List<DataSevenVo>();
+                            List<DashboardDTO> gridList = this.gridControl2.DataSource as List<DashboardDTO>;
+                            IList<DashboardDTO> resultList = new List<DashboardDTO>();
                             for (int x = 0; x < gridList.Count; x++)
                             {
                                 // https://stackoverflow.com/questions/12762617/how-to-get-the-selected-row-values-of-devexpress-xtragrid
                                 if (gridList[x].CHK2.ToString() == "True")
                                 {
-                                    DataSevenVo vo = gridList[x];
+                                    DashboardDTO vo = gridList[x];
                                     vo.EQP_ID = gridList[checkedGridView1].EQP_ID;
                                     vo.ORDER_COUNT = gridList[checkedGridView1].ORDER_COUNT;
                                     resultList.Add(vo);
@@ -363,74 +318,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void RepositoryItemCheckEdit_CheckedChanged(object sender, EventArgs e)
-        {
-
-            //CheckEdit edit = sender as CheckEdit;
-            //List<DataSevenVo> gridList = this.gridControl2.DataSource as List<DataSevenVo>;
-
-
-            //int _count = 0;
-            //for (int x = 0; x < gridList.Count; x++)
-            //{
-            //    if (gridList[x].CHK2.ToString() == "True") _count += 1;
-
-            //}
-            //if (edit.Checked == true) 
-            //{
-            //    _count += 1;
-            //}
-            //else if(edit.Checked == false)
-            //{
-            //    _count -= 1;
-            //}
-
-            //if (_count >= 1) this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true;
-            //else this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = false;
-
-        }
-
-
-
-        private void GridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            try
-            {
-                GridView view = sender as GridView;
-                if (e.Column.FieldName == "CHK" && (string)e.Value == "True")
-                {
-                    // https://www.devexpress.com/Support/Center/Question/Details/Q411750/single-selection-checkbox-in-a-grid
-                    int rowHandle = view.GetRowHandle(checkedRowIndex);
-                    view.SetRowCellValue(rowHandle, "CHK", "False");
-                    checkedRowIndex = view.GetDataSourceRowIndex(e.RowHandle);
-                    checkedGridView1 = e.RowHandle;
-                }
-                int _count = 0;
-                if (e.Column.FieldName == "CHK2")
-                {
-                    view.SetRowCellValue(view.GetRowHandle(e.RowHandle), "CHK2", e.Value.ToString());
-                    List<DataSevenVo> gridList = this.gridControl2.DataSource as List<DataSevenVo>;
-
-
-                    for (int x = 0; x < gridList.Count; x++)
-                    {
-                        if (gridList[x].CHK2.ToString() == "True") _count += 1;
-
-                    }
-
-                    if (_count >= 1) this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true;
-                    else this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = false;
-                }
-                //this.gridControl2.EndUpdate();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
         private void GridControl1_Click(object sender, EventArgs e)
         {
             try
@@ -439,7 +326,8 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 this.gridControl3.Visible = true;
 
                 GridView testView = gridView1 as GridView;
-                this.gridControl2.DataSource = new MyDatabaseConnect01().connectionProcessComaparence(testView.GetRowCellValue(testView.FocusedRowHandle, "PART_NUMBER").ToString());
+                //this.gridControl2.DataSource = new MyDatabaseConnect01().connectionProcessComaparence(testView.GetRowCellValue(testView.FocusedRowHandle, "PART_NUMBER").ToString());
+                this.gridControl2.DataSource = DashboardDAO.SelectEquipmentComparenceList(new DashboardDTO() {PART_NUMBER = testView.GetRowCellValue(testView.FocusedRowHandle, "PART_NUMBER").ToString() }); ;
 
                 //flyoutPanel1.Size = new Size(1200, 350);
             }
@@ -449,7 +337,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             }
 
         }
-
         //private void BtnMoveWork_Click(object sender, EventArgs e)
         //{
         //    //MyUserControl02 test = this.ActiveControl as MyUserControl02;
@@ -470,13 +357,13 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
         //    if (flyoutPanel1.FlyoutPanelState.IsActive) flyoutPanel1.HidePopup();
         //    else flyoutPanel1.ShowPopup();
         //}
-
         private void UserControl_Click(object sender, EventArgs e)
         {
             try
             {
                 MyUserControl02 selectedUserControl = sender as MyUserControl02;
-                this.gridControl1.DataSource = new MyDatabaseConnect01().connection7(selectedUserControl.eqpId, selectedUserControl.workCenter);
+                //this.gridControl1.DataSource = new MyDatabaseConnect01().connection7(selectedUserControl.eqpId, selectedUserControl.workCenter);
+                this.gridControl1.DataSource = DashboardDAO.SelectEquipmentOneList(new DashboardDTO() { EQP_ID= selectedUserControl.eqpId , WORK_CENTER= selectedUserControl.workCenter });
                 this.labelControl2.Text = selectedUserControl.eqpDesc;
                 flyoutPanel1.OwnerControl = this;
                 flyoutPanel1.Size = new Size(600, 350);
@@ -490,7 +377,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void BtnPreview_Click(object sender, EventArgs e)
         {
             try
@@ -506,7 +392,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void BtnChart_Click(object sender, EventArgs e)
         {
             try
@@ -548,7 +433,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 
 
         }
-
         private void BtnReset_Click(object sender, EventArgs e)
         {
             try
@@ -562,7 +446,6 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -570,7 +453,8 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 
                 BtnReset_Click(null, null);
 
-                List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(this.slueSelect.EditValue.ToString());
+                //List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(this.slueSelect.EditValue.ToString());
+                IList<DashboardDTO> resultList = DashboardDAO.SelectEquipmentList(new DashboardDTO() {DEPT_CODE = this.slueSelect.EditValue.ToString() });
                 //flowLayoutPanel.Size = new Size(3000, 2000);
                 //flowLayoutPanel.WrapContents = false;
                 // https://www.dotnetperls.com/flowlayoutpanel
@@ -598,6 +482,113 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // 컬럼 상단 체크헤더박스
+        //private void GridView2_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == System.Windows.Forms.MouseButtons.Left && e.Clicks == 1)
+        //    {
+        //        GridView gridview = sender as GridView;
+        //        if (gridview != null)
+        //        {
+        //            GridHitInfo hitinfo = gridview.CalcHitInfo(e.Location);
+
+        //            if (hitinfo.InRow == false && hitinfo.InColumn == true)
+        //            {
+        //                //SetAllCheckBox(!true);
+        //                //if (AffectCheckBoxChange != null)
+        //                //    AffectCheckBoxChange(this, null);
+        //                UnChekAll(gridview);
+        //            }
+
+        //        }
+        //        this.gridView2.RefreshData();
+        //        DXMouseEventArgs args = DXMouseEventArgs.GetMouseArgs(e);
+        //        args.Handled = true;
+        //    }
+        //}
+        //private void DrawCheckBox(Graphics g, Rectangle r, RepositoryItemCheckEdit checkEdit, string isCheck)
+        //{
+        //    DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo info = default(DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo);
+        //    DevExpress.XtraEditors.Drawing.CheckEditPainter painter = default(DevExpress.XtraEditors.Drawing.CheckEditPainter);
+        //    DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs args = default(DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs);
+        //    info = (CheckEditViewInfo)checkEdit.CreateViewInfo();
+        //    painter = (CheckEditPainter)checkEdit.CreatePainter();
+
+        //    info.EditValue = isCheck;
+        //    info.Bounds = r;
+        //    info.CalcViewInfo(g);
+        //    args = new DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs(info, new DevExpress.Utils.Drawing.GraphicsCache(g), r);
+        //    painter.Draw(args);
+        //    args.Cache.Dispose();
+        //}
+        //private void GridView2_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
+        //{
+        //    if (e.Column == null)
+        //        return;
+        //    if (e.Column.AbsoluteIndex != 2)
+        //        return;
+        //    Rectangle rect = e.Bounds;
+        //    rect.Inflate(-1, -1);
+
+        //    e.Info.InnerElements.Clear();
+        //    e.Painter.DrawObject(e.Info);
+        //    string sCheckedState = "";
+        //    if (GetCheckCount() == this.gridView2.DataRowCount) sCheckedState = "True";
+        //    else sCheckedState = "False";
+        //    DrawCheckBox(e.Graphics, rect, e.Column.ColumnEdit as RepositoryItemCheckEdit, sCheckedState);
+        //    e.Handled = true;
+
+        //}
+        ////// 모두 체크
+        ////void CheckAll(GridView gv)
+        ////{
+        ////    for (int i = 0; i < gv.DataRowCount; i++)
+        ////    {
+        ////        gv.SetRowCellValue(i, gv.Columns["선택2"], "True");
+        ////    }
+        ////}
+
+        //// 모두 체크 해제
+        //private void UnChekAll(GridView gv)
+        //{
+        //    if (GetCheckCount() == gv.DataRowCount)
+        //    {
+        //        for (int i = 0; i < gv.DataRowCount; i++)
+        //        {
+        //            gv.SetRowCellValue(i, "CHK2", (object)"False");
+
+        //        }
+        //    }
+        //    else
+        //    {
+        //        for (int i = 0; i < gv.DataRowCount; i++)
+        //        {
+        //            gv.SetRowCellValue(i, "CHK2", (object)"True");
+
+        //        }
+        //    }
+
+
+
+        //    //gv.RefreshData();
+        //}
+        //private int GetCheckCount()
+        //{
+        //    int count = 0;
+
+
+        //    List<DashboardVo> gridList = this.gridControl2.DataSource as List<DashboardVo>;
+
+
+        //    for (int x = 0; x < gridList.Count; x++)
+        //    {
+        //        if (gridList[x].CHK2.ToString() == "True") count += 1;
+
+        //    }
+
+        //    return count;
+        //}
 
 
     }

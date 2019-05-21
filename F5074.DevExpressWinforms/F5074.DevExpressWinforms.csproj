@@ -576,7 +576,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\F5074.MyBatisDataMapper\F5074.MyBatisDataMapper.csproj">
+      <Project>{cbe0c77d-77a1-4022-a7c8-0ebac23bdba0}</Project>
+      <Name>F5074.MyBatisDataMapper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
