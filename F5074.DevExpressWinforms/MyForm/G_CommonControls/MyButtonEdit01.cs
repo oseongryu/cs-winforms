@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using F5074.DevExpressWinforms.DialogFolder;
+using F5074.DevExpressWinforms.MyDialog;
 
 namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 {

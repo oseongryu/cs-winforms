@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace F5074.DevExpressWinforms.DialogFolder
+namespace F5074.DevExpressWinforms.MyDialog
 {
     public partial class ButtonEditForm : Form
     {

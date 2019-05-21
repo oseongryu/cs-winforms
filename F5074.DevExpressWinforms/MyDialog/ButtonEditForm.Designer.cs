@@ -1,4 +1,4 @@
-﻿namespace F5074.DevExpressWinforms.DialogFolder
+﻿namespace F5074.DevExpressWinforms.MyDialog
 {
     partial class ButtonEditForm
     {
