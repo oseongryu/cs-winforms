@@ -24,6 +24,7 @@ namespace F5074.MyBatisDataMapper.Common
                     //ISqlMapper mapper = Mapper.Instance();
 
                     // 2. Config의 위치 변경일 경우
+                    // https://guyaga.tistory.com/415
                     // https://guyaga.tistory.com/423
                     DomSqlMapBuilder dom = new DomSqlMapBuilder();
                     XmlDocument sqlMapConfig = Resources.GetEmbeddedResourceAsXmlDocument("Config.SqlMap.config, F5074.MyBatisDataMapper");
