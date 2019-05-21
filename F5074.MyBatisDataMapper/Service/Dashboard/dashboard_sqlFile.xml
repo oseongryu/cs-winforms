@@ -4,10 +4,10 @@
     <typeAlias alias="DashboardDTO" type="F5074.MyBatisDataMapper.Service.Dashboard.DashboardDTO"/>
   </alias>
   <statements>
-    <statement id="SelectList" parameterClass="DashboardDTO" resultClass="DashboardDTO" >
+    <statement id="SelectList" parameterClass="DashboardDTO" resultClass="DashboardDTO">
       <!--SELECT IF_UT as Name
         FROM METAL-->
-        SELECT 'aa' as  NAME FROM DUAL
+      SELECT 'aa' as  NAME FROM DUAL
     </statement>
   </statements>
 </sqlMap>
