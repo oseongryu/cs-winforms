@@ -108,7 +108,7 @@ namespace F5074.DevExpressWinforms.MyUserControl
                     MyDevExpressFunctions.SetCellAlignmentGridView(this.gridView1, gridView1.Columns.Count - 1);
                 }
                 //this.gridControl1.DataSource = new MyDatabaseConnect01().connection7(_eqpId, _workCenter);
-                this.gridControl1.DataSource = DashboardDAO.SelectEquipmentOneList(new DashboardDTO() {EQP_ID = _eqpId, WORK_CENTER= _workCenter });
+                this.gridControl1.DataSource = DashboardDAO.SelectOrderOfEquipmentList(new DashboardDTO() {EQP_ID = _eqpId, WORK_CENTER= _workCenter });
                 this.labelControl5.Text = "오더수량 : " + gridView1.RowCount.ToString();
 
                 if (_state == "Run") { this.panel1.BackColor = Color.DarkGreen; this.panel2.BackColor = Color.Green; }

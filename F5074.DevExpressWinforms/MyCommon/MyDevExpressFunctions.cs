@@ -51,78 +51,76 @@ namespace F5074.DevExpressWinforms.MyCommon
                 flowLayoutPanel.Controls.Add(userControl);
             }
         }
-        public static void MakeLayoutContol2(LayoutControlGroup layoutControlGroup, string _valString)
-        {
-            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
-            layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            layoutControlGroup.GroupBordersVisible = false;
-            layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            layoutControlGroup.Location = new Point(0, 0);
-            layoutControlGroup.Name = "layoutControlGroup";
+        //public static void MakeLayoutContol2(LayoutControlGroup layoutControlGroup, string _valString)
+        //{
+        //    List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
+        //    layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+        //    layoutControlGroup.GroupBordersVisible = false;
+        //    layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+        //    layoutControlGroup.Location = new Point(0, 0);
+        //    layoutControlGroup.Name = "layoutControlGroup";
 
-            for (int x = 0; x < 11; x++)
-            {
-                layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 120D, SizeType = SizeType.Absolute });
+        //    for (int x = 0; x < 11; x++)
+        //    {
+        //        layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 120D, SizeType = SizeType.Absolute });
 
-            }
-            layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 2D, SizeType = SizeType.Absolute });
+        //    }
+        //    layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 2D, SizeType = SizeType.Absolute });
 
-            for (int x = 0; x < (resultList.Count + 1) / 6; x++)
-            {
-                layoutControlGroup.OptionsTableLayoutGroup.RowDefinitions.Add(new RowDefinition() { Height = 200D, SizeType = SizeType.Absolute });
-            }
+        //    for (int x = 0; x < (resultList.Count + 1) / 6; x++)
+        //    {
+        //        layoutControlGroup.OptionsTableLayoutGroup.RowDefinitions.Add(new RowDefinition() { Height = 200D, SizeType = SizeType.Absolute });
+        //    }
 
-            layoutControlGroup.Size = new Size(3000, 2000);
-            layoutControlGroup.TextVisible = false;
+        //    layoutControlGroup.Size = new Size(3000, 2000);
+        //    layoutControlGroup.TextVisible = false;
 
 
-            LayoutControlItem controlItem;
-            MyUserControl02 userControl;
-            int _rowIndex = 0;
-            for (int x = 0; x < resultList.Count; x++)
-            {
-                controlItem = new LayoutControlItem() { TextVisible = false };
-                if ((x + 1) % 6 == 0)
-                {
-                    _rowIndex += 1;
-                }
-                controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex;
+        //    LayoutControlItem controlItem;
+        //    MyUserControl02 userControl;
+        //    int _rowIndex = 0;
+        //    for (int x = 0; x < resultList.Count; x++)
+        //    {
+        //        controlItem = new LayoutControlItem() { TextVisible = false };
+        //        if ((x + 1) % 6 == 0)
+        //        {
+        //            _rowIndex += 1;
+        //        }
+        //        controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex;
 
-                if ((x + 1) % 6 == 1)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 0;
-                }
-                else if ((x + 1) % 6 == 2)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 1;
-                }
-                else if ((x + 1) % 6 == 3)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 2;
-                }
-                else if ((x + 1) % 6 == 4)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 3;
+        //        if ((x + 1) % 6 == 1)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 0;
+        //        }
+        //        else if ((x + 1) % 6 == 2)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 1;
+        //        }
+        //        else if ((x + 1) % 6 == 3)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 2;
+        //        }
+        //        else if ((x + 1) % 6 == 4)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 3;
 
-                }
-                else if ((x + 1) % 6 == 5)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 4;
+        //        }
+        //        else if ((x + 1) % 6 == 5)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 4;
 
-                }
-                else if ((x + 1) % 6 == 0)
-                {
-                    controlItem.OptionsTableLayoutItem.ColumnIndex = 5;
-                    controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex - 1;
+        //        }
+        //        else if ((x + 1) % 6 == 0)
+        //        {
+        //            controlItem.OptionsTableLayoutItem.ColumnIndex = 5;
+        //            controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex - 1;
 
-                }
-                userControl = new MyUserControl02(resultList[x].EQP_DESC.ToString(), resultList[x].EQP_ID.ToString(), "", "");
-                controlItem.Control = userControl;
-                layoutControlGroup.Items.AddRange(new BaseLayoutItem[] { controlItem });
-
-            }
-
-        }
+        //        }
+        //        userControl = new MyUserControl02(resultList[x].EQP_DESC.ToString(), resultList[x].EQP_ID.ToString(), "", "");
+        //        controlItem.Control = userControl;
+        //        layoutControlGroup.Items.AddRange(new BaseLayoutItem[] { controlItem });
+        //    }
+        //}
         public static void MakeLayoutContol(LayoutControlGroup layoutControlGroup, string _valString)
         {
             List<DataFourVo> resultList = new MyDatabaseConnect01().connection6(_valString);

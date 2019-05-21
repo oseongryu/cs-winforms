@@ -22,18 +22,28 @@ namespace F5074.MyBatisDataMapper.Service.Dashboard
             return mapper.QueryForList<DashboardDTO>("SelectDepartmentList", vo);
         }
 
+        // 부서의 장비리스트
         public static IList<DashboardDTO> SelectEquipmentList(DashboardDTO vo)
         {
             return mapper.QueryForList<DashboardDTO>("SelectEquipmentList", vo);
         }
-
-        public static IList<DashboardDTO> SelectEquipmentOneList(DashboardDTO vo)
+        // 장비의 프로세스
+        public static IList<DashboardDTO> SelectProcessOfEquipmentList(DashboardDTO vo)
         {
-            return mapper.QueryForList<DashboardDTO>("SelectEquipmentOneList", vo);
+            return mapper.QueryForList<DashboardDTO>("SelectProcessOfEquipmentList", vo);
         }
+        // 장비의 오더리스트
+        public static IList<DashboardDTO> SelectOrderOfEquipmentList(DashboardDTO vo)
+        {
+            return mapper.QueryForList<DashboardDTO>("SelectOrderOfEquipmentList", vo);
+        }
+        
+        // 다른 장비에 있는 동일 아이템 찾기
         public static IList<DashboardDTO> SelectEquipmentComparenceList(DashboardDTO vo)
         {
             return mapper.QueryForList<DashboardDTO>("SelectEquipmentComparenceList", vo);
         }
+
+
     }
 }

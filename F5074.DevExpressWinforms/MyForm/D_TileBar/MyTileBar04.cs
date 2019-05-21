@@ -14,6 +14,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 {
     public partial class MyTileBar04 : UserControl
     {
+        private string description = "UserControl을 테이블레이아웃을 사용하여 만듦 ( Flow로 변경하면서 사용안함)";
         public MyTileBar04()
         {
             InitializeComponent();
@@ -47,9 +48,9 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            BtnReset_Click(null, null);
-            MyDevExpressFunctions.MakeLayoutContol2(this.layoutControlGroup2, this.slueSelect.EditValue.ToString());
-            this.groupControl2.Focus();
+            //BtnReset_Click(null, null);
+            //MyDevExpressFunctions.MakeLayoutContol2(this.layoutControlGroup2, this.slueSelect.EditValue.ToString());
+            //this.groupControl2.Focus();
         }
     }
 }

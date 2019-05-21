@@ -3,6 +3,7 @@ using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
 using F5074.DevExpressWinforms.MyCommon;
+using F5074.MyBatisDataMapper.Service.Dashboard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 
 namespace F5074.DevExpressWinforms.MyDialog
 {
@@ -34,7 +34,8 @@ namespace F5074.DevExpressWinforms.MyDialog
                 timer1.Interval = 1000;
                 timer1.Enabled = true;
 
-                List<DataSevenVo> resultList = new MyDatabaseConnect01().connection9(_prodOrderNumber, "");
+                //List<DashboardDTO> resultList = new MyDatabaseConnect01().connection9(_prodOrderNumber, "");
+                IList<DashboardDTO> resultList = DashboardDAO.SelectProcessOfEquipmentList(new DashboardDTO() {PROD_ORDER_NUMBER = _prodOrderNumber });
 
                 if (resultList.Count > 1 && resultList.Count <= 5)
                 {

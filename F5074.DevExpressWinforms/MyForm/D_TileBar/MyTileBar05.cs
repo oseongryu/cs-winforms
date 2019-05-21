@@ -363,7 +363,7 @@ namespace F5074.DevExpressWinforms.MyForm.D_TileBar
             {
                 MyUserControl02 selectedUserControl = sender as MyUserControl02;
                 //this.gridControl1.DataSource = new MyDatabaseConnect01().connection7(selectedUserControl.eqpId, selectedUserControl.workCenter);
-                this.gridControl1.DataSource = DashboardDAO.SelectEquipmentOneList(new DashboardDTO() { EQP_ID= selectedUserControl.eqpId , WORK_CENTER= selectedUserControl.workCenter });
+                this.gridControl1.DataSource = DashboardDAO.SelectOrderOfEquipmentList(new DashboardDTO() { EQP_ID= selectedUserControl.eqpId , WORK_CENTER= selectedUserControl.workCenter });
                 this.labelControl2.Text = selectedUserControl.eqpDesc;
                 flyoutPanel1.OwnerControl = this;
                 flyoutPanel1.Size = new Size(600, 350);
