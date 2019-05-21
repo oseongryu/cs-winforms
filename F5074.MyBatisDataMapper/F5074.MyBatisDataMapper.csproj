@@ -89,17 +89,11 @@
     <Content Include="Lib\log4net.dll" />
     <Content Include="Service\Dashboard\dashboard_sqlFile.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="log4Net.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="providers.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="SqlMap.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Config\log4Net.config" />
+    <EmbeddedResource Include="Config\providers.config" />
+    <EmbeddedResource Include="Config\SqlMap.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
