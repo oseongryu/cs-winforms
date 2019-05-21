@@ -1,6 +1,9 @@
-﻿using DevExpress.XtraBars.Docking2010;
+﻿using DevExpress.Utils;
+using DevExpress.XtraBars.Docking2010;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using F5074.DevExpressWinforms.MyUserControl;
 using System;
@@ -16,6 +19,110 @@ namespace F5074.DevExpressWinforms.MyCommon
 {
     public class MyDevExpressFunctions
     {
+        public static FlyoutAction CreateCloseAction()
+        {
+            // https://www.devexpress.com/Support/Center/Question/Details/T140795/how-to-show-modal-flyout-with-usercontrol-via-showflyoutdialog-method
+            FlyoutAction closeAction = new FlyoutAction();
+            closeAction.Caption = "[작업이동]";
+            closeAction.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/apply_32x32.png");
+            closeAction.Description = "정말로 작업이동을 하시겠습니까?";
+            closeAction.Commands.Add(FlyoutCommand.Yes);
+            closeAction.Commands.Add(FlyoutCommand.No);
+            return closeAction;
+        }
+        public static void MakeLayoutContol3(FlowLayoutPanel flowLayoutPanel, string _valString)
+        {
+            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
+            //flowLayoutPanel.Size = new Size(3000, 2000);
+            //flowLayoutPanel.WrapContents = false;
+            // https://www.dotnetperls.com/flowlayoutpanel
+            // https://www.c-sharpcorner.com/forums/getting-control-from-flowlayoutpanel
+            // https://stackoverflow.com/questions/40279918/flowlayoutpanel-scrollbar-doesnt-disapear-properly-sometimes
+            flowLayoutPanel.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel.AutoScroll = false;
+            flowLayoutPanel.VerticalScroll.Visible = false;
+            flowLayoutPanel.AutoScroll = true;
+
+            MyUserControl02 userControl;
+            int _rowIndex = 0;
+            for (int x = 0; x < resultList.Count; x++)
+            {
+                userControl = new MyUserControl02(resultList[x].EQP_DESC.ToString(), resultList[x].EQP_ID.ToString(), resultList[x].WORK_CENTER.ToString(), resultList[x].STATE.ToString());
+                flowLayoutPanel.Controls.Add(userControl);
+            }
+        }
+        public static void MakeLayoutContol2(LayoutControlGroup layoutControlGroup, string _valString)
+        {
+            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
+            layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            layoutControlGroup.GroupBordersVisible = false;
+            layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+            layoutControlGroup.Location = new Point(0, 0);
+            layoutControlGroup.Name = "layoutControlGroup";
+
+            for (int x = 0; x < 11; x++)
+            {
+                layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 120D, SizeType = SizeType.Absolute });
+
+            }
+            layoutControlGroup.OptionsTableLayoutGroup.ColumnDefinitions.Add(new ColumnDefinition() { Width = 2D, SizeType = SizeType.Absolute });
+
+            for (int x = 0; x < (resultList.Count + 1) / 6; x++)
+            {
+                layoutControlGroup.OptionsTableLayoutGroup.RowDefinitions.Add(new RowDefinition() { Height = 200D, SizeType = SizeType.Absolute });
+            }
+
+            layoutControlGroup.Size = new Size(3000, 2000);
+            layoutControlGroup.TextVisible = false;
+
+
+            LayoutControlItem controlItem;
+            MyUserControl02 userControl;
+            int _rowIndex = 0;
+            for (int x = 0; x < resultList.Count; x++)
+            {
+                controlItem = new LayoutControlItem() { TextVisible = false };
+                if ((x + 1) % 6 == 0)
+                {
+                    _rowIndex += 1;
+                }
+                controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex;
+
+                if ((x + 1) % 6 == 1)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 0;
+                }
+                else if ((x + 1) % 6 == 2)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 1;
+                }
+                else if ((x + 1) % 6 == 3)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 2;
+                }
+                else if ((x + 1) % 6 == 4)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 3;
+
+                }
+                else if ((x + 1) % 6 == 5)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 4;
+
+                }
+                else if ((x + 1) % 6 == 0)
+                {
+                    controlItem.OptionsTableLayoutItem.ColumnIndex = 5;
+                    controlItem.OptionsTableLayoutItem.RowIndex = _rowIndex - 1;
+
+                }
+                userControl = new MyUserControl02(resultList[x].EQP_DESC.ToString(), resultList[x].EQP_ID.ToString(), "", "");
+                controlItem.Control = userControl;
+                layoutControlGroup.Items.AddRange(new BaseLayoutItem[] { controlItem });
+
+            }
+
+        }
         public static void MakeLayoutContol(LayoutControlGroup layoutControlGroup, string _valString)
         {
             List<DataFourVo> resultList = new MyDatabaseConnect01().connection6(_valString);
@@ -91,7 +198,7 @@ namespace F5074.DevExpressWinforms.MyCommon
             //    //new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage(_imageName) });
             //    currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { Image = DevExpress.Images.ImageResourceCache.Default.GetImage(_imageName) }) });
             //}
-            
+
             // https://documentation.devexpress.com/WindowsForms/16864/What-s-Installed/Image-Gallery-and-Context-Dependent-Images
             for (int x = 0; x < arrString.Length; x++)
             {
@@ -104,13 +211,13 @@ namespace F5074.DevExpressWinforms.MyCommon
                     case "초기화": _imageUri = "Reset;Size32x32;GrayScaled"; break;
                     case "저장": _imageUri = "Save;Size32x32;GrayScaled"; break;
                     case "차트": _imageUri = "Chart;Size32x32;GrayScaled"; break;
+                    case "미리보기": _imageUri = "Show;Size32x32;GrayScaled"; break;
+                    case "작업이동": _imageUri = "Replace;Size32x32;GrayScaled"; break;
+                    case "구분자": currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUISeparator() }); break;
 
                 }
-                currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { ImageUri= _imageUri }) });
-                if (x!=0 && x%2 == 1)
-                {
-                    currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUISeparator() });
-                }
+                if (arrString[x] != "구분자") currentPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] { new WindowsUIButton(arrString[x], true, new WindowsUIButtonImageOptions() { ImageUri = _imageUri }) });
+
             }
 
 
@@ -222,7 +329,57 @@ namespace F5074.DevExpressWinforms.MyCommon
                     }
                 };
             }
+
         }
+
+        public static void InitGridControl(GridView _gridView, int _count)
+        {
+            _gridView.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DefaultBoolean.False;
+            _gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
+            _gridView.OptionsSelection.MultiSelect = false;
+            _gridView.OptionsView.ColumnAutoWidth = false;
+            _gridView.OptionsView.ShowGroupPanel = false;
+            _gridView.OptionsBehavior.Editable = false;
+            if (_count == 1)
+            {
+                _gridView.Appearance.Row.Font = new Font("Tahoma", 5f);
+                //_gridView.Appearance.HeaderPanel.Font = new Font(_gridView.Appearance.HeaderPanel.Font, FontStyle.Bold);
+                _gridView.Appearance.HeaderPanel.Font = new Font(new Font("Tahoma", 5f), FontStyle.Regular);
+            }
+
+
+            //_gridView.OptionsView.EnableAppearanceEvenRow = true;
+            //_gridView.Appearance.EvenRow.BackColor = Color.AliceBlue;
+        }
+
+        /// <summary>
+        /// 헤더 컬럼 텍스트 정렬. Default 는 가로, 세로 정렬 Center
+        /// </summary>
+        /// <param name="gvCurrentView"></param>
+        /// <param name="iColumnIndex"></param>
+        /// <param name="HAlignment"></param>
+        /// <param name="VAlignment"></param>
+        public static void SetHeaderAlignmentGridView(GridView gvCurrentView, int iColumnIndex
+            , DevExpress.Utils.HorzAlignment HAlignment = HorzAlignment.Center, DevExpress.Utils.VertAlignment VAlignment = VertAlignment.Center)
+        {
+            gvCurrentView.Columns[iColumnIndex].AppearanceHeader.TextOptions.HAlignment = HAlignment;
+            gvCurrentView.Columns[iColumnIndex].AppearanceHeader.TextOptions.VAlignment = VAlignment;
+        }
+
+        /// <summary>
+        /// 컬럼(Cell) 텍스트 정렬. Default 는 가로, 세로 정렬 Center
+        /// </summary>
+        /// <param name="gvCurrentView"></param>
+        /// <param name="iColumnIndex"></param>
+        /// <param name="HAlignment"></param>
+        /// <param name="VAlignment"></param>
+        public static void SetCellAlignmentGridView(GridView gvCurrentView, int iColumnIndex
+            , DevExpress.Utils.HorzAlignment HAlignment = HorzAlignment.Center, DevExpress.Utils.VertAlignment VAlignment = VertAlignment.Center)
+        {
+            gvCurrentView.Columns[iColumnIndex].AppearanceCell.TextOptions.HAlignment = HAlignment;
+            gvCurrentView.Columns[iColumnIndex].AppearanceCell.TextOptions.VAlignment = VAlignment;
+        }
+
         private static void Properties_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             if (!((SearchLookUpEdit)sender).ReadOnly) ((SearchLookUpEdit)sender).EditValue = null;

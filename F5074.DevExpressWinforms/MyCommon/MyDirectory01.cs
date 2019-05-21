@@ -34,9 +34,9 @@ namespace F5074.DevExpressWinforms.MyCommon
             foreach (var type in types)
             {
                 var typeInfo = type.GetTypeInfo();
-                if(typeInfo.BaseType != null)
+                if (typeInfo.BaseType != null)
                 {
-                    if (typeInfo.FullName.Contains("F5074.Winforms.MyForm") && typeInfo.BaseType.Name == "UserControl")
+                    if (typeInfo.FullName.Contains("F5074.Winforms") && typeInfo.BaseType.Name == "UserControl")
                     {
                         result.Add(new MenuVo() { Name = type.Name, FullName = type.FullName });
                         //Console.WriteLine("Type " + type.FullName + " has " + typeInfo.DeclaredProperties.Count().ToString() + " properties");
@@ -49,15 +49,15 @@ namespace F5074.DevExpressWinforms.MyCommon
             foreach (var type in types)
             {
                 var typeInfo = type.GetTypeInfo();
-                if(typeInfo.BaseType != null)
+                if (typeInfo.BaseType != null)
                 {
-                    if (typeInfo.FullName.Contains("F5074.DevExpressWinforms.MyForm") && typeInfo.BaseType.Name == "UserControl")
+                    if (typeInfo.FullName.Contains("F5074.DevExpressWinforms") && typeInfo.BaseType.Name == "UserControl")
                     {
                         result.Add(new MenuVo() { Name = type.Name, FullName = type.FullName });
                         //Console.WriteLine("Type " + type.FullName + " has " + typeInfo.DeclaredProperties.Count().ToString() + " properties");
                     }
                 }
-            
+
             }
             return result;
         }

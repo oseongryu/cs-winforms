@@ -101,6 +101,12 @@
     <Compile Include="MyForm\D_Common\MyEnum01.Designer.cs">
       <DependentUpon>MyEnum01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\D_Common\MyEnum02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_Common\MyEnum02.designer.cs">
+      <DependentUpon>MyEnum02.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\D_Common\MyPrivateFontCollection01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_Common\MyEnum01.resx">
       <DependentUpon>MyEnum01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_Common\MyEnum02.resx">
+      <DependentUpon>MyEnum02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_Common\MyPrivateFontCollection01.resx">
       <DependentUpon>MyPrivateFontCollection01.cs</DependentUpon>

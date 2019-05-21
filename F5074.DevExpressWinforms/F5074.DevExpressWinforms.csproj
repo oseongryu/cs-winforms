@@ -168,11 +168,21 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCommon\CheckBoxInColumnHeaderGridView.cs" />
     <Compile Include="MyCommon\MyDatabaseConnect01.cs" />
     <Compile Include="MyCommon\MyDevExpressFunctions.cs" />
     <Compile Include="MyCommon\MyDirectory01.cs" />
+    <Compile Include="MyCommon\MyFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyCommon\MyReflection01.cs" />
     <Compile Include="MyCommon\MyXMLReader.cs" />
+    <Compile Include="MyDialog\MyDialog01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDialog\MyDialog01.Designer.cs">
+      <DependentUpon>MyDialog01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\A_GridControl\MyGridControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -309,9 +319,7 @@
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyForm\C_ChartControl\ucValuePresenter.Designer.cs">
-      <DependentUpon>ucValuePresenter.cs</DependentUpon>
-    </Compile>
+    <Compile Include="MyForm\C_ChartControl\ucValuePresenter.Designer.cs" />
     <Compile Include="MyForm\D_TileBar\MyTileBar01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -329,6 +337,18 @@
     </Compile>
     <Compile Include="MyForm\D_TileBar\MyTileBar03.Designer.cs">
       <DependentUpon>MyTileBar03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar04.designer.cs">
+      <DependentUpon>MyTileBar04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\D_TileBar\MyTileBar05.designer.cs">
+      <DependentUpon>MyTileBar05.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\E_WindowsUIView\MyWindowsUIView01.cs">
       <SubType>UserControl</SubType>
@@ -353,6 +373,12 @@
     </Compile>
     <Compile Include="MyForm\G_CommonControls\MyDateEdit01.Designer.cs">
       <DependentUpon>MyDateEdit01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyFlyoutPanel01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyFlyoutPanel01.Designer.cs">
+      <DependentUpon>MyFlyoutPanel01.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\G_CommonControls\MyLayoutControl01.cs">
       <SubType>UserControl</SubType>
@@ -390,6 +416,12 @@
     <Compile Include="MyUserControl\MyUserControl01.Designer.cs">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\MyUserControl02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\MyUserControl02.designer.cs">
+      <DependentUpon>MyUserControl02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DialogFolder\ButtonEditForm.resx">
@@ -397,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDialog\MyDialog01.resx">
+      <DependentUpon>MyDialog01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl01.resx">
       <DependentUpon>MyGridControl01.cs</DependentUpon>
@@ -458,9 +493,7 @@
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl08.resx">
       <DependentUpon>MyChartControl08.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx">
-      <DependentUpon>ucValuePresenter.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx" />
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
       <DependentUpon>MyTileBar01.cs</DependentUpon>
     </EmbeddedResource>
@@ -469,6 +502,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar03.resx">
       <DependentUpon>MyTileBar03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar04.resx">
+      <DependentUpon>MyTileBar04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar05.resx">
+      <DependentUpon>MyTileBar05.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\E_WindowsUIView\MyWindowsUIView01.resx">
       <DependentUpon>MyWindowsUIView01.cs</DependentUpon>
@@ -481,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MyDateEdit01.resx">
       <DependentUpon>MyDateEdit01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyFlyoutPanel01.resx">
+      <DependentUpon>MyFlyoutPanel01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MyLayoutControl01.resx">
       <DependentUpon>MyLayoutControl01.cs</DependentUpon>
@@ -499,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\MyUserControl01.resx">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\MyUserControl02.resx">
+      <DependentUpon>MyUserControl02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
