@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
+using F5074.MyBatisDataMapper.Service.Dashboard;
 
 namespace F5074.LauncherWPF
 {
@@ -23,10 +24,16 @@ namespace F5074.LauncherWPF
         public MainWindow()
         {
             InitializeComponent();
-
-            for (int x = 0; x < 20; x++)
+            IList<DashboardDTO> resultList = new List<DashboardDTO>();
+            resultList.Add(new DashboardDTO() { });
+            for (int x = 0; x < resultList.Count; x++)
             {
-                this.flowLayout.Children.Add(new DevExpress.Xpf.LayoutControl.GroupBox() { Header = "xx" + x, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch, MaximizeElementVisibility = Visibility.Visible });
+                DevExpress.Xpf.LayoutControl.GroupBox groupBox = new DevExpress.Xpf.LayoutControl.GroupBox() { Header = "xx" + x, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch, MaximizeElementVisibility = Visibility.Visible };
+                System.Windows.Forms.Integration.WindowsFormsHost host = new System.Windows.Forms.Integration.WindowsFormsHost();
+                //host.Child = new F5074.DevExpressWinforms.Dashboard.FlowPanelControl();
+                DashboardDAO.SelectList(new DashboardDTO());
+                groupBox.Content = host;
+                this.flowLayout.Children.Add(groupBox);
 
             }
         }
