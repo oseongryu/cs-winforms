@@ -8,6 +8,12 @@ namespace F5074.MyBatisDataMapper.Service.Dashboard
 {
     public class DashboardDTO
     {
+        //
+        public object A1 { get; set; }
+        public object A2 { get; set; }
+        public object A3 { get; set; }
+        public object A4 { get; set; }
+
         // 부서
         public object DEPT_CODE { get; set; }
         public object DEPT_NAME { get; set; }
