@@ -362,6 +362,12 @@
     <Compile Include="MyForm\F_DevExpressImages\MyDevExpressImages01.Designer.cs">
       <DependentUpon>MyDevExpressImages01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyAccordionControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyAccordionControl01.Designer.cs">
+      <DependentUpon>MyAccordionControl01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\G_CommonControls\MyButtonEdit01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -397,6 +403,12 @@
     </Compile>
     <Compile Include="MyForm\I_XtraReport\MyXtraReport01.Designer.cs">
       <DependentUpon>MyXtraReport01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\J_DocumentManager\MyDocumentManager01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\J_DocumentManager\MyDocumentManager01.Designer.cs">
+      <DependentUpon>MyDocumentManager01.cs</DependentUpon>
     </Compile>
     <Compile Include="MyMainForm.cs">
       <SubType>Form</SubType>
@@ -515,6 +527,9 @@
     <EmbeddedResource Include="MyForm\F_DevExpressImages\MyDevExpressImages01.resx">
       <DependentUpon>MyDevExpressImages01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyAccordionControl01.resx">
+      <DependentUpon>MyAccordionControl01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MyButtonEdit01.resx">
       <DependentUpon>MyButtonEdit01.cs</DependentUpon>
     </EmbeddedResource>
@@ -533,6 +548,9 @@
     <EmbeddedResource Include="MyForm\I_XtraReport\MyXtraReport01.resx">
       <DependentUpon>MyXtraReport01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\J_DocumentManager\MyDocumentManager01.resx">
+      <DependentUpon>MyDocumentManager01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyMainForm.resx">
       <DependentUpon>MyMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +563,7 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl02.resx">
       <DependentUpon>MyUserControl02.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
