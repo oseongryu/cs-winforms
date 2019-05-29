@@ -34,7 +34,7 @@ namespace F5074.MyBatisDataMapper.Common
                     mapper.SessionStore = new HybridWebThreadSessionStore(mapper.Id);
                     mapper.DataSource.ConnectionString = "User Id=hr;Password=hr;Data Source=(DESCRIPTION=(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP) (HOST=127.0.0.1) (PORT=1521))) (CONNECT_DATA = (SERVICE_NAME = XE)))";
 
-                    foreach (string line in File.ReadLines("C:\\DEV\\setting.txt", Encoding.UTF8))
+                    foreach (string line in File.ReadLines("C:\\DEV\\server.txt", Encoding.UTF8))
                     {
                         mapper.DataSource.ConnectionString = line;
                     }

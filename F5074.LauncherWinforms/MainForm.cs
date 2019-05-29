@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraTab;
+﻿using DevExpress.XtraBars.Docking2010.Views.NoDocuments;
+using DevExpress.XtraTab;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace F5074.LauncherWinforms
         private List<DevExpressWinforms.MyCommon.MyDirectory01.MenuVo> resultList;
         private string programPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         Assembly assembly;
+        DevExpress.XtraBars.Docking.DockPanel dockPanel;
         public MainForm()
         {
             InitializeComponent();
@@ -35,9 +37,12 @@ namespace F5074.LauncherWinforms
                 this.treeList1.AppendNode(new object[] { Text = resultList[x].Name }, -1);
                 //this.treeList1.AppendNode(new object[] { Text = resultList[x].MenuName }, -1);
             }
-            this.xtraTabControl1.TabPages.Add("Main");
+            //this.xtraTabControl1.TabPages.Add("Main");
             this.dockManager1.DockingOptions.ShowCloseButton = false;
+            documentManager1.DocumentActivate += DocumentManager1_DocumentActivate;
         }
+
+
 
         private void treeList1_DoubleClick(object sender, EventArgs e)
         {
@@ -88,22 +93,56 @@ namespace F5074.LauncherWinforms
                     }
                 }
 
+                // XtraTabControl 사용
+                //Type t = assembly.GetType(className);
+                //string classNamespace = t.Namespace;
+                //Object obj = Activator.CreateInstance(t);
+                //Control tabControl = obj as Control;
+                //tabControl.Dock = DockStyle.Fill;
+                //string tabName = this.treeList1.FocusedValue.ToString();
+                //XtraTabPage tabPage = new XtraTabPage() { Name = tabName, Text = tabName };
+                //tabPage.Controls.Add(tabControl);
+                //xtraTabControl1.TabPages.Add(tabPage);
+                //xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
+
+
+
+                // 선택된 document가 없을 경우 추가
+                for (int x = 0; x < documentManager1.View.Documents.Count; x++)
+                {
+                    DevExpress.XtraBars.Docking2010.Views.BaseDocumentCollection ds = documentManager1.View.Documents;
+                    if (ds[x].Caption == this.treeList1.FocusedValue.ToString())
+                    {
+                        Document document = documentManager1.View.Documents[x] as Document;
+                        //tabbedView1.Controller.Activate(document);
+                        //documentManager1.View.ActivateDocument(tabbedView1.ActiveDocument.Control);
+                        //documentManager1.View.ActivateDocument(document.Control);
+                        documentManager1.View.ActivateDocument(ds[x].Control);
+                        return;
+                    }
+                }
+                // DocumentManager 사용
                 Type t = assembly.GetType(className);
                 string classNamespace = t.Namespace;
                 Object obj = Activator.CreateInstance(t);
-                Control tabControl = obj as Control;
-                tabControl.Dock = DockStyle.Fill;
+                Control userControl = obj as Control;
+                userControl.Dock = DockStyle.Fill;
                 string tabName = this.treeList1.FocusedValue.ToString();
-                XtraTabPage tabPage = new XtraTabPage() { Name = tabName, Text = tabName };
-                tabPage.Controls.Add(tabControl);
-                xtraTabControl1.TabPages.Add(tabPage);
-                xtraTabControl1.SelectedTabPageIndex = xtraTabControl1.TabPages.Count - 1;
-
+                dockPanel = new DevExpress.XtraBars.Docking.DockPanel() { Text = tabName };
+                dockPanel.Controls.Add(userControl);
+                documentManager1.View.AddDocument(dockPanel);
+                //documentManager1.View.ActivateDocument(dockPanel);
+                dockPanel.Select();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void DocumentManager1_DocumentActivate(object sender, DevExpress.XtraBars.Docking2010.Views.DocumentEventArgs e)
+        {
+            
         }
     }
 }

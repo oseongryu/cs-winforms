@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // documentManager1
@@ -46,14 +50,34 @@
             // 
             this.tabbedView1.RootContainer.Element = null;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(870, 100);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(302, 41);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // MyDocumentManager01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelControl1);
             this.Name = "MyDocumentManager01";
             this.Size = new System.Drawing.Size(870, 469);
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -62,5 +86,7 @@
 
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
