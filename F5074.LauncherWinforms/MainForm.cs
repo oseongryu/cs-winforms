@@ -108,6 +108,7 @@ namespace F5074.LauncherWinforms
 
 
                 // 선택된 document가 없을 경우 추가
+                // https://www.devexpress.com/Support/Center/Question/Details/Q335155/how-to-programmatically-select-a-documentmanager-tab-without-focusing-it
                 for (int x = 0; x < documentManager1.View.Documents.Count; x++)
                 {
                     DevExpress.XtraBars.Docking2010.Views.BaseDocumentCollection ds = documentManager1.View.Documents;
