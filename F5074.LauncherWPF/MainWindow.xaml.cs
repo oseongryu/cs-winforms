@@ -24,14 +24,11 @@ namespace F5074.LauncherWPF
         public MainWindow()
         {
             InitializeComponent();
-            IList<DashboardDTO> resultList = new List<DashboardDTO>();
-            resultList.Add(new DashboardDTO() { });
-            for (int x = 0; x < resultList.Count; x++)
+            for (int x = 0; x < 5; x++)
             {
                 DevExpress.Xpf.LayoutControl.GroupBox groupBox = new DevExpress.Xpf.LayoutControl.GroupBox() { Header = "xx" + x, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch, MaximizeElementVisibility = Visibility.Visible };
                 System.Windows.Forms.Integration.WindowsFormsHost host = new System.Windows.Forms.Integration.WindowsFormsHost();
                 //host.Child = new F5074.DevExpressWinforms.Dashboard.FlowPanelControl();
-                DashboardDAO.SelectList(new DashboardDTO());
                 groupBox.Content = host;
                 this.flowLayout.Children.Add(groupBox);
 

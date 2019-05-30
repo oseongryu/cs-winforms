@@ -1,0 +1,108 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:F5074.LauncherWPF.View.A_FlowLayout"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" x:Class="F5074.LauncherWPF.View.A_FlowLayout.FlowLayout01"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <dxlc:FlowLayoutControl x:Name="flowLayout" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" ItemSpace="12" LayerSpace="12" Background="Transparent">
+            <dxlc:FlowLayoutControl.ItemTemplate>
+                <DataTemplate>
+                    <dxlc:GroupBox Header="{Binding}"
+                               Content="{Binding}"
+                               Width="200"
+                               Height="250"
+                               Padding="0"
+                               MaximizeElementVisibility="Visible"
+                               FontFamily="Segoe UI Light"
+                               FontSize="14"
+                               Cursor="Hand"
+                               >
+                        <dxlc:GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Margin="1">
+                                <Run Text="{Binding Model.LastName}" FontFamily="Segoe UI" />
+                                ,<Run Text="{Binding Model.FirstName}" /></TextBlock>
+                            </DataTemplate>
+                        </dxlc:GroupBox.HeaderTemplate>
+                        <dxlc:GroupBox.ContentTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageSource}" Stretch="UniformToFill" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </dxlc:GroupBox.ContentTemplate>
+                        <dxlc:GroupBox.MaximizedContentTemplate>
+                            <DataTemplate>
+                                <dxlc:LayoutControl ItemSpace="12">
+                                    <dxlc:LayoutControl.GroupBoxStyle>
+                                        <Style TargetType="dxlc:GroupBox">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="dxlc:GroupBox">
+                                                        <GroupBox Header="{TemplateBinding Header}" Content="{TemplateBinding Content}" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </dxlc:LayoutControl.GroupBoxStyle>
+
+                                    <dxlc:LayoutGroup Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <dxlc:LayoutGroup View="GroupBox" Header="Job" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Group:">
+                                                <TextBlock Text="{Binding Model.GroupName}" />
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Title:">
+                                                <TextBlock Text="{Binding Model.JobTitle}" />
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Hire date:">
+                                                <TextBlock Text="{Binding Model.HireDate, StringFormat='MMMM d, yyyy'}" />
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+                                        <dxlc:LayoutGroup View="GroupBox" Header="Contact" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Phone:">
+                                                <TextBlock Text="{Binding Model.Phone}" />
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Email:">
+                                                <TextBlock Text="{Binding Model.EmailAddress}" />
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+                                        <dxlc:LayoutGroup View="GroupBox" Header="Address" Orientation="Vertical">
+                                            <TextBlock Text="{Binding Model.AddressLine1}" />
+                                            <TextBlock Text="{Binding AddressLine2}" />
+                                        </dxlc:LayoutGroup>
+                                        <dxlc:LayoutGroup View="GroupBox" Header="Personal" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Gender:">
+                                                <Image Source="{Binding Model.Image}" Stretch="None" HorizontalAlignment="Left" />
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Birth date:">
+                                                <TextBlock Text="{Binding Model.BirthDate, StringFormat='MMMM d, yyyy'}" />
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+                                    </dxlc:LayoutGroup>
+
+                                    <Image Source="{Binding ImageSource}" Stretch="Uniform" />
+                                </dxlc:LayoutControl>
+                            </DataTemplate>
+                        </dxlc:GroupBox.MaximizedContentTemplate>
+                    </dxlc:GroupBox>
+                </DataTemplate>
+            </dxlc:FlowLayoutControl.ItemTemplate>
+
+            <!--<dxlc:GroupBox x:Name="groupBox1" Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>
+            <dxlc:GroupBox Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>
+            <dxlc:GroupBox Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>
+            <dxlc:GroupBox Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>
+            <dxlc:GroupBox Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>
+            <dxlc:GroupBox Header="GroupBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="50" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible"/>-->
+
+        </dxlc:FlowLayoutControl>
+        <dx:SimpleButton Content="SimpleButton" HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="190" Click="SimpleButton_Click"/>
+        <!--https://docs.microsoft.com/ko-kr/dotnet/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf-->
+        <dxlc:GroupBox  Header="GroupBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="250" MaximizeElementVisibility="Visible" MinimizeElementVisibility="Visible">
+            <Button Content="Yes"/>
+        </dxlc:GroupBox>
+    </Grid>
+</UserControl>

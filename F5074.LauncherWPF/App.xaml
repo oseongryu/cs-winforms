@@ -1,7 +1,7 @@
 ﻿<Application x:Class="F5074.LauncherWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml" Startup="OnAppStartup_UpdateThemeName">
+             StartupUri="View/MainHamburger.xaml" Startup="OnAppStartup_UpdateThemeName">
     <Application.Resources>
          
     </Application.Resources>

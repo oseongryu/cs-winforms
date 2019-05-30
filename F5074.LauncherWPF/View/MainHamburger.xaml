@@ -33,10 +33,16 @@
         </dxwui:HamburgerMenu>-->
 
         <dxdo:DockLayoutManager x:Name="dockLayoutManager1" Margin="158,0,0,0" >
-            <dxdo:LayoutGroup x:Name="layoutGroup1" Caption="LayoutRoot">
-                
-        <dxdo:LayoutPanel Caption="Panel1"/>
-        
+            <dxdo:LayoutGroup >
+                <!--<dxdo:TabbedGroup>
+                    <dxdo:LayoutPanel Caption="Panel1"/>
+                    <dxdo:LayoutPanel Caption="Panel2"/>
+                    <dxdo:LayoutPanel Caption="Panel3"/>
+
+                </dxdo:TabbedGroup>-->
+                <dxdo:DocumentGroup x:Name="documentGroup1" Caption="LayoutRoot">
+
+                </dxdo:DocumentGroup>
             </dxdo:LayoutGroup>
         </dxdo:DockLayoutManager>
 
