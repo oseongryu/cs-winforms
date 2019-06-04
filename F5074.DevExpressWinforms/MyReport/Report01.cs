@@ -12,8 +12,8 @@ namespace F5074.DevExpressWinforms.MyReport
         public Report01()
         {
             InitializeComponent();
-            customFontStyle.Font = new Font(FontCollection.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point);
-            xrLabel1.Font = new Font(FontCollection.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point);
+            //customFontStyle.Font = new Font(FontCollection.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point);
+            //xrLabel1.Font = new Font(FontCollection.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point);
         }
 
         static PrivateFontCollection fontCollection;
@@ -24,7 +24,7 @@ namespace F5074.DevExpressWinforms.MyReport
                 if (fontCollection == null)
                 {
                     fontCollection = new PrivateFontCollection();
-                    fontCollection.AddFontFile("free3of9.ttf");
+                    //fontCollection.AddFontFile("free3of9.ttf");
                 }
                 return fontCollection;
             }

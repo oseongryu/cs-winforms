@@ -24,7 +24,13 @@ namespace F5074.DevExpressWinforms.MyForm.I_XtraReport
         {
             Report01 report = new Report01();
             ReportPrintTool pt = new ReportPrintTool(report);
-            pt.ShowPreview();
+            // https://www.devexpress.com/Support/Center/Question/Details/Q296340/position-of-the-report-on-the-screen
+            pt.PreviewForm.StartPosition = FormStartPosition.CenterScreen;
+            pt.PreviewForm.SaveState = false;
+            pt.PreviewForm.SetDesktopBounds(0, 0, 1000, 900);
+            //pt.ShowPreview();
+            pt.ShowRibbonPreviewDialog();
+            //pt.ShowRibbonPreview();
         }
     }
 }
