@@ -67,6 +67,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
@@ -131,6 +134,12 @@
     <Compile Include="MyForm\D_Common\MyUserControl01.Designer.cs">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\E_Selenium\MySelenium01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\E_Selenium\MySelenium01.Designer.cs">
+      <DependentUpon>MySelenium01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
     <Compile Include="MyResources\MyReadTextFile.cs" />
     <Compile Include="MyResources\WebFile.cs" />
@@ -169,6 +178,9 @@
     <EmbeddedResource Include="MyForm\D_Common\MyUserControl01.resx">
       <DependentUpon>MyUserControl01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\E_Selenium\MySelenium01.resx">
+      <DependentUpon>MySelenium01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\TestUserControl.resx">
       <DependentUpon>TestUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +200,7 @@
     <None Include="MyLib\Font\free3of9.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
