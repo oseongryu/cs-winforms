@@ -69,8 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AutomationConnection.cs" />
     <Compile Include="Common\DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Automation\AutomationDAO.cs" />
+    <Compile Include="Service\Automation\AutomationDTO.cs" />
+    <Compile Include="Service\Common\CommonDTO.cs" />
     <Compile Include="Service\Dashboard\DashboardDAO.cs" />
     <Compile Include="Service\Dashboard\DashboardDTO.cs" />
   </ItemGroup>
@@ -86,13 +90,16 @@
     <Content Include="Lib\IBatisNet.DataMapper.dll" />
     <Content Include="Lib\IBatisNet.DataMapper.xml" />
     <Content Include="Lib\log4net.dll" />
+    <EmbeddedResource Include="Service\Automation\automation_sqlFile.xml" />
     <Content Include="Service\Dashboard\dashboard_sqlFile.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Config\log4Net.config" />
     <EmbeddedResource Include="Config\providers.config" />
     <EmbeddedResource Include="Config\SqlMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\AutomationSqlMap.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

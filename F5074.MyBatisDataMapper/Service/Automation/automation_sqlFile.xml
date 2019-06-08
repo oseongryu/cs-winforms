@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Automation" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <typeAlias alias="AutomationDTO" type="F5074.MyBatisDataMapper.Service.Automation.AutomationDTO"/>
+  </alias>
+  <statements>
+    <select id="SelectSiteList" parameterClass="AutomationDTO" resultClass="AutomationDTO">
+      SELECT  ID
+            , NAME
+        FROM TABLE2
+    </select>
+    <insert id="InsertSite" parameterClass="AutomationDTO">
+      INSERT INTO TABLE2
+      (
+          ID
+        , NAME
+      )
+      VALUES
+      (
+          #ID#
+        , #NAME#
+      )
+    </insert>
+    <update id="UpdateSite" parameterClass="AutomationDTO">
+      <!--UPDATE TABLE2
+         SET UPD_USR_ID   = #USR_ID#
+           , UPD_DT       = SYSDATE
+       WHERE ID  = #ID#-->
+      UPDATE TABLE2
+         SET NAME = #NAME#
+       WHERE ID  = #ID#
+    </update>
+    <delete id="DeleteSite" parameterClass="AutomationDTO">
+      DELETE FROM TABLE2
+       WHERE 1 = 1
+         AND ID = #ID#
+    </delete>
+  </statements>
+</sqlMap>
