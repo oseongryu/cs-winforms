@@ -5,9 +5,9 @@
   </alias>
   <statements>
     <select id="SelectSiteList" parameterClass="AutomationDTO" resultClass="AutomationDTO">
-      SELECT  ID
-            , NAME
-        FROM TABLE2
+      SELECT  'b' ID
+            , 'a' NAME
+
     </select>
     <insert id="InsertSite" parameterClass="AutomationDTO">
       INSERT INTO TABLE2

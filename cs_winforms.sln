@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.LauncherWPF", "F5074.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.LauncherWinforms", "F5074.LauncherWinforms\F5074.LauncherWinforms.csproj", "{ED0B12AE-E45D-4B21-97C9-A9EBCF1E5820}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.Selenium", "F5074.Selenium\F5074.Selenium.csproj", "{41F4BE37-753F-4E86-8B65-D8B0B4FE4C24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{ED0B12AE-E45D-4B21-97C9-A9EBCF1E5820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0B12AE-E45D-4B21-97C9-A9EBCF1E5820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0B12AE-E45D-4B21-97C9-A9EBCF1E5820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F4BE37-753F-4E86-8B65-D8B0B4FE4C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F4BE37-753F-4E86-8B65-D8B0B4FE4C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F4BE37-753F-4E86-8B65-D8B0B4FE4C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F4BE37-753F-4E86-8B65-D8B0B4FE4C24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
