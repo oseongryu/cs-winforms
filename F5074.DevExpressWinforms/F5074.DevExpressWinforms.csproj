@@ -156,6 +156,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyCommon\IVisible.cs" />
     <Compile Include="MyDialog\ButtonEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +417,12 @@
     <Compile Include="MyForm\J_DocumentManager\MyDocumentManager01.Designer.cs">
       <DependentUpon>MyDocumentManager01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\J_DocumentManager\MyDocumentManager02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\J_DocumentManager\MyDocumentManager02.Designer.cs">
+      <DependentUpon>MyDocumentManager02.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +567,9 @@
     <EmbeddedResource Include="MyForm\J_DocumentManager\MyDocumentManager01.resx">
       <DependentUpon>MyDocumentManager01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\J_DocumentManager\MyDocumentManager02.resx">
+      <DependentUpon>MyDocumentManager02.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyMainForm.resx">
       <DependentUpon>MyMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -572,6 +582,7 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl02.resx">
       <DependentUpon>MyUserControl02.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
