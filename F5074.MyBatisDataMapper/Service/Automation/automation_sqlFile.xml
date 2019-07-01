@@ -4,10 +4,16 @@
     <typeAlias alias="AutomationDTO" type="F5074.MyBatisDataMapper.Service.Automation.AutomationDTO"/>
   </alias>
   <statements>
+    <update id="CreateTable1" parameterClass="System.String">
+      CREATE TABLE [#value#]
+      (
+        ID VARCHAR(50) NOT NULL PRIMARY KEY,
+        Name VARCHAR(50) NULL
+      )
+    </update>
     <select id="SelectSiteList" parameterClass="AutomationDTO" resultClass="AutomationDTO">
       SELECT  'b' ID
             , 'a' NAME
-
     </select>
     <insert id="InsertSite" parameterClass="AutomationDTO">
       INSERT INTO TABLE2

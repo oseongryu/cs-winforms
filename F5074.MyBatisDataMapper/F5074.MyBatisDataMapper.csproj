@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,6 +94,13 @@
     <Compile Include="Service\Dashboard\DashboardDTO.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Lib\AutomationDB.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>AutomationDB.mdf</DependentUpon>
+    </Content>
+    <None Include="Lib\AutomationDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Lib\Castle.DynamicProxy.dll" />
     <Content Include="Lib\Castle.DynamicProxy.xml" />
     <Content Include="Lib\Common.Logging.dll" />
@@ -90,7 +112,9 @@
     <Content Include="Lib\IBatisNet.DataMapper.dll" />
     <Content Include="Lib\IBatisNet.DataMapper.xml" />
     <Content Include="Lib\log4net.dll" />
-    <EmbeddedResource Include="Service\Automation\automation_sqlFile.xml" />
+    <EmbeddedResource Include="Service\Automation\automation_sqlFile.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Content Include="Service\Dashboard\dashboard_sqlFile.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +124,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\AutomationSqlMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

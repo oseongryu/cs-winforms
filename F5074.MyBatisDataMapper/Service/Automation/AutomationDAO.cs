@@ -17,6 +17,22 @@ namespace F5074.MyBatisDataMapper.Service.Automation
             return mapper.QueryForList<AutomationDTO>("Automation.SelectSiteList", _dto);
         }
 
+        public static AutomationDTO CreateTable1(AutomationDTO _dto)
+        {
+            try
+            {
+                int str = mapper.Update("Automation.CreateTable1", (object)"Testss");
+                resultDTO.isSuccess = true;
+            }
+            catch (Exception exception)
+            {
+                resultDTO.Message = exception.Message;
+                resultDTO.isSuccess = false;
+            }
+            return resultDTO;
+        }
+
+
         public static AutomationDTO InsertSite(AutomationDTO _dto)
         {
             try

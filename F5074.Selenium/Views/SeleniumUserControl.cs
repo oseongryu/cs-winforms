@@ -32,6 +32,7 @@ namespace F5074.Selenium.Views
             btnSearch.Click += BtnSearch_Click;
 
             IList<AutomationDTO> tempList = AutomationDAO.SelectSiteList(new AutomationDTO());
+            AutomationDTO createTableResult = AutomationDAO.CreateTable1(new AutomationDTO());
 
         }
 

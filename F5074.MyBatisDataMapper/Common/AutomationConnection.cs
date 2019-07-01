@@ -30,7 +30,10 @@ namespace F5074.MyBatisDataMapper.Common
                     XmlDocument sqlMapConfig = Resources.GetEmbeddedResourceAsXmlDocument("Config.AutomationSqlMap.config, F5074.MyBatisDataMapper");
                     ISqlMapper mapper = dom.Configure(sqlMapConfig);
 
-
+                    // https://stackoverflow.com/questions/18641883/a-database-with-the-same-name-exists-or-specified-file-cannot-be-opened-or-it
+                    // C# mssql attached db https://stackoverflow.com/questions/39264707/attach-sql-server-database-in-c-sharp
+                    // https://andwiz.tistory.com/entry/MyBatisnet%EC%97%90%EC%84%9C-%EC%BF%BC%EB%A6%AC-%EB%A7%B5%ED%95%91-%ED%8C%8C%EC%9D%BC%EB%93%A4%EC%9D%98-%EB%B6%84%EB%A6%AC
+                    // http://www.sqler.com/401700
                     mapper.SessionStore = new HybridWebThreadSessionStore(mapper.Id);
                     //mapper.DataSource.ConnectionString = @"Server=(localdb)\MSSQLLocalDB; Integrated Security=true ;AttachDbFileName=C:\Users\f5074\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb\AutomationDB.mdf;";
                     //string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
