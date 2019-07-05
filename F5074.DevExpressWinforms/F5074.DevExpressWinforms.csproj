@@ -250,6 +250,12 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl11.Designer.cs">
       <DependentUpon>MyGridControl11.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl12.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl12.Designer.cs">
+      <DependentUpon>MyGridControl12.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -488,6 +494,9 @@
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl11.resx">
       <DependentUpon>MyGridControl11.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl12.resx">
+      <DependentUpon>MyGridControl12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
     </EmbeddedResource>
@@ -582,7 +591,6 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl02.resx">
       <DependentUpon>MyUserControl02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
