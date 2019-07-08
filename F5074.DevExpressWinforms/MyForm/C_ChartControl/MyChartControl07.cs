@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraCharts;
 using F5074.DevExpressWinforms.MyCommon;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 using System.Globalization;
 
 namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
@@ -21,7 +20,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             InitializeComponent();
 
 
-            List< DataFourVo> resultList =  new MyDatabaseConnect01().connection4("");
+            List<MyDatabaseConnect01.DataFourVo> resultList =  new MyDatabaseConnect01().connection4("");
             this.chartControl1.AxisScaleChanged += ChartControl1_AxisScaleChanged;
             this.chartControl1.CustomDrawAxisLabel += ChartControl1_CustomDrawAxisLabel;
 

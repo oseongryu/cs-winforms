@@ -13,7 +13,6 @@ using F5074.DevExpressWinforms.MyUserControl;
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraLayout;
 using F5074.DevExpressWinforms.MyCommon;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 
 namespace F5074.DevExpressWinforms.MyForm.D_TileBar
 {

@@ -13,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 
 namespace F5074.DevExpressWinforms.MyCommon
 {
@@ -32,7 +31,7 @@ namespace F5074.DevExpressWinforms.MyCommon
         }
         public static void MakeLayoutContol3(FlowLayoutPanel flowLayoutPanel, string _valString)
         {
-            List<DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
+            List<MyDatabaseConnect01.DataThreeVo> resultList = new MyDatabaseConnect01().connection3(_valString);
             //flowLayoutPanel.Size = new Size(3000, 2000);
             //flowLayoutPanel.WrapContents = false;
             // https://www.dotnetperls.com/flowlayoutpanel
@@ -123,7 +122,7 @@ namespace F5074.DevExpressWinforms.MyCommon
         //}
         public static void MakeLayoutContol(LayoutControlGroup layoutControlGroup, string _valString)
         {
-            List<DataFourVo> resultList = new MyDatabaseConnect01().connection6(_valString);
+            List<MyDatabaseConnect01.DataFourVo> resultList = new MyDatabaseConnect01().connection6(_valString);
             layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             layoutControlGroup.GroupBordersVisible = false;
             layoutControlGroup.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;

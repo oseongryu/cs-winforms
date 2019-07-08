@@ -17,7 +17,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static F5074.DevExpressWinforms.MyCommon.MyDirectory01;
 
 namespace F5074.DevExpressWinforms
 {
@@ -25,7 +24,7 @@ namespace F5074.DevExpressWinforms
     {
         public XtraTabControl ParentTab { get; set; }
         private string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        private List<MenuVo> resultList;
+        private List<MyDirectory01.MenuVo> resultList;
         private string programPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         Assembly assembly;
         public MyMainForm()

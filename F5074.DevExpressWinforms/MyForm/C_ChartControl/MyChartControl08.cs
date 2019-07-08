@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraCharts;
-using static F5074.DevExpressWinforms.MyCommon.MyDatabaseConnect01;
 using F5074.DevExpressWinforms.MyCommon;
 using System.Globalization;
 
@@ -21,7 +20,7 @@ namespace F5074.DevExpressWinforms.MyForm.C_ChartControl
             InitializeComponent();
 
 
-            List<DataFourVo> resultList = new MyDatabaseConnect01().connection4("");
+            List<MyDatabaseConnect01.DataFourVo> resultList = new MyDatabaseConnect01().connection4("");
 
             int maxVal = resultList.Count;
             for (int x = 0; x < maxVal; x++)
