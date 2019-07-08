@@ -10,7 +10,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static F5074.DevExpressWinforms.MyCommon.MyDirectory01;
 
 namespace F5074.WinformsLauncher
 {
@@ -18,7 +17,7 @@ namespace F5074.WinformsLauncher
     public partial class MyDashBoardForm : Form
     {
         private string programPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        private List<MenuVo> resultList;
+        private List<DevExpressWinforms.MyCommon.MyDirectory01.MenuVo> resultList;
         Assembly assembly;
         public MyDashBoardForm()
         {
