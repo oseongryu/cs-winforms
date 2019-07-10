@@ -48,6 +48,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             this.gridView1.RowCellStyle += GridView1_RowCellStyle;
 
             this.simpleButton1.Click += SimpleButton1_Click;
+            this.gridControl1.DataSource = CreateTable(50);
 
         }
 
@@ -97,6 +98,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             visibleEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             visibleEditor.ButtonClick += repositoryItemButtonEdit_ButtonClick;
             visibleEditor.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            visibleEditor.Buttons[0].Caption = "조치대기";
 
             RepositoryItemButtonEdit emptyEditor = new RepositoryItemButtonEdit();
             emptyEditor.Name = "repositoryItemButtonEdit2";
@@ -120,11 +122,16 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
         void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            MessageBox.Show("");
-            //DevExpress.XtraEditors.Controls.EditorButton temp = (DevExpress.XtraEditors.Controls.EditorButton)e.Button;
+            //MessageBox.Show("");
+            DevExpress.XtraEditors.Controls.EditorButton temp = (DevExpress.XtraEditors.Controls.EditorButton)e.Button;
+            string b = temp.Caption;
             //System.Data.DataRow row = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             //string cellValue = gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, "Height").ToString();
             //MessageBox.Show(cellValue);
+
+            string editInfo = this.gridView1.GetFocusedRowCellValue(gridView1.Columns[gridView1.FocusedColumn.FieldName]).ToString();
+            editInfo = this.gridView1.GetFocusedRowCellDisplayText(gridView1.FocusedColumn.FieldName);
+            //editInfo = ((RepositoryItem)gridView1.Columns[gridView1.FocusedColumn.FieldName].ColumnEdit).Name;
         }
         #region 테이블데이터생성
         private DataTable CreateTable(int RowCount)
