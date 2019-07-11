@@ -256,6 +256,12 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl12.Designer.cs">
       <DependentUpon>MyGridControl12.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl13.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl13.Designer.cs">
+      <DependentUpon>MyGridControl13.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -502,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl12.resx">
       <DependentUpon>MyGridControl12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl13.resx">
+      <DependentUpon>MyGridControl13.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
