@@ -59,7 +59,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             DevExpress.XtraEditors.Repository.RepositoryItemTextEdit riteTextEditColumn = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             riteTextEditColumn.Mask.EditMask = "####-##-## ##:##:##"; // 0000-00-00 00:00:00
             riteTextEditColumn.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            riteTextEditColumn.Mask.UseMaskAsDisplayFormat = false;
+            riteTextEditColumn.Mask.UseMaskAsDisplayFormat = true;
             riteTextEditColumn.Mask.IgnoreMaskBlank = true;
             riteTextEditColumn.Mask.ShowPlaceHolders = false;
 
@@ -68,6 +68,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
             riteTextEditColumn.NullValuePromptShowForEmptyValue = false;
             //riteTextEditColumn.ShowNullValuePromptWhenFocused = false;
             gridView.Columns["Date"].ColumnEdit = riteTextEditColumn;
+            this.gridView.CustomColumnDisplayText += gridView1_CustomColumnDisplayText;
 
             //gridView.Columns["Date"].DisplayFormat.FormatType = FormatType.Custom;
             //gridView.Columns["Date"].DisplayFormat.FormatType = FormatType.Custom;
@@ -111,6 +112,7 @@ namespace F5074.DevExpressWinforms.MyForm.A_GridControl
 
         private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
+            // https://www.devexpress.com/Support/Center/Question/Details/T162738/display-null-for-null-values-in-the-database-in-the-grid-control
             object value = e.Value;
             if (value == null || string.IsNullOrEmpty(value.ToString()) || string.IsNullOrWhiteSpace(value.ToString())) e.DisplayText = null;
         }
