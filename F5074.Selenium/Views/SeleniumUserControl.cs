@@ -60,20 +60,23 @@ namespace F5074.Selenium.Views
 
                 using (IWebDriver driver = new ChromeDriver(Environment.CurrentDirectory + @"\Lib"))
                 {
-                    driver.Url = "https://google.co.kr";
+
+
+                    driver.Url = "https://ep.knou.ac.kr/login.do?epTicket=LOG";
                     //driver.Manage().Window.Maximize();
 
-                    IWebElement q = driver.FindElement(By.Id("query"));
+                    IWebElement q = driver.FindElement(By.XPath(@"//input[@id='username']"));
                     q.SendKeys("abc");
-                    driver.FindElement(By.Id("search_btn")).Click();
+
+                    q = driver.FindElement(By.XPath(@"//input[@id='password']"));
+                    q.SendKeys("abc");
+
+
+                    driver.FindElement(By.XPath(@"//input[@id='btn_login']")).Click();
                     Thread.Sleep(5000);
 
-                    // 1위 제목 출력
-                    var rank = driver.FindElement(By.ClassName("list_rank"));
-                    var rankOne = rank.FindElement(By.XPath(".//li[0]/h4/a"));
-                    string title = rankOne.Text;
-                    Console.WriteLine(title);
-                    driver.Close();
+
+                    //driver.Close();
 
                 }
 
