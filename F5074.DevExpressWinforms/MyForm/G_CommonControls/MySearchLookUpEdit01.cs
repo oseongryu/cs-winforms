@@ -38,7 +38,49 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
         }
         private void slueTest_Enter(object sender, EventArgs e)
         {
+            try
+            {
 
+                DataTable dtBigClass = CreateTable(50);
+                dtBigClass.Columns.Add("ROWINDEX");
+                for (int i = 0; i < dtBigClass.Rows.Count; i++)
+                {
+                    dtBigClass.Rows[i]["ROWINDEX"] = (i + 1).ToString();
+                }
+
+                this.slueTest.Properties.DataSource = dtBigClass;
+
+                if (slueTest.EditValue != null)
+                {
+                    string[] oItem = slueTest.EditValue.ToString().Split(new char[] { ',' });
+                    List<int> oIndex = new List<int>();
+
+                    for (int i = 0; i < oItem.Length; i++)
+                    {
+                        for (int iRow = 0; iRow < dtBigClass.Rows.Count; iRow++)
+                        {
+                            if (dtBigClass.Rows[iRow]["ROWINDEX"].ToString() == oItem[i])
+                            {
+                                oIndex.Add(iRow);
+                                break;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < oIndex.Count; i++)
+                    {
+                        this.slueTest.Properties.View.SelectRow(oIndex[i]);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+            }
         }
 
         private void slueTest_EditValueChanged(object sender, EventArgs e)
@@ -70,8 +112,6 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
                 e.DisplayText = sValues;
             }
         }
-
-
         private void searchLookUpEdit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
             SearchLookUpEdit searchLookUpEdit = sender as SearchLookUpEdit;
@@ -97,9 +137,6 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
             else
                 searchLookUpEdit.EditValue = null;
         }
-
-
-
         private void AddNewButtonChangeCaption_Popup(object sender, EventArgs e)
         {
             IPopupControl popupControl = sender as IPopupControl;
@@ -107,6 +144,26 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
             SimpleButton AddNewButton = ((LayoutControlItem)layoutControl.Items.FindByName("lciAddNew")).Control as SimpleButton;
 
             AddNewButton.Text = "OK";
+        }
+        private DataTable CreateTable(int RowCount)
+        {
+            Random rnd = new Random();
+            DataTable tbl = new DataTable();
+
+            tbl.Columns.Add("BIG_CLASS", typeof(string));
+            tbl.Columns.Add("BIG_CLASS_DESC", typeof(string));
+
+            //tbl.Columns.Add("Checked", typeof(bool));
+            //for (int i = 0; i < RowCount; i++)
+            //{
+            //    tbl.Rows.Add(new object[] { "False", "kim" });
+            //}
+            tbl.Rows.Add(new object[] { "False", "kim1" });
+            tbl.Rows.Add(new object[] { "False", "kim2" });
+            tbl.Rows.Add(new object[] { "False", "kim3" });
+            tbl.Rows.Add(new object[] { "False", "kim4" });
+            tbl.Rows.Add(new object[] { "False", "kim5" });
+            return tbl;
         }
     }
 }

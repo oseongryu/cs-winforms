@@ -36,12 +36,12 @@
             // 
             // slueTest
             // 
-            this.slueTest.Location = new System.Drawing.Point(3, 16);
+            this.slueTest.Location = new System.Drawing.Point(68, 36);
             this.slueTest.Name = "slueTest";
             this.slueTest.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slueTest.Properties.View = this.searchLookUpEdit1View;
-            this.slueTest.Size = new System.Drawing.Size(100, 20);
+            this.slueTest.Size = new System.Drawing.Size(278, 20);
             this.slueTest.TabIndex = 0;
             // 
             // searchLookUpEdit1View
