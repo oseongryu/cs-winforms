@@ -30,6 +30,7 @@
         {
             this.slueTest = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.slueTest.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,19 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(302, 208);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // MySearchLookUpEdit01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.slueTest);
             this.Name = "MySearchLookUpEdit01";
             this.Size = new System.Drawing.Size(908, 459);
@@ -68,5 +78,6 @@
 
         private DevExpress.XtraEditors.SearchLookUpEdit slueTest;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

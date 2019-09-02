@@ -35,7 +35,20 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
             slueTest.Closed += searchLookUpEdit_Closed;
             slueTest.Popup += AddNewButtonChangeCaption_Popup; // AddNewButton Caption
             MyDevExpressFunctions.SetBestFitPopupSearchLookUpEdit(this.slueTest, 25);
+            this.simpleButton1.Click += SimpleButton1_Click;
         }
+
+        private void SimpleButton1_Click(object sender, EventArgs e)
+        {
+            string sSelectedBigClass = slueTest.EditValue == null ? "" : GetValue("BIG_CLASS", "BIG_CLASS");
+
+            if (sSelectedBigClass != "")
+            {
+                sSelectedBigClass = slueTest.EditValue == null ? "" : GetValue("BIG_CLASS", "BIG_CLASS");
+            }
+            MessageBox.Show(sSelectedBigClass);
+        }
+
         private void slueTest_Enter(object sender, EventArgs e)
         {
             try
@@ -145,6 +158,84 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
 
             AddNewButton.Text = "OK";
         }
+
+        private string GetValue(string sDisplayMember, string sValueMember)
+        {
+            string sReturn = "";
+
+            if (sDisplayMember == "BIG_CLASS" && slueTest.EditValue != null && slueTest.EditValue.ToString() != "")
+            {
+                GridView view = slueTest.Properties.View;
+
+                int[] selectedRows = view.GetSelectedRows();
+                if (selectedRows.Length > 0)
+                {
+                    string sValues = "";
+                    for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+                    {
+                        if (iRow == 0)
+                        {
+                            sValues = view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+                        }
+                        else
+                        {
+                            sValues += "," + view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+                        }
+                    }
+
+                    sReturn = sValues;
+                }
+            }
+            //else if (sDisplayMember == "MID_CLASS" && slueMidClass.EditValue != null && slueMidClass.EditValue.ToString() != "")
+            //{
+            //    GridView view = slueMidClass.Properties.View;
+
+            //    int[] selectedRows = view.GetSelectedRows();
+            //    if (selectedRows.Length > 0)
+            //    {
+            //        string sValues = "";
+            //        for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+            //        {
+            //            if (iRow == 0)
+            //            {
+            //                sValues = view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+            //            }
+            //            else
+            //            {
+            //                sValues += "," + view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+            //            }
+            //        }
+
+            //        sReturn = sValues;
+            //    }
+
+            //}
+            //else if (sDisplayMember == "SUB_CLASS" && slueSubClass.EditValue != null && slueSubClass.EditValue.ToString() != "")
+            //{
+            //    GridView view = slueSubClass.Properties.View;
+
+            //    int[] selectedRows = view.GetSelectedRows();
+            //    if (selectedRows.Length > 0)
+            //    {
+            //        string sValues = "";
+            //        for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+            //        {
+            //            if (iRow == 0)
+            //            {
+            //                sValues = view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+            //            }
+            //            else
+            //            {
+            //                sValues += "," + view.GetRowCellValue(selectedRows[iRow], sValueMember).ToString();
+            //            }
+            //        }
+
+            //        sReturn = sValues;
+            //    }
+            //}
+
+            return sReturn;
+        }
         private DataTable CreateTable(int RowCount)
         {
             Random rnd = new Random();
@@ -158,12 +249,13 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
             //{
             //    tbl.Rows.Add(new object[] { "False", "kim" });
             //}
-            tbl.Rows.Add(new object[] { "False", "kim1" });
-            tbl.Rows.Add(new object[] { "False", "kim2" });
-            tbl.Rows.Add(new object[] { "False", "kim3" });
-            tbl.Rows.Add(new object[] { "False", "kim4" });
-            tbl.Rows.Add(new object[] { "False", "kim5" });
+            tbl.Rows.Add(new object[] { "Code1", "kim1" });
+            tbl.Rows.Add(new object[] { "Code2", "kim2" });
+            tbl.Rows.Add(new object[] { "Code3", "kim3" });
+            tbl.Rows.Add(new object[] { "Code4", "kim4" });
+            tbl.Rows.Add(new object[] { "Code5", "kim5" });
             return tbl;
         }
     }
+
 }
