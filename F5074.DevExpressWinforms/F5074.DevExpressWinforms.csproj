@@ -411,11 +411,23 @@
     <Compile Include="MyForm\G_CommonControls\MyLayoutControl01.Designer.cs">
       <DependentUpon>MyLayoutControl01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\G_CommonControls\MySearchLookUpEdit01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MySearchLookUpEdit01.Designer.cs">
+      <DependentUpon>MySearchLookUpEdit01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\G_CommonControls\MySpinEdit01.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyForm\G_CommonControls\MySpinEdit01.Designer.cs">
       <DependentUpon>MySpinEdit01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyTextEdit01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MyTextEdit01.Designer.cs">
+      <DependentUpon>MyTextEdit01.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\H_PdfViewer\MyPdfViewer01.cs">
       <SubType>UserControl</SubType>
@@ -582,8 +594,14 @@
     <EmbeddedResource Include="MyForm\G_CommonControls\MyLayoutControl01.resx">
       <DependentUpon>MyLayoutControl01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MySearchLookUpEdit01.resx">
+      <DependentUpon>MySearchLookUpEdit01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MySpinEdit01.resx">
       <DependentUpon>MySpinEdit01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MyTextEdit01.resx">
+      <DependentUpon>MyTextEdit01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\H_PdfViewer\MyPdfViewer01.resx">
       <DependentUpon>MyPdfViewer01.cs</DependentUpon>

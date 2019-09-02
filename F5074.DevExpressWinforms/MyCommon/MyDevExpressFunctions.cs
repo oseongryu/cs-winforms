@@ -252,6 +252,41 @@ namespace F5074.DevExpressWinforms.MyCommon
 
         }
 
+        public static void SetBestFitPopupSearchLookUpEdit(SearchLookUpEdit slEdit, int CheckBoxWidth = 0)
+        {
+            slEdit.Properties.Popup += (sender, e) =>
+            {
+                try
+                {
+                    DevExpress.XtraEditors.SearchLookUpEdit currentLook = (DevExpress.XtraEditors.SearchLookUpEdit)sender;
+
+                    currentLook.Properties.View.OptionsView.ColumnAutoWidth = false;
+                    currentLook.Properties.View.BestFitColumns();
+
+                    currentLook.Properties.View.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+
+                    DevExpress.XtraEditors.Popup.PopupSearchLookUpEditForm currentPopup = (currentLook as DevExpress.Utils.Win.IPopupControl).PopupWindow as DevExpress.XtraEditors.Popup.PopupSearchLookUpEditForm;
+                    //currentPopup.Size = new System.Drawing.Size(currentPopup.Width + 20, currentPopup.Height);
+                    //currentPopup.Size = new System.Drawing.Size(slEdit.Width, currentPopup.Height);
+
+                    int iColumnWidth = 0;
+                    int iColCount = currentLook.Properties.View.Columns.Count;
+                    for (int i = 0; i < iColCount; i++)
+                    {
+                        if (currentLook.Properties.View.Columns[i].Visible == true)
+                            iColumnWidth += currentLook.Properties.View.Columns[i].Width;
+                    }
+
+                    if (iColumnWidth > 0 && currentPopup.Size.Width < (iColumnWidth + 47 + CheckBoxWidth))
+                    {
+                        currentPopup.Size = new System.Drawing.Size(iColumnWidth + 47 + CheckBoxWidth, currentPopup.Height);
+                    }
+                }
+                catch { }
+            };
+        }
+
+
         public static void InitSearchLookUpEdit(SearchLookUpEdit slEdit, string displayMember, string valueMember, bool addClearButton = true)
         {
             slEdit.EditValue = null;
