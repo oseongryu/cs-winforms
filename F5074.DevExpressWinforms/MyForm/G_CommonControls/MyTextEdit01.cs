@@ -18,7 +18,8 @@ namespace F5074.DevExpressWinforms.MyForm.G_CommonControls
             textEdit1.Enter += TextEdit_Enter;
             textEdit2.Enter += TextEdit_Enter;
 
-
+            string test = "08-04 00:08~08-04 00:08(-),08-05 09:08~08-10 20:08(-),08-12 01:08~08-17 17:08(-),08-19 08:08~09-03 13:09(-)";
+            MessageBox.Show(test.Replace(",", "\r\n"));
         }
 
         private void TextEdit_Enter(object sender, EventArgs e)
