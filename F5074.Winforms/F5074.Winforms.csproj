@@ -51,6 +51,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>MyLib\CefSharp.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MyLib\CSharpDriver-1.7.0.4714\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MyLib\CSharpDriver-1.7.0.4714\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -139,6 +147,12 @@
     </Compile>
     <Compile Include="MyForm\E_Selenium\MySelenium01.Designer.cs">
       <DependentUpon>MySelenium01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\F_DBMS\MyMongoDB01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\F_DBMS\MyMongoDB01.Designer.cs">
+      <DependentUpon>MyMongoDB01.cs</DependentUpon>
     </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
     <Compile Include="MyResources\MyReadTextFile.cs" />
