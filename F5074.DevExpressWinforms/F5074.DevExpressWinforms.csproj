@@ -335,6 +335,18 @@
     <Compile Include="MyForm\C_ChartControl\MyChartControl08.Designer.cs">
       <DependentUpon>MyChartControl08.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl09.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl09.Designer.cs">
+      <DependentUpon>MyChartControl09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl10.Designer.cs">
+      <DependentUpon>MyChartControl10.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -459,6 +471,12 @@
     <Compile Include="MyForm\K_XtraDiagram\MyXtraDiagram01.Designer.cs">
       <DependentUpon>MyXtraDiagram01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\L_GaugeControl\MyGaugeControl01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\L_GaugeControl\MyGaugeControl01.Designer.cs">
+      <DependentUpon>MyGaugeControl01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +581,12 @@
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl08.resx">
       <DependentUpon>MyChartControl08.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl09.resx">
+      <DependentUpon>MyChartControl09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl10.resx">
+      <DependentUpon>MyChartControl10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx" />
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
       <DependentUpon>MyTileBar01.cs</DependentUpon>
@@ -623,6 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\K_XtraDiagram\MyXtraDiagram01.resx">
       <DependentUpon>MyXtraDiagram01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\L_GaugeControl\MyGaugeControl01.resx">
+      <DependentUpon>MyGaugeControl01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyMainForm.resx">
       <DependentUpon>MyMainForm.cs</DependentUpon>
