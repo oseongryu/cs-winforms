@@ -100,6 +100,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.XtraCharts.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -371,6 +372,12 @@
     <Compile Include="MyForm\C_ChartControl\MyChartControl10.Designer.cs">
       <DependentUpon>MyChartControl10.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl11.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl11.Designer.cs">
+      <DependentUpon>MyChartControl11.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -622,6 +629,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl10.resx">
       <DependentUpon>MyChartControl10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl11.resx">
+      <DependentUpon>MyChartControl11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx" />
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
