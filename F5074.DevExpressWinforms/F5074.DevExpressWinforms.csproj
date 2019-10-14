@@ -262,6 +262,30 @@
     <Compile Include="MyForm\A_GridControl\MyGridControl13.Designer.cs">
       <DependentUpon>MyGridControl13.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl14.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl14.Designer.cs">
+      <DependentUpon>MyGridControl14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl15.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl15.Designer.cs">
+      <DependentUpon>MyGridControl15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl16.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl16.Designer.cs">
+      <DependentUpon>MyGridControl16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl17.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\A_GridControl\MyGridControl17.Designer.cs">
+      <DependentUpon>MyGridControl17.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -547,6 +571,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl13.resx">
       <DependentUpon>MyGridControl13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl14.resx">
+      <DependentUpon>MyGridControl14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl15.resx">
+      <DependentUpon>MyGridControl15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl16.resx">
+      <DependentUpon>MyGridControl16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\A_GridControl\MyGridControl17.resx">
+      <DependentUpon>MyGridControl17.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\B_SpreadsheetControl\MySpreadsheetControl02.resx">
       <DependentUpon>MySpreadsheetControl02.cs</DependentUpon>
