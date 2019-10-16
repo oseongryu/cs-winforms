@@ -154,6 +154,12 @@
     <Compile Include="MyForm\F_DBMS\MyMongoDB01.Designer.cs">
       <DependentUpon>MyMongoDB01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\G_WebBrowser\MyWebBrowser01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_WebBrowser\MyWebBrowser01.Designer.cs">
+      <DependentUpon>MyWebBrowser01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
     <Compile Include="MyResources\MyReadTextFile.cs" />
     <Compile Include="MyResources\WebFile.cs" />
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\E_Selenium\MySelenium01.resx">
       <DependentUpon>MySelenium01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_WebBrowser\MyWebBrowser01.resx">
+      <DependentUpon>MyWebBrowser01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\TestUserControl.resx">
       <DependentUpon>TestUserControl.cs</DependentUpon>
@@ -239,6 +248,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MyResources\MyTextFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MyResources\WebBrowserList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

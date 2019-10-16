@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,9 +41,31 @@ namespace F5074.LauncherWinforms
             //this.xtraTabControl1.TabPages.Add("Main");
             this.dockManager1.DockingOptions.ShowCloseButton = false;
             documentManager1.DocumentActivate += DocumentManager1_DocumentActivate;
+
+            // TrayIcon https://m.blog.naver.com/PostView.nhn?blogId=nersion&logNo=140141051503&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+            this.Resize += MainForm_Resize;
+            notifyIcon1.DoubleClick += NotifyIcon1_DoubleClick;
         }
 
+        private void NotifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            //Notify Icon을 더블클릭했을시 일어나는 이벤트.
+            this.Visible = true;
+            this.ShowIcon = true;
+            notifyIcon1.Visible = false; //트레이 아이콘을 숨긴다.
+        }
 
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            //윈도우 상태가 Minimized일 경우
+            if (this.WindowState == FormWindowState.Minimized)
+
+            {
+                this.Visible = false; //창을 보이지 않게 한다.
+                this.ShowIcon = false; //작업표시줄에서 제거.
+                notifyIcon1.Visible = true; //트레이 아이콘을 표시한다.
+            }
+        }
 
         private void treeList1_DoubleClick(object sender, EventArgs e)
         {
@@ -145,5 +168,50 @@ namespace F5074.LauncherWinforms
         {
             
         }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+        }
+        [DllImport("user32.dll")]
+        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        [DllImport("user32.dll")]
+        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
+        [DllImport("user32.dll")]
+        public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
+
+
+        public void RefreshTrayArea()
+        {
+            IntPtr systemTrayContainerHandle = FindWindow("Shell_TrayWnd", null);
+            IntPtr systemTrayHandle = FindWindowEx(systemTrayContainerHandle, IntPtr.Zero, "TrayNotifyWnd", null);
+            IntPtr sysPagerHandle = FindWindowEx(systemTrayHandle, IntPtr.Zero, "SysPager", null);
+            IntPtr notificationAreaHandle = FindWindowEx(sysPagerHandle, IntPtr.Zero, "ToolbarWindow32", "Notification Area");
+            if (notificationAreaHandle == IntPtr.Zero)
+            {
+                notificationAreaHandle = FindWindowEx(sysPagerHandle, IntPtr.Zero, "ToolbarWindow32", "User Promoted Notification Area");
+                IntPtr notifyIconOverflowWindowHandle = FindWindow("NotifyIconOverflowWindow", null);
+                IntPtr overflowNotificationAreaHandle = FindWindowEx(notifyIconOverflowWindowHandle, IntPtr.Zero, "ToolbarWindow32", "Overflow Notification Area");
+                RefreshTrayArea(overflowNotificationAreaHandle);
+            }
+            RefreshTrayArea(notificationAreaHandle);
+        }
+
+        private static void RefreshTrayArea(IntPtr windowHandle)
+        {
+            const uint wmMousemove = 0x0200;
+            RECT rect;
+            GetClientRect(windowHandle, out rect);
+            for (var x = 0; x < rect.right; x += 5)
+                for (var y = 0; y < rect.bottom; y += 5)
+                    SendMessage(windowHandle, wmMousemove, 0, (y << 16) + x);
+        }
+
     }
 }
