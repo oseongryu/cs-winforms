@@ -460,6 +460,12 @@
     <Compile Include="MyForm\G_CommonControls\MySearchLookUpEdit01.Designer.cs">
       <DependentUpon>MySearchLookUpEdit01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\G_CommonControls\MySearchLookUpEdit02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\G_CommonControls\MySearchLookUpEdit02.Designer.cs">
+      <DependentUpon>MySearchLookUpEdit02.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\G_CommonControls\MySpinEdit01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -672,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MySearchLookUpEdit01.resx">
       <DependentUpon>MySearchLookUpEdit01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\G_CommonControls\MySearchLookUpEdit02.resx">
+      <DependentUpon>MySearchLookUpEdit02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\G_CommonControls\MySpinEdit01.resx">
       <DependentUpon>MySpinEdit01.cs</DependentUpon>
