@@ -65,7 +65,7 @@ namespace F5074.DevExpressWinforms.MyForm.L_GaugeControl
         float AnimateScaleValue(IScale scale)
         {
             Random r = new Random();
-            return 100;
+            return r.Next(0,100);
         }
     }
 }
