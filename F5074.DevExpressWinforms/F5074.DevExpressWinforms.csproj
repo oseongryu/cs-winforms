@@ -398,12 +398,6 @@
     <Compile Include="MyForm\C_ChartControl\MyChartControl11.Designer.cs">
       <DependentUpon>MyChartControl11.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\C_ChartControl\MyChartControl12.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyForm\C_ChartControl\MyChartControl12.Designer.cs">
-      <DependentUpon>MyChartControl12.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -661,9 +655,6 @@
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl11.resx">
       <DependentUpon>MyChartControl11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl12.resx">
-      <DependentUpon>MyChartControl12.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx" />
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
       <DependentUpon>MyTileBar01.cs</DependentUpon>
@@ -731,7 +722,6 @@
     <EmbeddedResource Include="MyForm\L_GaugeControl\MyGaugeControl01.resx">
       <DependentUpon>MyGaugeControl01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\Report01.resx">
       <DependentUpon>Report01.cs</DependentUpon>
     </EmbeddedResource>
