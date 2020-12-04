@@ -5,7 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Drawing.Text;
 
-namespace F5074.DevExpressWinforms.MyReport
+namespace F5074.DevExpressWinforms.Report
 {
     public partial class Report01 : DevExpress.XtraReports.UI.XtraReport
     {

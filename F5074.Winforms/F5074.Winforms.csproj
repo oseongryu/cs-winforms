@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,14 +53,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>MyLib\CefSharp.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>MyLib\CSharpDriver-1.7.0.4714\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>MyLib\CSharpDriver-1.7.0.4714\MongoDB.Driver.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -82,12 +76,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyForm\A_WPF\MyWPFControl01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,7 +157,6 @@
     <Compile Include="MyUserControl\TestUserControl.Designer.cs">
       <DependentUpon>TestUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MyForm\A_WPF\MyWPFControl01.resx">
       <DependentUpon>MyWPFControl01.cs</DependentUpon>
@@ -235,9 +222,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MyLib\CefSharp.Core.dll" />
     <Content Include="MyLib\CefSharp.dll" />
     <Content Include="MyLib\CefSharp.WinForms.dll" />
@@ -253,12 +237,6 @@
     <Content Include="MyResources\WebBrowserList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\F5074.WPF\F5074.WPF.csproj">
-      <Project>{ee8e4138-434e-4f2b-a02a-dd46dcac24d4}</Project>
-      <Name>F5074.WPF</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

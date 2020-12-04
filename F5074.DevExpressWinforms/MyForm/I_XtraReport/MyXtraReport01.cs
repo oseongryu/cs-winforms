@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using F5074.DevExpressWinforms.MyReport;
+using F5074.DevExpressWinforms.Report;
 using DevExpress.XtraReports.UI;
 
 namespace F5074.DevExpressWinforms.MyForm.I_XtraReport

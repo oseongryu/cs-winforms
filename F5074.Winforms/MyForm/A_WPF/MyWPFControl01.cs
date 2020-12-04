@@ -17,7 +17,7 @@ namespace F5074.Winforms.MyForm.A_WPF
             InitializeComponent();
 
             // https://shine10e.tistory.com/70
-            this.elementHost1.Child = new F5074.WPF.MainWindow();
+            //this.elementHost1.Child = new F5074.WPF.MainWindow();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace F5074.DevExpressWinforms.MyReport
+﻿namespace F5074.DevExpressWinforms.Report
 {
     partial class Report01
     {

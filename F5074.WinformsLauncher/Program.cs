@@ -34,7 +34,7 @@ namespace F5074.WinformsLauncher
             //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Colorful");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyMainForm() { WindowState = FormWindowState.Maximized });
+            Application.Run(new MyDashBoardForm() { WindowState = FormWindowState.Maximized });
         }
     }
 }
