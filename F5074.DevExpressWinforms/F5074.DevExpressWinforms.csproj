@@ -147,6 +147,9 @@
       <HintPath>bin\Debug\DevExpress.XtraTreeList.v17.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="F5074.Winforms">
+      <HintPath>..\F5074.Winforms\obj\Debug\F5074.Winforms.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -394,6 +397,12 @@
     </Compile>
     <Compile Include="MyForm\C_ChartControl\MyChartControl11.Designer.cs">
       <DependentUpon>MyChartControl11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl12.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\C_ChartControl\MyChartControl12.Designer.cs">
+      <DependentUpon>MyChartControl12.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\C_ChartControl\ucValuePresenter.cs">
       <SubType>UserControl</SubType>
@@ -652,6 +661,9 @@
     <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl11.resx">
       <DependentUpon>MyChartControl11.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\C_ChartControl\MyChartControl12.resx">
+      <DependentUpon>MyChartControl12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\C_ChartControl\ucValuePresenter.resx" />
     <EmbeddedResource Include="MyForm\D_TileBar\MyTileBar01.resx">
       <DependentUpon>MyTileBar01.cs</DependentUpon>
@@ -719,6 +731,7 @@
     <EmbeddedResource Include="MyForm\L_GaugeControl\MyGaugeControl01.resx">
       <DependentUpon>MyGaugeControl01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\Report01.resx">
       <DependentUpon>Report01.cs</DependentUpon>
     </EmbeddedResource>
@@ -728,7 +741,6 @@
     <EmbeddedResource Include="MyUserControl\MyUserControl02.resx">
       <DependentUpon>MyUserControl02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
