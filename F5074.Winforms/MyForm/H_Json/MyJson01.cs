@@ -45,9 +45,11 @@ namespace F5074.Winforms.MyForm.H_Json {
 
         private void RestApi()
         {
-            var json = new WebClient().DownloadString("http://localhost/users2/user1");
+            var json = new WebClient().DownloadString("http://localhost/users2");
+
             string strJson = json.ToString();
             JObject arrJson = JObject.Parse(strJson);
+            JArray arrJsons = JArray.Parse(arrJson["data"].ToString());
             DataTable dt = JsonConvert.DeserializeObject<DataTable>(arrJson["data"].ToString());
         }
 
