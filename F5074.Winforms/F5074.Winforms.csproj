@@ -157,6 +157,12 @@
     <Compile Include="MyForm\H_Json\MyJson01.Designer.cs">
       <DependentUpon>MyJson01.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\I_Office\MyExcel01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\I_Office\MyExcel01.Designer.cs">
+      <DependentUpon>MyExcel01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyResources\ConvertToEnum.cs" />
     <Compile Include="MyResources\MyReadTextFile.cs" />
     <Compile Include="MyResources\WebFile.cs" />
