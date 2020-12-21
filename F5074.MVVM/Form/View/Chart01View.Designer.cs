@@ -1,5 +1,5 @@
 ﻿
-namespace F5074.MVVM.Form.View {
+namespace F5074.UI.Form.View {
     partial class Chart01View {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -27,14 +27,13 @@ namespace F5074.MVVM.Form.View {
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chart01View));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.calFromDate = new DevExpress.XtraEditors.DateEdit();
@@ -54,10 +53,20 @@ namespace F5074.MVVM.Form.View {
             this.lciPartNumber = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciCategory = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciEquipment = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnChart = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFind = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupChart = new DevExpress.XtraEditors.GroupControl();
+            this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.chartTab1 = new DevExpress.XtraCharts.ChartControl();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.chartTab2 = new DevExpress.XtraCharts.ChartControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.chartTab3 = new DevExpress.XtraCharts.ChartControl();
+            this.groupGrid = new DevExpress.XtraEditors.GroupControl();
+            this.pgDataGrid = new DevExpress.XtraPivotGrid.PivotGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -81,26 +90,24 @@ namespace F5074.MVVM.Form.View {
             ((System.ComponentModel.ISupportInitialize)(this.lciPartNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciEquipment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupChart)).BeginInit();
+            this.groupChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
+            this.xtraTabControl2.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTab1)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTab2)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTab3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupGrid)).BeginInit();
+            this.groupGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pgDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 70);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(633, 338);
-            this.xtraTabControl1.TabIndex = 5;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.chartTab1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(627, 309);
-            this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // groupControl1
             // 
@@ -109,7 +116,7 @@ namespace F5074.MVVM.Form.View {
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(633, 70);
+            this.groupControl1.Size = new System.Drawing.Size(1386, 70);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "조회조건";
             // 
@@ -128,7 +135,7 @@ namespace F5074.MVVM.Form.View {
             this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(572, 342, 562, 500);
             this.layoutControl2.OptionsView.UseDefaultDragAndDropRendering = false;
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(629, 47);
+            this.layoutControl2.Size = new System.Drawing.Size(1382, 47);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -143,21 +150,21 @@ namespace F5074.MVVM.Form.View {
             this.calFromDate.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
             this.calFromDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calFromDate.Size = new System.Drawing.Size(104, 20);
+            this.calFromDate.Size = new System.Drawing.Size(292, 20);
             this.calFromDate.StyleController = this.layoutControl2;
             this.calFromDate.TabIndex = 14;
             // 
             // calToDate
             // 
             this.calToDate.EditValue = null;
-            this.calToDate.Location = new System.Drawing.Point(198, 28);
+            this.calToDate.Location = new System.Drawing.Point(386, 28);
             this.calToDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.calToDate.Name = "calToDate";
             this.calToDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calToDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calToDate.Size = new System.Drawing.Size(106, 20);
+            this.calToDate.Size = new System.Drawing.Size(294, 20);
             this.calToDate.StyleController = this.layoutControl2;
             this.calToDate.TabIndex = 14;
             // 
@@ -171,7 +178,7 @@ namespace F5074.MVVM.Form.View {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slueEquipment.Properties.NullText = "";
             this.slueEquipment.Properties.View = this.gridView1;
-            this.slueEquipment.Size = new System.Drawing.Size(106, 20);
+            this.slueEquipment.Size = new System.Drawing.Size(294, 20);
             this.slueEquipment.StyleController = this.layoutControl2;
             this.slueEquipment.TabIndex = 19;
             // 
@@ -185,14 +192,14 @@ namespace F5074.MVVM.Form.View {
             // sluePartNumber
             // 
             this.sluePartNumber.EditValue = "";
-            this.sluePartNumber.Location = new System.Drawing.Point(351, 2);
+            this.sluePartNumber.Location = new System.Drawing.Point(727, 2);
             this.sluePartNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sluePartNumber.Name = "sluePartNumber";
             this.sluePartNumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sluePartNumber.Properties.NullText = "";
             this.sluePartNumber.Properties.View = this.gridView2;
-            this.sluePartNumber.Size = new System.Drawing.Size(106, 20);
+            this.sluePartNumber.Size = new System.Drawing.Size(294, 20);
             this.sluePartNumber.StyleController = this.layoutControl2;
             this.sluePartNumber.TabIndex = 19;
             // 
@@ -206,14 +213,14 @@ namespace F5074.MVVM.Form.View {
             // slueItemSpec
             // 
             this.slueItemSpec.EditValue = "";
-            this.slueItemSpec.Location = new System.Drawing.Point(198, 2);
+            this.slueItemSpec.Location = new System.Drawing.Point(386, 2);
             this.slueItemSpec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slueItemSpec.Name = "slueItemSpec";
             this.slueItemSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slueItemSpec.Properties.NullText = "";
             this.slueItemSpec.Properties.View = this.gridView3;
-            this.slueItemSpec.Size = new System.Drawing.Size(106, 20);
+            this.slueItemSpec.Size = new System.Drawing.Size(294, 20);
             this.slueItemSpec.StyleController = this.layoutControl2;
             this.slueItemSpec.TabIndex = 19;
             // 
@@ -227,14 +234,14 @@ namespace F5074.MVVM.Form.View {
             // slueCategory
             // 
             this.slueCategory.EditValue = "";
-            this.slueCategory.Location = new System.Drawing.Point(504, 2);
+            this.slueCategory.Location = new System.Drawing.Point(1068, 2);
             this.slueCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slueCategory.Name = "slueCategory";
             this.slueCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slueCategory.Properties.NullText = "";
             this.slueCategory.Properties.View = this.gridView4;
-            this.slueCategory.Size = new System.Drawing.Size(106, 20);
+            this.slueCategory.Size = new System.Drawing.Size(295, 20);
             this.slueCategory.StyleController = this.layoutControl2;
             this.slueCategory.TabIndex = 19;
             // 
@@ -259,28 +266,28 @@ namespace F5074.MVVM.Form.View {
             this.layoutControlGroup2.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 25D;
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition6.Width = 25D;
-            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition7.Width = 25D;
-            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition8.Width = 25D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1.Width = 25D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition2.Width = 25D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition3.Width = 25D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4.Width = 25D;
             this.layoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition5,
-            columnDefinition6,
-            columnDefinition7,
-            columnDefinition8});
-            rowDefinition3.Height = 26D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            rowDefinition4.Height = 28D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4});
+            rowDefinition1.Height = 26D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition2.Height = 28D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition3,
-            rowDefinition4});
+            rowDefinition1,
+            rowDefinition2});
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(612, 54);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1365, 54);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem6
@@ -290,7 +297,7 @@ namespace F5074.MVVM.Form.View {
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem6.Size = new System.Drawing.Size(153, 28);
+            this.layoutControlItem6.Size = new System.Drawing.Size(341, 28);
             this.layoutControlItem6.Text = "집계날짜";
             this.layoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(40, 14);
@@ -300,11 +307,11 @@ namespace F5074.MVVM.Form.View {
             // 
             this.layoutControlItem7.Control = this.calToDate;
             this.layoutControlItem7.CustomizationFormText = "기간From";
-            this.layoutControlItem7.Location = new System.Drawing.Point(153, 26);
+            this.layoutControlItem7.Location = new System.Drawing.Point(341, 26);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem7.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem7.Size = new System.Drawing.Size(153, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(341, 28);
             this.layoutControlItem7.Text = " ~    ";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(40, 14);
             // 
@@ -312,10 +319,10 @@ namespace F5074.MVVM.Form.View {
             // 
             this.lciItemSpec.Control = this.slueItemSpec;
             this.lciItemSpec.CustomizationFormText = " ";
-            this.lciItemSpec.Location = new System.Drawing.Point(153, 0);
+            this.lciItemSpec.Location = new System.Drawing.Point(341, 0);
             this.lciItemSpec.Name = "lciItemSpec";
             this.lciItemSpec.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.lciItemSpec.Size = new System.Drawing.Size(153, 26);
+            this.lciItemSpec.Size = new System.Drawing.Size(341, 26);
             this.lciItemSpec.Text = "재종";
             this.lciItemSpec.TextSize = new System.Drawing.Size(40, 14);
             // 
@@ -323,10 +330,10 @@ namespace F5074.MVVM.Form.View {
             // 
             this.lciPartNumber.Control = this.sluePartNumber;
             this.lciPartNumber.CustomizationFormText = " ";
-            this.lciPartNumber.Location = new System.Drawing.Point(306, 0);
+            this.lciPartNumber.Location = new System.Drawing.Point(682, 0);
             this.lciPartNumber.Name = "lciPartNumber";
             this.lciPartNumber.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.lciPartNumber.Size = new System.Drawing.Size(153, 26);
+            this.lciPartNumber.Size = new System.Drawing.Size(341, 26);
             this.lciPartNumber.Text = "형번";
             this.lciPartNumber.TextSize = new System.Drawing.Size(40, 14);
             // 
@@ -334,10 +341,10 @@ namespace F5074.MVVM.Form.View {
             // 
             this.lciCategory.Control = this.slueCategory;
             this.lciCategory.CustomizationFormText = "구분";
-            this.lciCategory.Location = new System.Drawing.Point(459, 0);
+            this.lciCategory.Location = new System.Drawing.Point(1023, 0);
             this.lciCategory.Name = "lciCategory";
             this.lciCategory.OptionsTableLayoutItem.ColumnIndex = 3;
-            this.lciCategory.Size = new System.Drawing.Size(153, 26);
+            this.lciCategory.Size = new System.Drawing.Size(342, 26);
             this.lciCategory.Text = "구분";
             this.lciCategory.TextSize = new System.Drawing.Size(40, 14);
             // 
@@ -347,9 +354,83 @@ namespace F5074.MVVM.Form.View {
             this.lciEquipment.CustomizationFormText = "설비번호";
             this.lciEquipment.Location = new System.Drawing.Point(0, 0);
             this.lciEquipment.Name = "lciEquipment";
-            this.lciEquipment.Size = new System.Drawing.Size(153, 26);
+            this.lciEquipment.Size = new System.Drawing.Size(341, 26);
             this.lciEquipment.Text = "설비번호";
             this.lciEquipment.TextSize = new System.Drawing.Size(40, 14);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnChart);
+            this.panelControl1.Controls.Add(this.btnFind);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 70);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1386, 38);
+            this.panelControl1.TabIndex = 6;
+            // 
+            // btnChart
+            // 
+            this.btnChart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChart.ImageOptions.Image")));
+            this.btnChart.Location = new System.Drawing.Point(131, 4);
+            this.btnChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(120, 28);
+            this.btnChart.TabIndex = 6;
+            this.btnChart.Text = "차트 확대";
+            // 
+            // btnFind
+            // 
+            this.btnFind.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.ImageOptions.Image")));
+            this.btnFind.Location = new System.Drawing.Point(5, 4);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(120, 28);
+            this.btnFind.TabIndex = 5;
+            this.btnFind.Text = "조회";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.groupChart);
+            this.groupControl2.Controls.Add(this.groupGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 108);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.ShowCaption = false;
+            this.groupControl2.Size = new System.Drawing.Size(1386, 534);
+            this.groupControl2.TabIndex = 7;
+            this.groupControl2.Text = "-";
+            // 
+            // groupChart
+            // 
+            this.groupChart.Controls.Add(this.xtraTabControl2);
+            this.groupChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupChart.Location = new System.Drawing.Point(341, 2);
+            this.groupChart.Name = "groupChart";
+            this.groupChart.Size = new System.Drawing.Size(1043, 530);
+            this.groupChart.TabIndex = 4;
+            this.groupChart.Text = "Chart";
+            // 
+            // xtraTabControl2
+            // 
+            this.xtraTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl2.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl2.Name = "xtraTabControl2";
+            this.xtraTabControl2.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl2.Size = new System.Drawing.Size(1039, 507);
+            this.xtraTabControl2.TabIndex = 4;
+            this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2,
+            this.xtraTabPage3});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.chartTab1);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1033, 478);
+            this.xtraTabPage1.Text = "주요 차트 ";
             // 
             // chartTab1
             // 
@@ -359,20 +440,73 @@ namespace F5074.MVVM.Form.View {
             this.chartTab1.Location = new System.Drawing.Point(0, 0);
             this.chartTab1.Name = "chartTab1";
             this.chartTab1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartTab1.Size = new System.Drawing.Size(627, 309);
-            this.chartTab1.TabIndex = 4;
+            this.chartTab1.Size = new System.Drawing.Size(1033, 478);
+            this.chartTab1.TabIndex = 3;
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.chartTab2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(849, 408);
+            this.xtraTabPage2.Text = "Load 1";
+            // 
+            // chartTab2
+            // 
+            this.chartTab2.DataBindings = null;
+            this.chartTab2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartTab2.Legend.Name = "Default Legend";
+            this.chartTab2.Location = new System.Drawing.Point(0, 0);
+            this.chartTab2.Name = "chartTab2";
+            this.chartTab2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartTab2.Size = new System.Drawing.Size(849, 408);
+            this.chartTab2.TabIndex = 4;
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.chartTab3);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(849, 408);
+            this.xtraTabPage3.Text = "Load 2";
+            // 
+            // chartTab3
+            // 
+            this.chartTab3.DataBindings = null;
+            this.chartTab3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartTab3.Legend.Name = "Default Legend";
+            this.chartTab3.Location = new System.Drawing.Point(0, 0);
+            this.chartTab3.Name = "chartTab3";
+            this.chartTab3.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartTab3.Size = new System.Drawing.Size(849, 408);
+            this.chartTab3.TabIndex = 5;
+            // 
+            // groupGrid
+            // 
+            this.groupGrid.Controls.Add(this.pgDataGrid);
+            this.groupGrid.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupGrid.Location = new System.Drawing.Point(2, 2);
+            this.groupGrid.Name = "groupGrid";
+            this.groupGrid.Size = new System.Drawing.Size(339, 530);
+            this.groupGrid.TabIndex = 2;
+            this.groupGrid.Text = "Grid";
+            // 
+            // pgDataGrid
+            // 
+            this.pgDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgDataGrid.Location = new System.Drawing.Point(2, 21);
+            this.pgDataGrid.Name = "pgDataGrid";
+            this.pgDataGrid.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.LegacyOptimized;
+            this.pgDataGrid.Size = new System.Drawing.Size(335, 507);
+            this.pgDataGrid.TabIndex = 1;
             // 
             // Chart01View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "Chart01View";
-            this.Size = new System.Drawing.Size(633, 408);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1386, 642);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
@@ -396,15 +530,28 @@ namespace F5074.MVVM.Form.View {
             ((System.ComponentModel.ISupportInitialize)(this.lciPartNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciEquipment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupChart)).EndInit();
+            this.groupChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
+            this.xtraTabControl2.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartTab1)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartTab2)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartTab3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupGrid)).EndInit();
+            this.groupGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pgDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraEditors.DateEdit calFromDate;
@@ -424,6 +571,19 @@ namespace F5074.MVVM.Form.View {
         private DevExpress.XtraLayout.LayoutControlItem lciPartNumber;
         private DevExpress.XtraLayout.LayoutControlItem lciCategory;
         private DevExpress.XtraLayout.LayoutControlItem lciEquipment;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnChart;
+        private DevExpress.XtraEditors.SimpleButton btnFind;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupChart;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraCharts.ChartControl chartTab1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraCharts.ChartControl chartTab2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraCharts.ChartControl chartTab3;
+        private DevExpress.XtraEditors.GroupControl groupGrid;
+        private DevExpress.XtraPivotGrid.PivotGridControl pgDataGrid;
     }
 }
