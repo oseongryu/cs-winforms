@@ -114,6 +114,13 @@ namespace F5074.LauncherWinforms
                         assembly = Assembly.LoadFrom(programPath + "\\F5074.WInforms.dll");
                         break;
                     }
+                    else if (resultList[x].FullName.Contains("F5074.MVVM") && resultList[x].Name.Contains(this.treeList1.FocusedValue.ToString()))
+                    {
+                        className = resultList[x].FullName;
+                        //assembly = Assembly.GetExecutingAssembly();
+                        assembly = Assembly.LoadFrom(programPath + "\\F5074.MVVM.dll");
+                        break;
+                    }
                 }
 
                 // XtraTabControl 사용

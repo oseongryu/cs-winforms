@@ -59,6 +59,20 @@ namespace F5074.DevExpressWinforms.MyCommon
                 }
 
             }
+
+            assembly = Assembly.LoadFrom(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\F5074.MVVM.dll");
+            types = assembly.GetTypes();
+            foreach (var type in types)
+            {
+                var typeInfo = type.GetTypeInfo();
+                if (typeInfo.BaseType != null)
+                {
+                    if (typeInfo.FullName.Contains("F5074.MVVM") && typeInfo.BaseType.Name == "UserControl")
+                    {
+                        result.Add(new MenuVo() { Name = type.Name, FullName = type.FullName });
+                    }
+                }
+            }
             return result;
         }
 
