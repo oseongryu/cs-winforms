@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.WPF", "F5074.WPF\F507
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.LauncherWPF", "F5074.LauncherWPF\F5074.LauncherWPF.csproj", "{B78576B8-F80B-4F69-8069-1A5341B29AF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F5074.MVVM", "F5074.MVVM\F5074.MVVM.csproj", "{0901D9B3-8681-4903-9BAA-94FFDCA6F150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B78576B8-F80B-4F69-8069-1A5341B29AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B78576B8-F80B-4F69-8069-1A5341B29AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B78576B8-F80B-4F69-8069-1A5341B29AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0901D9B3-8681-4903-9BAA-94FFDCA6F150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0901D9B3-8681-4903-9BAA-94FFDCA6F150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0901D9B3-8681-4903-9BAA-94FFDCA6F150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0901D9B3-8681-4903-9BAA-94FFDCA6F150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
