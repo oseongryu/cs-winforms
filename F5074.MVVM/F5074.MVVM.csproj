@@ -203,22 +203,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\View\ChartView01.cs">
+    <Compile Include="Form\View\Chart01View.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\View\ChartView01.Designer.cs">
-      <DependentUpon>ChartView01.cs</DependentUpon>
+    <Compile Include="Form\View\Chart01View.Designer.cs">
+      <DependentUpon>Chart01View.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form\View\ChartView01.resx">
-      <DependentUpon>ChartView01.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Form\ViewModel\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\ViewModel\" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\View\Chart01View.resx">
+      <DependentUpon>Chart01View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
