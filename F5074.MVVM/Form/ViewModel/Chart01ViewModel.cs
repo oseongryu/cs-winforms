@@ -1,4 +1,5 @@
-﻿using System;
+﻿using F5074.Common.Service;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace F5074.UI.Form.ViewModel {
                 dicParam.Add("SITE", "1000");
                 dicParam.Add("USE_YN", useYn);
                 dicParam.Add("GENE_DV", geneDv);
-                DataTable dt = SelectCommandRESTful("MAS_CD_GENEDATA_SELECT_BY_CONDITION", dicParam).Tables[0].Copy();
+                DataTable dt = RESTfulService.SelectCommandRESTful("MAS_CD_GENEDATA_SELECT_BY_CONDITION", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -43,7 +44,7 @@ namespace F5074.UI.Form.ViewModel {
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
                 dicParam.Add("SITE", "1000");
-                DataTable dt = SelectCommandRESTful("EQP_MST", dicParam).Tables[0].Copy();
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MST", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -70,7 +71,7 @@ namespace F5074.UI.Form.ViewModel {
                 dicParam.Add("START_DT", startDt);
                 dicParam.Add("END_DT", endDt);
                 dicParam.Add("ITEM_CD", itemCd);
-                DataTable dt = SelectCommandRESTful("EQP_SRC_DATA", dicParam).Tables[0].Copy();
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_SRC_DATA", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -91,7 +92,7 @@ namespace F5074.UI.Form.ViewModel {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
                 dicParam.Add("SITE", "1000");
                 dicParam.Add("EQP_ID", eqpId);
-                DataTable dt = SelectCommandRESTful("EQP_CD_SPEC", dicParam).Tables[0].Copy();
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_CD_SPEC", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -118,7 +119,7 @@ namespace F5074.UI.Form.ViewModel {
                 dicParam.Add("START_DT", startDt);
                 dicParam.Add("END_DT", endDt);
                 dicParam.Add("CATEGORY", category);
-                DataTable dt = SelectCommandRESTful("EQP_MAX_LOAD", dicParam).Tables[0].Copy();
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MAX_LOAD", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -127,39 +128,5 @@ namespace F5074.UI.Form.ViewModel {
             }
         }
 
-        /// <summary>
-        /// SelectCommand
-        /// </summary>
-        /// <param name="EVENT_CD"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public static DataSet SelectCommandRESTful(String EVENT_CD, Dictionary<string, string> parameters)
-        {
-            try
-            {
-                DataSet resultSet = new DataSet();
-                using (System.Net.WebClient wc = new System.Net.WebClient())
-                {
-                    var reqparam = new System.Collections.Specialized.NameValueCollection();
-                    foreach (var kvp in parameters)
-                    {
-                        reqparam.Add(kvp.Key.ToString(), kvp.Value.ToString());
-                    }
-
-                    var json = System.Text.Encoding.UTF8.GetString(wc.UploadValues(String.Format("{0}{1}", "http://localhost/equipment/", EVENT_CD), reqparam));
-
-                    string strJson = json.ToString();
-                    Newtonsoft.Json.Linq.JObject arrJson = Newtonsoft.Json.Linq.JObject.Parse(strJson);
-                    Newtonsoft.Json.Linq.JArray arrJsons = Newtonsoft.Json.Linq.JArray.Parse(arrJson["data"].ToString());
-                    resultSet.Tables.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(arrJson["data"].ToString()));
-                    return resultSet;
-                }
-                return resultSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
     }
 }
