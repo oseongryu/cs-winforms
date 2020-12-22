@@ -205,6 +205,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\ChartControlExtension.cs" />
     <Compile Include="Extension\DateEditExtension.cs" />
     <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\GridViewExtension.cs" />
