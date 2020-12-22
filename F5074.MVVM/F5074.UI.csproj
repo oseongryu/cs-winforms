@@ -208,11 +208,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form\ViewModel\Chart01ViewModel.cs" />
-    <Compile Include="Form\View\Chart01View.cs">
+    <Compile Include="Form\View\Chart02View.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\View\Chart01View.Designer.cs">
-      <DependentUpon>Chart01View.cs</DependentUpon>
+    <Compile Include="Form\View\Chart02View.Designer.cs">
+      <DependentUpon>Chart02View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\View\Chart03View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\View\Chart03View.Designer.cs">
+      <DependentUpon>Chart03View.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
@@ -221,9 +227,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form\View\Chart01View.resx">
-      <DependentUpon>Chart01View.cs</DependentUpon>
+    <EmbeddedResource Include="Form\View\Chart02View.resx">
+      <DependentUpon>Chart02View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\View\Chart03View.resx">
+      <DependentUpon>Chart03View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\F5074.Common\F5074.Common.csproj">

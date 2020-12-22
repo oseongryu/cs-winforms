@@ -335,7 +335,10 @@ namespace F5074.UI.Form.View {
             xyDiagram1.AxisX.Interlaced = true;
             xyDiagram1.AxisX.Label.Staggered = true;
             xyDiagram1.AxisX.Label.TextPattern = "{A:dd/MM HH:mm}";
+            xyDiagram1.AxisX.Label.Visible = false;
             xyDiagram1.AxisX.Title.Text = "Date";
+            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "1";
             xyDiagram1.AxisX.VisualRange.Auto = false;
             xyDiagram1.AxisX.VisualRange.MaxValueSerializable = "06/08/2008 09:00:00.000";
@@ -355,6 +358,7 @@ namespace F5074.UI.Form.View {
             xyDiagramPane1.PaneID = 0;
             xyDiagramPane1.ScrollBarOptions.XAxisScrollBarVisible = false;
             xyDiagramPane1.ScrollBarOptions.YAxisScrollBarVisible = false;
+            xyDiagramPane1.Weight = 2D;
             xyDiagramPane2.Name = "Pane 2";
             xyDiagramPane2.PaneID = 1;
             xyDiagramPane2.ScrollBarOptions.YAxisScrollBarVisible = false;
@@ -418,7 +422,7 @@ namespace F5074.UI.Form.View {
             this.chart.Diagram = xyDiagram1;
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Left;
-            this.chart.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside;
+            this.chart.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
             this.chart.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             this.chart.Legend.Name = "Default Legend";
             this.chart.Location = new System.Drawing.Point(0, 0);
