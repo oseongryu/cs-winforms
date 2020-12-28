@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Windows.Forms;
@@ -18,18 +19,20 @@ namespace F5074.UI.Form.View {
         {
 
             // http://taeyo.net/columns/View.aspx?SEQ=347&PSEQ=23&IDX=5
-            Uri uri = new Uri("http://localhost:53045/Services/PDA/PDAService.svc");
+            Uri uri = new Uri("http://localhost:53045/Services/Common/CommonService.svc");
             ServiceEndpoint ep = new ServiceEndpoint(
-                ContractDescription.GetContract(typeof(IPDAService)),
+                ContractDescription.GetContract(typeof(ICommonService)),
                 new BasicHttpBinding(),
                 new EndpointAddress(uri));
 
-            ChannelFactory<IPDAService> factory = new ChannelFactory<IPDAService>(ep);
+            ChannelFactory<ICommonService> factory = new ChannelFactory<ICommonService>(ep);
 
-            IPDAService proxy = factory.CreateChannel();
+            ICommonService proxy = factory.CreateChannel();
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("EQP_ID", "17");
-            var result = proxy.SelectDeptList(parameters);
+            //var result = proxy.SelectDeptList(parameters);
+
+            var results = proxy.SelectDeptList2(parameters);
 
             (proxy as IDisposable).Dispose();
 
@@ -53,9 +56,25 @@ namespace F5074.UI.Form.View {
     }
 
     [ServiceContract]
-    public interface IPDAService {
+    public interface ICommonService {
 
         [OperationContract]
         IList<Hashtable> SelectDeptList(Dictionary<string, object> parameters);
+
+        [OperationContract]
+        ApiResponse<IList<Hashtable>> SelectDeptList2(Dictionary<string, object> parameters);
+    }
+
+
+
+    [DataContract]
+    public class ApiResponse<T> {
+
+        [DataMember]
+        public bool Result = false;
+        [DataMember]
+        public T Data;
+        [DataMember]
+        public string Message = string.Empty;
     }
 }
