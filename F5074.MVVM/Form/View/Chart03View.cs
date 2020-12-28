@@ -56,13 +56,7 @@ namespace F5074.UI.Form.View {
 
             DateTime dtFromDt = Convert.ToDateTime(this.calFromDate.EditValue);
             DateTime dtToDt = Convert.ToDateTime(this.calToDate.EditValue);
-            int yearVal = Convert.ToInt32(dtFromDt.ToString("yyyy"));
-            int monthVal = Convert.ToInt32(dtFromDt.ToString("MM"));
-            int dayVal = Convert.ToInt32(dtFromDt.ToString("dd"));
 
-            int toYearVal = Convert.ToInt32(dtToDt.ToString("yyyy"));
-            int toMonthVal = Convert.ToInt32(dtToDt.ToString("MM"));
-            int toDayVal = Convert.ToInt32(dtToDt.ToString("dd"));
 
             DataTable dt = Chart01ViewModel.SelectEqpMaxLoad(eqpId, dtFromDt.ToString("yyyyMMdd01"), dtToDt.ToString("yyyyMMdd23"), "ITEM_VALUE");
             DataTable dtCdSpec = Chart01ViewModel.SelectEqpCdSpec(eqpId);
@@ -94,38 +88,32 @@ namespace F5074.UI.Form.View {
                     string sItemDesc = dtCdSpec.Rows[cdIdx]["ITEM_DESC"].ToString();
 
                     Series series = new Series(sItemDesc, ViewType.Line);
+                    Series series2 = new Series(sItemDesc, ViewType.Line);
                     for (int rowIdx = 0; rowIdx < dt.Rows.Count; rowIdx++)
                     {
                         DataRow dataRow = dt.Rows[rowIdx];
                         if (dataRow["ITEM_CD"].ToString() == sItemCd)
                         {
-                            series.Points.Add(new SeriesPoint(DateTime.ParseExact(dataRow["PER_MIN"].ToString(), "yyyyMMdd HHmm", null), dataRow["ITEM_VALUE"]));
-                            if (rowIdx != 0) series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+                            series.Points.Add(new SeriesPoint(rowIdx, 2 * Convert.ToDouble(dataRow["ITEM_VALUE"])));
+                            series2.Points.Add(new SeriesPoint(rowIdx, dataRow["ITEM_VALUE"]));
+                            if (rowIdx != 0) 
+                            { 
+                                series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+                                series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+                            }
                         }
                     }
 
                     chartControl.Series.Add(series);
+                    chartControl.Series.Add(series2);
                     chartControl.InitScrolling();
+                    chartControl.InitChartControl(0, 60 * 24 * 3, 60*24);
                     XYDiagram diagram = (XYDiagram)chartControl.Diagram;
                     if (idx == 0)
                     {
                         diagram.Panes.Clear();
                         diagram.SecondaryAxesX.Clear();
                         diagram.SecondaryAxesY.Clear();
-
-                        diagram.AxisX.Label.TextPattern = "{A:MM-dd HH:mm}";
-                        diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DevExpress.XtraCharts.DateTimeMeasureUnit.Minute;
-                        diagram.AxisX.DateTimeScaleOptions.GridAlignment = DevExpress.XtraCharts.DateTimeGridAlignment.Hour;
-
-                        diagram.AxisX.WholeRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 9, 0, 0), new DateTime(toYearVal, toMonthVal, toDayVal, 17, 59, 0));
-                        diagram.AxisX.VisualRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 9, 0, 0), new DateTime(yearVal, monthVal, dayVal, 17, 59, 0));
-
-                        diagram.AxisX.WholeRange.SideMarginsValue = 20;
-                        diagram.AxisX.VisualRange.SideMarginsValue = 20;
-
-                        diagram.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 10F);
-                        diagram.AxisY.Title.Text = sItemDesc;
-                        diagram.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
 
                         diagram.DefaultPane.ScrollBarOptions.XAxisScrollBarVisible = false;
                         diagram.DefaultPane.Weight = 1D;
@@ -149,6 +137,12 @@ namespace F5074.UI.Form.View {
                         diagram.SecondaryAxesY[viewIdx].Title.Text = sItemDesc;
                         diagram.SecondaryAxesY[viewIdx].Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
 
+
+                        LineSeriesView myView2 = (LineSeriesView)series2.View;
+                        myView2.AxisY = diagram.SecondaryAxesY[viewIdx];
+                        myView2.Pane = diagram.Panes[viewIdx];
+                        myView2.Pane.ScrollBarOptions.XAxisScrollBarVisible = false;
+                        myView2.Pane.Weight = 1D;
                     }
                     if(dtCdSpec.Rows.Count -1 != cdIdx) cdIdx += 1;
                 }
