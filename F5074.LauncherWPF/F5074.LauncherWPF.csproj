@@ -72,6 +72,9 @@
     <Compile Include="View\A_FlowLayout\FlowLayout01.xaml.cs">
       <DependentUpon>FlowLayout01.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MainDockingView.xaml.cs">
+      <DependentUpon>MainDockingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainHamburger.xaml.cs">
       <DependentUpon>MainHamburger.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\A_FlowLayout\FlowLayout01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainDockingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
