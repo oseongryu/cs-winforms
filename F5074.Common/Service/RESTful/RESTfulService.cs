@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace F5074.Common.Service {
+namespace F5074.Common.Service.RESTful {
     public static class RESTfulService {
 
         /// <summary>
-        /// SelectCommand
+        /// SelectCommandRESTful
         /// </summary>
         /// <param name="EVENT_CD"></param>
         /// <param name="parameters"></param>

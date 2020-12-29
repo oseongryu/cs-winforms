@@ -1,4 +1,4 @@
-﻿using F5074.Common.Service;
+﻿using F5074.Common.Service.RESTful;
 using System;
 using System.Collections.Generic;
 using System.Data;

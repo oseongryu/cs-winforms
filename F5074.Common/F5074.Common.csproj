@@ -195,6 +195,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -212,7 +213,10 @@
     <Compile Include="Extension\PivotGridControlExtension.cs" />
     <Compile Include="Extension\SearchLookUpEditExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\RESTfulService.cs" />
+    <Compile Include="Service\RESTful\RESTfulService.cs" />
+    <Compile Include="Service\WCF\WCFService.cs" />
+    <Compile Include="Service\WCF\ServiceInterface\IAutomationService.cs" />
+    <Compile Include="Service\WCF\ServiceInterface\ICommonService.cs" />
     <Compile Include="Utility\PingTest.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
