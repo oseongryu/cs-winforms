@@ -217,6 +217,7 @@
     <Compile Include="Service\WCF\WCFService.cs" />
     <Compile Include="Service\WCF\ServiceInterface\IAutomationService.cs" />
     <Compile Include="Service\WCF\ServiceInterface\ICommonService.cs" />
+    <Compile Include="Utility\PingPortTest.cs" />
     <Compile Include="Utility\PingTest.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
