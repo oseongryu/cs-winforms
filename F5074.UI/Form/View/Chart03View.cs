@@ -20,9 +20,9 @@ namespace F5074.UI.Form.View {
             // ComboBox 장비
             slueEquipment.InitSearchLookUpEdit("EQP_DESC", "EQP_ID", true);
             slueEquipment.SetVisibleColumnSearchLookUpEdit(new string[] { "EQP_ID", "EQP_NO", "EQP_DESC" }, new string[] { "설비번호", "호기", "설비명" });
-            slueEquipment.Properties.DataSource = Chart01ViewModel.SelectEqpMst();
-            slueEquipment.EditValue = (slueEquipment.Properties.DataSource as DataTable).Rows[0]["EQP_ID"].ToString();
-            slueEquipment.Text = "100218";
+            //slueEquipment.Properties.DataSource = Chart01ViewModel.SelectEqpMst();
+            //slueEquipment.EditValue = (slueEquipment.Properties.DataSource as DataTable).Rows[0]["EQP_ID"].ToString();
+            //slueEquipment.Text = "100218";
 
             // ComboBox 구분
             slueCategory.InitSearchLookUpEdit("GENE_CD_DESC", "GENE_CD", true);

@@ -3,6 +3,7 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,24 @@ namespace F5074.Common.Extension {
             searchLookUpEdit.Properties.View.OptionsSelection.MultiSelect = true;
             searchLookUpEdit.Properties.View.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
             searchLookUpEdit.Properties.ShowAddNewButton = true;
+        }
+
+        /// <summary>
+        /// GetSelectedColumnValue
+        /// </summary>
+        /// <param name="searchLookUpEdit"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static string GetSelectedColumnValue(this SearchLookUpEdit searchLookUpEdit, string columnName)
+        {
+            string partNumberCompare = searchLookUpEdit.EditValue.ToString();
+            int rowIdx = searchLookUpEdit.Properties.GetIndexByKeyValue(partNumberCompare);
+            DataTable dt = (DataTable)searchLookUpEdit.Properties.DataSource;
+            if (dt.Columns.Contains(columnName))
+            {
+                return dt.Rows[rowIdx][columnName] == null ? "" : dt.Rows[rowIdx][columnName].ToString();
+            }
+            return "";
         }
 
         /// <summary>

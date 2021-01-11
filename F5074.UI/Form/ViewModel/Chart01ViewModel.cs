@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace F5074.UI.Form.ViewModel {
     public static class Chart01ViewModel {
-
+        private static string SITE = "1000";
 
         /// <summary>
         /// SelectCommonMasCd
@@ -21,7 +21,7 @@ namespace F5074.UI.Form.ViewModel {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", "1000");
+                dicParam.Add("SITE", SITE);
                 dicParam.Add("USE_YN", useYn);
                 dicParam.Add("GENE_DV", geneDv);
                 DataTable dt = RESTfulService.SelectCommandRESTful("MAS_CD_GENEDATA_SELECT_BY_CONDITION", dicParam).Tables[0].Copy();
@@ -37,13 +37,15 @@ namespace F5074.UI.Form.ViewModel {
         /// <summary>
         /// SelectEqpMst
         /// </summary>
+        /// <param name="deptCd"></param>
         /// <returns></returns>
-        public static DataTable SelectEqpMst()
+        public static DataTable SelectEqpMst(string deptCd)
         {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", "1000");
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("DEPT_CODE", deptCd);
                 DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MST", dicParam).Tables[0].Copy();
                 return dt;
             }
@@ -66,7 +68,7 @@ namespace F5074.UI.Form.ViewModel {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", "1000");
+                dicParam.Add("SITE", SITE);
                 dicParam.Add("EQP_ID", eqpId);
                 dicParam.Add("START_DT", startDt);
                 dicParam.Add("END_DT", endDt);
@@ -90,7 +92,7 @@ namespace F5074.UI.Form.ViewModel {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", "1000");
+                dicParam.Add("SITE", SITE);
                 dicParam.Add("EQP_ID", eqpId);
                 DataTable dt = RESTfulService.SelectCommandRESTful("EQP_CD_SPEC", dicParam).Tables[0].Copy();
                 return dt;
@@ -114,12 +116,85 @@ namespace F5074.UI.Form.ViewModel {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", "1000");
+                dicParam.Add("SITE", SITE);
                 dicParam.Add("EQP_ID", eqpId);
                 dicParam.Add("START_DT", startDt);
                 dicParam.Add("END_DT", endDt);
                 dicParam.Add("CATEGORY", category);
                 DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MAX_LOAD", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpMaxLoad
+        /// </summary>
+        /// <param name="eqpId"></param>
+        /// <param name="startDt"></param>
+        /// <param name="endDt"></param>
+        /// <param name="category"></param>
+        /// <param name="partNumber"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpMaxLoad(string eqpId, string startDt, string endDt, string category, string partNumber)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("EQP_ID", eqpId);
+                dicParam.Add("START_DT", startDt);
+                dicParam.Add("END_DT", endDt);
+                dicParam.Add("CATEGORY", category);
+                dicParam.Add("PART_NUMBER", partNumber);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MAX_LOAD", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpDeptMst
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable SelectEqpDeptMst()
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("GENE_DV", "CB_EQP_DEPT_CD");
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_DEPT_CD", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpPartNumber
+        /// </summary>
+        /// <param name="eqpId"></param>
+        /// <param name="startDt"></param>
+        /// <param name="endDt"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpPartNumber(String eqpId, string startDt, string endDt)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("EQP_ID", eqpId);
+                dicParam.Add("START_DT", startDt);
+                dicParam.Add("END_DT", endDt);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_PART_NUMBER", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
