@@ -47,33 +47,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.DynamicProxy, Version=1.1.5.666, Culture=neutral, PublicKeyToken=2841860fcfb14445, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Castle.DynamicProxy.dll</HintPath>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Common.Logging.dll</HintPath>
+    <Reference Include="IBatisNet.Common, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\IBatisNet45.1.6.2\lib\net45\IBatisNet.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Common.Logging.Log4Net.dll</HintPath>
+    <Reference Include="IBatisNet.Common.Logging.Log4Net, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IBatisNet45.1.6.2\lib\net45\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="IBatisNet.Common, Version=1.6.2.666, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\IBatisNet.Common.dll</HintPath>
+    <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\IBatisNet45.1.6.2\lib\net45\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
-    <Reference Include="IBatisNet.Common.Logging.Log4Net, Version=1.0.0.666, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="IBatisNet.DataMapper, Version=1.6.2.666, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\IBatisNet.DataMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\log4net.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.10.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,24 +89,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AutomationDB.mdf</DependentUpon>
     </Content>
+    <None Include="App.config" />
     <None Include="Lib\AutomationDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Lib\Castle.DynamicProxy.dll" />
-    <Content Include="Lib\Castle.DynamicProxy.xml" />
-    <Content Include="Lib\Common.Logging.dll" />
-    <Content Include="Lib\Common.Logging.Log4Net.dll" />
-    <Content Include="Lib\IBatisNet.Common.dll" />
-    <Content Include="Lib\IBatisNet.Common.Logging.Log4Net.dll" />
-    <Content Include="Lib\IBatisNet.Common.Logging.Log4Net.xml" />
-    <Content Include="Lib\IBatisNet.Common.xml" />
-    <Content Include="Lib\IBatisNet.DataMapper.dll" />
-    <Content Include="Lib\IBatisNet.DataMapper.xml" />
-    <Content Include="Lib\log4net.dll" />
     <EmbeddedResource Include="Service\Automation\automation_sqlFile.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="Service\Dashboard\dashboard_sqlFile.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\log4Net.config" />
