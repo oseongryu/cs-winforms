@@ -225,17 +225,11 @@
     <Compile Include="Form\View\Chart03View.Designer.cs">
       <DependentUpon>Chart03View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\View\Chart04View.cs">
+    <Compile Include="Form\View\Chart08View.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\View\Chart04View.Designer.cs">
-      <DependentUpon>Chart04View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\View\Chart05View.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Form\View\Chart05View.Designer.cs">
-      <DependentUpon>Chart05View.cs</DependentUpon>
+    <Compile Include="Form\View\Chart08View.Designer.cs">
+      <DependentUpon>Chart08View.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\View\WCF01View.cs">
       <SubType>UserControl</SubType>
@@ -256,11 +250,8 @@
     <EmbeddedResource Include="Form\View\Chart03View.resx">
       <DependentUpon>Chart03View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\View\Chart04View.resx">
-      <DependentUpon>Chart04View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\View\Chart05View.resx">
-      <DependentUpon>Chart05View.cs</DependentUpon>
+    <EmbeddedResource Include="Form\View\Chart08View.resx">
+      <DependentUpon>Chart08View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\View\WCF01View.resx">
       <DependentUpon>WCF01View.cs</DependentUpon>

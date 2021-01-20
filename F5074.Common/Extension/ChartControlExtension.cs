@@ -29,7 +29,7 @@ namespace F5074.Common.Extension {
         }
 
 
-        public static void InitChartCOntrol(this ChartControl chartControl, DateTime dtFromDt, DateTime dtToDt)
+        public static void InitChartControl(this ChartControl chartControl, DateTime dtFromDt, DateTime dtToDt)
         {
             XYDiagram diagram = (XYDiagram)chartControl.Diagram;
 
@@ -56,7 +56,7 @@ namespace F5074.Common.Extension {
             //chartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
             //chartControl.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             // https://docs.devexpress.com/CoreLibraries/DevExpress.XtraCharts.Legend.MarkerMode
-            chartControl.Legend.MarkerMode = LegendMarkerMode.CheckBoxAndMarker;
+            //chartControl.Legend.MarkerMode = LegendMarkerMode.CheckBoxAndMarker;
 
 
         }

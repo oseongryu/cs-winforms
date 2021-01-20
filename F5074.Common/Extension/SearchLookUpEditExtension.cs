@@ -1,6 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.Win;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +14,7 @@ namespace F5074.Common.Extension {
     public static class SearchLookUpEditExtension {
 
         /// <summary>
-        /// SearchLookUpEdit 멀티 체크박스 가능
+        /// InitMultiSelect
         /// </summary>
         /// <param name="searchLookUpEdit"></param>
         public static void InitMultiSelect(this SearchLookUpEdit searchLookUpEdit)
@@ -21,7 +23,87 @@ namespace F5074.Common.Extension {
             searchLookUpEdit.Properties.View.OptionsSelection.MultiSelect = true;
             searchLookUpEdit.Properties.View.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
             searchLookUpEdit.Properties.ShowAddNewButton = true;
+            searchLookUpEdit.CustomDisplayText += searchLookUpEdit_CustomDisplayText;
+            searchLookUpEdit.Closed += searchLookUpEdit_Closed;
+            searchLookUpEdit.Popup += searchLookUpEdit_Popup;
         }
+
+        /// <summary>
+        /// searchLookUpEdit_CustomDisplayText
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void searchLookUpEdit_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            SearchLookUpEdit searchLookUpEdit = (SearchLookUpEdit)sender;
+            String displayMember = searchLookUpEdit.Properties.DisplayMember;
+            var view = searchLookUpEdit.Properties.View;
+            int[] selectedRows = view.GetSelectedRows();
+            if (selectedRows.Length > 0)
+            {
+                string sValues = "";
+                for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+                {
+                    if (iRow == 0)
+                    {
+                        sValues = view.GetRowCellValue(selectedRows[iRow], displayMember).ToString();
+                    }
+                    else
+                    {
+                        sValues += "," + view.GetRowCellValue(selectedRows[iRow], displayMember).ToString();
+                    }
+                }
+                e.DisplayText = sValues;
+            }
+        }
+
+        /// <summary>
+        /// searchLookUpEdit_Closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void searchLookUpEdit_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            SearchLookUpEdit searchLookUpEdit = (SearchLookUpEdit)sender;
+            String valueMember = searchLookUpEdit.Properties.ValueMember;
+
+            var view = searchLookUpEdit.Properties.View;
+            int[] selectedRows = view.GetSelectedRows();
+            if (selectedRows.Length > 0)
+            {
+                string sValues = "";
+                for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+                {
+                    if (iRow == 0)
+                    {
+                        sValues = view.GetRowCellValue(selectedRows[iRow], valueMember).ToString();
+                    }
+                    else
+                    {
+                        sValues += "," + view.GetRowCellValue(selectedRows[iRow], valueMember).ToString();
+                    }
+                }
+                searchLookUpEdit.EditValue = sValues;
+            }
+            else
+            {
+                searchLookUpEdit.EditValue = null;
+            }
+        }
+
+        /// <summary>
+        /// searchLookUpEdit_Popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void searchLookUpEdit_Popup(object sender, EventArgs e)
+        {
+            IPopupControl popupControl = sender as IPopupControl;
+            LayoutControl layoutControl = popupControl.PopupWindow.Controls[2].Controls[0] as LayoutControl;
+            SimpleButton AddNewButton = ((LayoutControlItem)layoutControl.Items.FindByName("lciAddNew")).Control as SimpleButton;
+            AddNewButton.Text = "OK";
+        }
+
 
         /// <summary>
         /// GetSelectedColumnValue
@@ -39,6 +121,47 @@ namespace F5074.Common.Extension {
                 return dt.Rows[rowIdx][columnName] == null ? "" : dt.Rows[rowIdx][columnName].ToString();
             }
             return "";
+        }
+
+        /// <summary>
+        /// GetSelectedValue
+        /// </summary>
+        /// <param name="searchLookUpEdit"></param>
+        /// <returns></returns>
+        public static String GetSelectedValue(this SearchLookUpEdit searchLookUpEdit)
+        {
+            string sReturn = "";
+            if (!searchLookUpEdit.Properties.View.OptionsSelection.MultiSelect)
+            {
+                if (searchLookUpEdit.EditValue == null) return "";
+                return searchLookUpEdit.EditValue.ToString();
+            }
+            else
+            {
+                String valueMember = searchLookUpEdit.Properties.ValueMember;
+                if (searchLookUpEdit.EditValue != null && searchLookUpEdit.EditValue.ToString() != "")
+                {
+                    GridView view = searchLookUpEdit.Properties.View;
+                    int[] selectedRows = view.GetSelectedRows();
+                    if (selectedRows.Length > 0)
+                    {
+                        string sValues = "";
+                        for (int iRow = 0; iRow < selectedRows.Length; iRow++)
+                        {
+                            if (iRow == 0)
+                            {
+                                sValues = view.GetRowCellValue(selectedRows[iRow], valueMember).ToString();
+                            }
+                            else
+                            {
+                                sValues += "," + view.GetRowCellValue(selectedRows[iRow], valueMember).ToString();
+                            }
+                        }
+                        sReturn = sValues;
+                    }
+                }
+                return sReturn;
+            }
         }
 
         /// <summary>

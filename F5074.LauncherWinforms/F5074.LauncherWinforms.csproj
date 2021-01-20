@@ -97,6 +97,10 @@
       <Project>{cbe0c77d-77a1-4022-a7c8-0ebac23bdba0}</Project>
       <Name>F5074.MyBatisDataMapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\F5074.UI\F5074.UI.csproj">
+      <Project>{0901d9b3-8681-4903-9baa-94ffdca6f150}</Project>
+      <Name>F5074.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\F5074.Winforms\F5074.Winforms.csproj">
       <Project>{38cfed43-2f87-4389-ad57-0ed198363ef4}</Project>
       <Name>F5074.Winforms</Name>
