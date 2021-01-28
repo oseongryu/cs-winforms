@@ -45,8 +45,8 @@ namespace F5074.Common.Extension {
             diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DevExpress.XtraCharts.DateTimeMeasureUnit.Minute;
             diagram.AxisX.DateTimeScaleOptions.GridAlignment = DevExpress.XtraCharts.DateTimeGridAlignment.Hour;
 
-            diagram.AxisX.WholeRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 9, 0, 0), new DateTime(toYearVal, toMonthVal, toDayVal, 17, 59, 0));
-            diagram.AxisX.VisualRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 9, 0, 0), new DateTime(yearVal, monthVal, dayVal, 17, 59, 0));
+            diagram.AxisX.WholeRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 0, 0, 0), new DateTime(toYearVal, toMonthVal, toDayVal, 23, 59, 0));
+            diagram.AxisX.VisualRange.SetMinMaxValues(new DateTime(yearVal, monthVal, dayVal, 0, 0, 0), new DateTime(yearVal, monthVal, dayVal, 23, 59, 0));
 
             diagram.AxisX.WholeRange.SideMarginsValue = 20;
             diagram.AxisX.VisualRange.SideMarginsValue = 20;
