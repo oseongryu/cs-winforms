@@ -33,28 +33,6 @@ namespace F5074.UI.Form.ViewModel {
             }
         }
 
-
-        /// <summary>
-        /// SelectEqpMst
-        /// </summary>
-        /// <param name="deptCd"></param>
-        /// <returns></returns>
-        public static DataTable SelectEqpMst(string deptCd)
-        {
-            try
-            {
-                Dictionary<string, string> dicParam = new Dictionary<string, string>();
-                dicParam.Add("SITE", SITE);
-                dicParam.Add("DEPT_CODE", deptCd);
-                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MST", dicParam).Tables[0].Copy();
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         /// <summary>
         /// SelectEqpSrcData
         /// </summary>
@@ -168,8 +146,56 @@ namespace F5074.UI.Form.ViewModel {
             try
             {
                 Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
                 dicParam.Add("GENE_DV", "CB_EQP_DEPT_CD");
                 DataTable dt = RESTfulService.SelectCommandRESTful("EQP_DEPT_CD", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpWorkCenter
+        /// </summary>
+        /// <param name="deptCd"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpWorkCenter(string deptCd)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("DEPT_CODE", deptCd);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_WORK_CENTER", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// SelectEqpMst
+        /// </summary>
+        /// <param name="deptCd"></param>
+        /// <param name="workCenter"></param>
+        /// <param name="eqpId"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpMstCIM(string deptCd, string workCenter = "", string eqpId = "")
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("DEPT_CODE", deptCd);
+                dicParam.Add("WORK_CENTER", workCenter);
+                dicParam.Add("EQP_ID", eqpId);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_MST", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
@@ -195,6 +221,68 @@ namespace F5074.UI.Form.ViewModel {
                 dicParam.Add("START_DT", startDt);
                 dicParam.Add("END_DT", endDt);
                 DataTable dt = RESTfulService.SelectCommandRESTful("EQP_PART_NUMBER", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpSetupPerf
+        /// </summary>
+        /// <param name="startDt"></param>
+        /// <param name="endDt"></param>
+        /// /// <param name="statusDetail"></param>
+        /// <param name="deptCd"></param>
+        /// <param name="workCenter"></param>
+        /// <param name="eqpId"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpSetupPerf(String startDt, String endDt, String statusDetail, String deptCd, String workCenter = "", String eqpId = "")
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("START_DT", startDt);
+                dicParam.Add("END_DT", endDt);
+                dicParam.Add("STATUS_D", statusDetail);
+                dicParam.Add("DEPT_CODE", deptCd);
+                dicParam.Add("WORK_CENTER", workCenter);
+                dicParam.Add("EQP_ID", eqpId);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_SETUP_PERF", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// SelectEqpSetupPerfSum
+        /// </summary>
+        /// <param name="startDt"></param>
+        /// <param name="endDt"></param>
+        /// /// <param name="statusDetail"></param>
+        /// <param name="deptCd"></param>
+        /// <param name="workCenter"></param>
+        /// <param name="eqpId"></param>
+        /// <returns></returns>
+        public static DataTable SelectEqpSetupPerfSum(String startDt, String endDt, String statusDetail, String deptCd, String workCenter = "", String eqpId = "")
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("START_DT", startDt);
+                dicParam.Add("END_DT", endDt);
+                dicParam.Add("STATUS_D", statusDetail);
+                dicParam.Add("DEPT_CODE", deptCd);
+                dicParam.Add("WORK_CENTER", workCenter);
+                dicParam.Add("EQP_ID", eqpId);
+                DataTable dt = RESTfulService.SelectCommandRESTful("EQP_SETUP_PERF_SUM", dicParam).Tables[0].Copy();
                 return dt;
             }
             catch (Exception ex)
