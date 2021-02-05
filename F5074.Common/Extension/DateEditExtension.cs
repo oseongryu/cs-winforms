@@ -10,6 +10,30 @@ namespace F5074.Common.Extension {
     public static class DateEditExtension {
 
         /// <summary>
+        /// DateEdit의 포맷 yyyy
+        /// </summary>
+        /// <param name="dateEdit"></param>
+        public static void InitDisplayFormatYear(this DateEdit dateEdit, DateTime dateTime)
+        {
+            dateEdit.EditValue = dateTime;
+            dateEdit.Properties.Mask.EditMask = "yyyy";
+            dateEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateEdit.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView;
+        }
+
+        /// <summary>
+        /// DateEdit의 포맷 yyyy-MM
+        /// </summary>
+        /// <param name="dateEdit"></param>
+        public static void InitDisplayFormatMonth(this DateEdit dateEdit, DateTime dateTime)
+        {
+            dateEdit.EditValue = dateTime;
+            dateEdit.Properties.Mask.EditMask = "yyyy-MM";
+            dateEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateEdit.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearView;
+        }
+
+        /// <summary>
         /// DateEdit의 포맷 yyyy-MM-dd
         /// </summary>
         /// <param name="dateEdit"></param>

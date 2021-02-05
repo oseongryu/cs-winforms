@@ -209,6 +209,7 @@
     <Compile Include="Extension\ChartControlExtension.cs" />
     <Compile Include="Extension\DateEditExtension.cs" />
     <Compile Include="Extension\EnumExtension.cs" />
+    <Compile Include="Extension\GridControlExtension.cs" />
     <Compile Include="Extension\GridViewExtension.cs" />
     <Compile Include="Extension\PivotGridControlExtension.cs" />
     <Compile Include="Extension\SearchLookUpEditExtension.cs" />

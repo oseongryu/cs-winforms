@@ -1,9 +1,15 @@
-﻿using DevExpress.XtraCharts;
+﻿using DevExpress.Skins;
+using DevExpress.Utils;
+using DevExpress.XtraCharts;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace F5074.Common.Extension {
     public static class ChartControlExtension {
