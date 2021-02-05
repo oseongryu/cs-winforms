@@ -291,5 +291,109 @@ namespace F5074.UI.Form.ViewModel {
             }
         }
 
+        public static DataTable SelectItemSpec(String itemNumber)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("ITEM_NUMBER", itemNumber);
+                DataTable dt = RESTfulService.SelectCommandRESTful("SPC_CODE_SPEC_ITEMSPEC_SELECT", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable SelectPartNumber(String itemNumber)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("ITEM_NUMBER", itemNumber);
+                DataTable dt = RESTfulService.SelectCommandRESTful("SPC_CODE_SPEC_PARTNO_SELECT", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable SelectProductName(String itemNumber)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("ITEM_NUMBER", itemNumber);
+                DataTable dt = RESTfulService.SelectCommandRESTful("SPC_CODE_SPEC_PROD_SELECT", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable SelectProcessName(String productName)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("PRODUCT_NAME", productName);
+                DataTable dt = RESTfulService.SelectCommandRESTful("SPC_CHART_PROCESS_SELECT", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable SelectItemCode(String productName, String processName)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("PRODUCT_NAME", productName);
+                dicParam.Add("PROCESS_NAME", processName);
+                DataTable dt = RESTfulService.SelectCommandRESTful("SPC_CHART_ITEM_SELECT", dicParam).Tables[0].Copy();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataSet SelectByCondition(String itemSpec, String partNumber, String productName, String processName, String itemCd, String fromDate, String toDate)
+        {
+            try
+            {
+                Dictionary<string, string> dicParam = new Dictionary<string, string>();
+                dicParam.Add("SITE", SITE);
+                dicParam.Add("ITEM_SPEC", itemSpec);
+                dicParam.Add("PART_NUMBER", partNumber);
+                dicParam.Add("PRODUCT_NAME", productName);
+                dicParam.Add("PROCESS_NAME", processName);
+                dicParam.Add("ITEM_CD", itemCd);
+                dicParam.Add("UPDATE_TIME_FROM", fromDate);
+                dicParam.Add("UPDATE_TIME_TO", toDate);
+
+                DataSet ds = RESTfulService.SelectCommandRESTful("SPC_CHART_HISTOGRAM_SELECT", dicParam).Copy();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
